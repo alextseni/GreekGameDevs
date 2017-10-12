@@ -1,0 +1,96 @@
+.cardContainer {
+
+  min-height: 150px;
+  padding: 10px;
+      background-color: #f4f5f7 !important;
+}
+.header {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters {
+  display: flex;
+  margin: 10px 10px 40px;
+}
+
+.chip {
+  margin-left: 10px;
+}
+
+.year {
+  display: flex;
+justify-content: flex-end;
+height: 0px;
+}
+
+.optionsContainer {
+  display: flex;
+  margin: 20px 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flip-container {
+	perspective: 1000px;
+}
+
+.contentContainer {
+  height:100vh;
+  overflow: auto;
+}
+	/* flip the pane when hovered */
+	.flip-container:active .flipper, .flip-container.active .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 100%;
+	min-height: 170px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.vertical.flip-container {
+	position: relative;
+}
+
+	.vertical .back {
+		transform: rotateX(180deg);
+	}
+
+	.vertical.flip-container .flipper {
+		transform-origin: 100% 213.5px; /* half of height */
+	}
+
+	.vertical.flip-container:hover .flipper {
+		transform: rotateY(-180deg);
+	}
