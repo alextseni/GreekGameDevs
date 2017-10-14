@@ -3,9 +3,9 @@ const data = [
     company: {
       name: 'Tamasenco',
       founded: '',
-      website: '',
-      socialMedia: {
-        facebook: '',
+      links: {
+        website: 'https://www.tamasenco.com/',
+        facebook: 'https://www.facebook.com/Tamasenco/',
       },
     },
     games: [
@@ -28,9 +28,31 @@ const data = [
     ],
     members: [
       {
-        fullName: '',
-        role: '',
-        contactInfo: '',
+        fullName: 'FIRST MEMBER',
+        role: 'Game Designer',
+        contact: {
+          mail: 'mail@mail.com',
+          facebook: '',
+          linkedIn: '',
+        }
+      },
+      {
+        fullName: 'ANOTHER MEMBER',
+        role: 'Artist',
+        contact: {
+          mail: 'mail@mail.com',
+          facebook: '',
+          linkedIn: '',
+        }
+      },
+      {
+        fullName: 'ANOTHER MEMBER',
+        role: 'Developer',
+        contact: {
+          mail: 'mail@mail.com',
+          facebook: '',
+          linkedIn: '',
+        }
       }
     ],
   },
@@ -38,6 +60,10 @@ const data = [
     company: {
       name: 'Traptics',
       founded: '',
+      links: {
+        website: '',
+        facebook: '',
+      },
     },
     games: [
       {
@@ -50,7 +76,9 @@ const data = [
     company: {
       name: '3 HoundRed',
       founded: '',
-      website: 'https://www.facebook.com/3houndred',
+      links: {
+        facebook: 'https://www.facebook.com/3houndred',
+      },
     },
     games: [
       {
@@ -64,7 +92,9 @@ const data = [
     company: {
       name: 'Anima ppd interactive',
       founded: '1993',
-      website: 'http://www.anima-ppd.com/',
+      links: {
+        website: 'http://www.anima-ppd.com/',
+      }
     },
     games: [
       {
@@ -83,7 +113,9 @@ const data = [
     company: {
       name: 'Another Circus',
       founded: '',
-      website: 'https://www.anothercircus.com/',
+      links: {
+        website: 'https://www.anothercircus.com/',
+      }
     },
     games: [],
   },
@@ -91,7 +123,9 @@ const data = [
     company: {
       name: 'ARTcle Studios',
       founded: '2010',
-      website: 'http://www.artclestudios.com/',
+      links: {
+        website: 'http://www.artclestudios.com/',
+      }
     },
     games: [],
   },
@@ -99,7 +133,9 @@ const data = [
     company: {
       name: 'Artnroll Games',
       founded: '',
-      website: 'http://artnrollmultimedia.com/',
+      links: {
+        website: 'http://artnrollmultimedia.com/',
+      }
     },
     games: [],
   },
@@ -107,7 +143,9 @@ const data = [
     company: {
       name: 'Astra Games',
       founded: '',
-      website: 'https://www.facebook.com/AstraGamesGr/',
+      links: {
+        facebook: 'https://www.facebook.com/AstraGamesGr/',
+      }
     },
     games: [
       {
@@ -120,7 +158,9 @@ const data = [
     company: {
       name: 'Atropos Studios ',
       founded: '2006',
-      website: 'http://www.atropos-studios.com/',
+      links: {
+        website: 'http://www.atropos-studios.com/',
+      }
     },
     games: [
       {
@@ -134,6 +174,7 @@ const data = [
     company: {
       name: 'Aventurine',
       founded: '',
+      links: {}
     },
     games: [
       {
@@ -146,7 +187,9 @@ const data = [
     company: {
       name: 'Berrynauts',
       founded: '',
-      website: 'https://www.facebook.com/Berrynauts/',
+      links: {
+        facebook: 'https://www.facebook.com/Berrynauts/',
+      }
     },
     games: [
       {
@@ -165,7 +208,9 @@ const data = [
     company: {
       name: 'BlackSheep Games',
       founded: '',
-      website: 'https://www.facebook.com/BlackSheepGames/',
+      links: {
+        facebook: 'https://www.facebook.com/BlackSheepGames/',
+      }
     },
     games: [
       {
@@ -189,7 +234,9 @@ const data = [
     company: {
       name: 'beyondthosehills',
       founded: '',
-      website: 'http://beyondthosehills.com/',
+      links: {
+        website: 'http://beyondthosehills.com/',
+      },
     },
     games: [
       {
@@ -208,7 +255,9 @@ const data = [
     company: {
       name: 'Condax Games',
       founded: '',
-      website: 'https://play.google.com/store/apps/developer?id=Demosthenes+Koptsis',
+      links: {
+        playStore: 'https://play.google.com/store/apps/developer?id=Demosthenes+Koptsis',
+      }
     },
     games: [
       {
@@ -232,7 +281,9 @@ const data = [
     company: {
       name: 'Convex',
       founded: '',
-      website: 'https://www.facebook.com/ConvexGames/',
+      links: {
+        facebook: 'https://www.facebook.com/ConvexGames/',
+      }
     },
     games: [],
   },
@@ -240,7 +291,9 @@ const data = [
     company: {
       name: 'CountNerdula',
       founded: '',
-      website: 'http://www.indiedb.com/members/homerpv',
+      links: {
+        indieDB: 'http://www.indiedb.com/members/homerpv',
+      }
     },
     games: [
       {
@@ -259,7 +312,9 @@ const data = [
     company: {
       name: 'CrazySoft',
       founded: '',
-      website: 'http://www.crazysoft.gr/',
+      links: {
+        website: 'http://www.crazysoft.gr/',
+      }
     },
     games: [],
   },
@@ -267,7 +322,9 @@ const data = [
     company: {
       name: 'CREAT3D Productions',
       founded: '',
-      website: 'http://creat3d.com/',
+      links: {
+        website: 'http://creat3d.com/',
+      }
     },
     games: [
       {
@@ -281,7 +338,9 @@ const data = [
     company: {
       name: 'Creative Family',
       founded: '',
-      website: 'https://play.google.com/store/apps/developer?id=Creative+Family',
+      links: {
+        playStore: 'https://play.google.com/store/apps/developer?id=Creative+Family',
+      }
     },
     games: [
       {
@@ -300,7 +359,9 @@ const data = [
     company: {
       name: 'Cucuvaya',
       founded: '',
-      website: 'http://www.cucuvaya.com/',
+      links: {
+        website: 'http://www.cucuvaya.com/',
+      }
     },
     games: [],
   },
@@ -308,7 +369,9 @@ const data = [
     company: {
       name: 'Cymban',
       founded: '',
-      website: 'https://www.cymban.com/',
+      links: {
+        website: 'https://www.cymban.com/',
+      }
     },
     games: [
       {
@@ -322,7 +385,9 @@ const data = [
     company: {
       name: 'Demigod Studios',
       founded: '',
-      website: 'https://www.facebook.com/demigodstudios/',
+      links: {
+        facebook: 'https://www.facebook.com/demigodstudios/',
+      }
     },
     games: [
       {
@@ -336,7 +401,9 @@ const data = [
     company: {
       name: 'Digital Element',
       founded: '',
-      website: 'http://www.digitalelement.gr/',
+      links: {
+        website: 'http://www.digitalelement.gr/',
+      }
     },
     games: [
       {
@@ -383,20 +450,32 @@ const data = [
   },
   {
     company: {
-      name: 'CountNerdula',
+      name: 'Dragontale',
       founded: '',
-      website: 'http://www.indiedb.com/members/homerpv',
+      links: {
+        website: 'https://www.dragontale.net/',
+      }
     },
     games: [
       {
-        name: 'Flotilla WWII',
+        name: 'Ram Bros',
         released: '',
-        website: 'http://www.indiedb.com/games/flotilla-wwii',
+        website: 'https://www.dragontale.net/our-games/rambros/',
       },
       {
-        name: 'Survival Wasteland',
+        name: 'Toothy and the Candygans',
         released: '',
-        website: 'http://www.indiedb.com/games/survival-wasteland',
+        website: 'https://play.google.com/store/apps/details?id=com.burntdragon.toothygame',
+      },
+      {
+        name: 'Totemon',
+        released: '',
+        website: 'https://play.google.com/store/apps/details?id=com.burntdragon.totemon',
+      },
+      {
+        name: 'Passagio',
+        released: '',
+        website: 'http://www.burntdragon.com/livegames/passaggio/index.html',
       },
     ],
   },
