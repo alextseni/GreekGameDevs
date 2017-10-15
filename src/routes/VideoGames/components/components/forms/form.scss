@@ -1,0 +1,23 @@
+.infoContainer {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  flex-direction: column;
+  font-size: 22px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.infoForm {
+  margin-top: 20px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+.multiline > div {
+  max-height: 200px;
+  margin-top: 40px !important;
+}

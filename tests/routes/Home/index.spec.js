@@ -1,14 +1,14 @@
-import HomeRoute from 'routes/Home'
+import VideoGamesRoute from 'routes/VideoGames'
 
-describe('(Route) Home', () => {
+describe('(Route) VideoGames', () => {
   let _component
 
   beforeEach(() => {
-    _component = HomeRoute.component()
+    _component = VideoGamesRoute.component()
   })
 
   it('Should return a route configuration object', () => {
-    expect(typeof HomeRoute).to.equal('object')
+    expect(typeof VideoGamesRoute).to.equal('object')
   })
 
   it('Should define a route component', () => {

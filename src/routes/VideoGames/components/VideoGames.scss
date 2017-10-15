@@ -1,0 +1,17 @@
+
+.contentContainer {
+  height:100vh;
+  overflow: auto;
+      padding: 10px 30px;
+}
+
+.info {
+  position: relative;
+    top: 45px;
+    width: 32px;
+}
+.btnandcard {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}

@@ -1,3 +1,4 @@
+const credentials = require('./cred')
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack')
@@ -5,9 +6,40 @@ const logger = require('../build/lib/logger')
 const webpackConfig = require('../build/webpack.config')
 const project = require('../project.config')
 const compress = require('compression')
+const nodemailer = require('nodemailer')
 
 const app = express()
+
+const smtpTransport = nodemailer.createTransport({
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  auth: {
+    user: credentials.mail,
+    pass: credentials.pass,
+  }
+})
+
 app.use(compress())
+
+app.get('/send', (req, res) => {
+  console.log('data', req.query)
+  const mailOptions = {
+    to : credentials.mail,
+    subject : req.query.name,
+    text : req.query.comment,
+  }
+  console.log(mailOptions)
+  smtpTransport.sendMail(mailOptions, (error, response) => {
+    if (error) {
+      console.log(error)
+      store.dispatch()
+        res.end('error')
+     } else {
+       console.log('Message sent')
+       res.end('sent')
+    }
+  })
+})
 
 // ------------------------------------
 // Apply Webpack HMR Middleware

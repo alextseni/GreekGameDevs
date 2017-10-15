@@ -1,5 +1,5 @@
 .cardContainer {
-
+  width: 100%;
   min-height: 190px;
   margin: 20px;
   padding: 10px;
@@ -9,15 +9,7 @@
   display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.filters {
-  display: flex;
-  margin: 10px 10px 40px;
-}
-
-.chip {
-  margin-left: 10px;
+    min-height: 60px;
 }
 
 .year {

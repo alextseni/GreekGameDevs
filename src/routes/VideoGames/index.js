@@ -9,16 +9,16 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Home = require('./containers/HomeContainer').default
-      const reducer = require('./modules/home').default
+      const VideoGames = require('./containers/VideoGamesContainer').default
+      const reducer = require('./modules/videogames').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'home', reducer })
+      injectReducer(store, { key: 'videogames', reducer })
 
       /*  Return getComponent   */
-      cb(null, Home)
+      cb(null, VideoGames)
 
     /* Webpack named bundle   */
-  }, 'home')
+    }, 'videogames')
   }
 })

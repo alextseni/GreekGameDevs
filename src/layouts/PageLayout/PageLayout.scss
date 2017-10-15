@@ -5,3 +5,13 @@
   font-weight: bold;
   text-decoration: underline;
 }
+
+.stats {
+display: flex;
+justify-content: center;
+font-weight: 800;
+margin-right: 50px;
+}
+.stat {
+  width: 100px;
+}

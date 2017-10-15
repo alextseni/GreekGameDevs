@@ -59,8 +59,8 @@ Changelog
 
 ### Improvements
 * Updated syntax used for `createStore` to match `redux@^3.1.0`
-* Cleaned up `connect` decorator in `HomeView`
-* Cleaned up flow types in `HomeView`
+* Cleaned up `connect` decorator in `VideoGamesView`
+* Cleaned up flow types in `VideoGamesView`
 
 2.0.0-alpha.5
 -------------
@@ -216,7 +216,7 @@ Changelog
 * Upgraded `isparta` from `^2.0.0` to `^3.0.0`
 * Replaced `karma-sinon-chai` with `karma-chai-sinon` for peerDependencies fix
 * Added sample asynchronous action
-* Added example `composes` style to demo CSS modules in `HomeView`
+* Added example `composes` style to demo CSS modules in `VideoGamesView`
 * Added `lint:fix` npm script
 * Added CONTRIBUTING document
 * Added placeholder favicon
@@ -367,7 +367,7 @@ Changelog
 * Adds explicit directory references to some `import` statements to clarify which are from from `npm` and which are local.
 
 #### Fixes
-* Fixes naming in `HomeView` where `mapStateToProps` was incorrectly written as `mapDispatchToProps`.
+* Fixes naming in `VideoGamesView` where `mapStateToProps` was incorrectly written as `mapDispatchToProps`.
 
 #### Deprecations
 * Removes local test utilities (in `~/src/utils/test`).

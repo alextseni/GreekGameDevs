@@ -1,12 +1,12 @@
 import React from 'react'
-import { HomeView } from 'routes/Home/components/HomeView'
+import { VideoGamesView } from 'routes/VideoGames/components/VideoGamesView'
 import { render } from 'enzyme'
 
-describe('(View) Home', () => {
+describe('(View) VideoGames', () => {
   let _component
 
   beforeEach(() => {
-    _component = render(<HomeView />)
+    _component = render(<VideoGamesView />)
   })
 
   it('Renders a welcome message', () => {
