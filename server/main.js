@@ -25,8 +25,8 @@ app.get('/send', (req, res) => {
   console.log('data', req.query)
   const mailOptions = {
     to : credentials.mail,
-    subject : req.query.name,
-    text : req.query.comment,
+    subject : req.query.title,
+    text : 'From ' + req.query.mail + ': ' + req.query.comment,
   }
   console.log(mailOptions)
   smtpTransport.sendMail(mailOptions, (error, response) => {

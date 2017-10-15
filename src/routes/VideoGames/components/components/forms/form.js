@@ -11,47 +11,98 @@ import {
   Button,
   Badge,
   TextField,
-  Chip,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Card,
-  Popover,
-  DropDownMenu,
-  MenuItem,
+  CircularProgress,
 } from 'material-ui'
+import {CheckCircle, Error} from 'material-ui-icons'
 
+let xhttp
 
 class Form extends Component {
   constructor (props: Form.propTypes) {
     super(props)
     this.state = {
+      hasSubmitted: false,
+      isLoading: false,
+      success: false,
       formItem: {
-        name: '',
-
       },
     }
+  }
+
+  componentWillMount = () => {
+    xhttp = new XMLHttpRequest()
+    this.setState({
+      formItem: this.props.selectedItem,
+      hasSubmitted: false,
+      success: false,
+    })
   }
 
   handleFormChange = name => event => {
     this.setState({
       formItem: {
+        ...this.state.formItem,
         [name]: event.target.value,
       }
     })
   }
-
-  componentWillMount = () => {
-    console.log('entered')
+  sendMail = () => {
     this.setState({
-      formItem: this.props.selectedItem,
+      hasSubmitted: true,
+      isLoading: true,
     })
+    xhttp = new XMLHttpRequest()
+
+    xhttp.onreadystatechange = () => {
+      if (xhttp.responseText === 'error') {
+        console.log('error')
+        xhttp = new XMLHttpRequest()
+        this.setState({
+          success: false,
+          isLoading: false,
+        })
+      } else if (xhttp.responseText === 'sent') {
+        console.log('sent')
+        xhttp = new XMLHttpRequest()
+        this.setState({
+          success: true,
+          isLoading: false,
+        })
+      }
+   }
+    xhttp.open(
+      'GET',
+      '/send?' +
+      'title=' + this.state.formItem.name +
+      '&comment=' + this.state.formItem.comment +
+      '&mail=' + this.state.formItem.mail,
+      true)
+    xhttp.send()
   }
 
   render () {
     return (
       <div className='infoContainer'>
-      <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+        {this.state.isLoading
+          ? <div className='popupStatus' style={{backgroundColor: 'white'}}>
+              <CircularProgress size={80} />
+            </div>
+          : this.state.success
+            ? <div className='popupStatus' style={{backgroundColor: '#70d188'}}>
+                <CheckCircle style={{width:'50px', height: '50px'}} />
+                <Typography type='headline' component='h4'>
+                  Success!
+                </Typography>
+              </div>
+            : this.state.hasSubmitted
+              ? <div className='popupStatus' style={{backgroundColor: '#db8787'}}>
+                    <Error style={{width:'50px', height: '50px'}} />
+                    <Typography type='headline' component='h4'>
+                      Email was not sent!
+                    </Typography>
+                </div>
+              : <div style={{ width: 0, height: 0 }} />
+        }
         <Typography type='headline' component='h4'>
           Is this card missing info?
         </Typography>
@@ -60,17 +111,27 @@ class Form extends Component {
         </Typography>
         <form
           className='infoForm'
-          action='/send'
-          target='dummyframe'
-          method='get'
-          noValidate
           autoComplete='off'>
           <TextField
             id='name'
             name='name'
-            value={this.props.selectedItem.name}
+            value={this.state.formItem.name}
             onChange={this.handleFormChange('name')}
+            disabled
             margin='normal'
+          />
+          <TextField
+            id='mail'
+            label='Your email'
+            name='mail'
+            required
+            type='e-mail'
+            value={this.state.formItem.mail}
+            onChange={this.handleFormChange('mail')}
+            margin='normal'
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <TextField
             className='multiline'
@@ -90,7 +151,8 @@ class Form extends Component {
           <Button
             style={{ width: '50px', margin: '20px', alignSelf: 'flex-end' }}
             raised
-            type='submit'>
+            onClick={this.sendMail}
+            disabled={!this.state.formItem.mail || !this.state.formItem.comment || this.state.hasSubmitted}>
             Send!
           </Button>
         </form>

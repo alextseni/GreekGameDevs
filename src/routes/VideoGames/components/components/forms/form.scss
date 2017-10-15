@@ -21,3 +21,17 @@
   max-height: 200px;
   margin-top: 40px !important;
 }
+
+.popupStatus {
+  position: absolute;
+  flex-direction: column;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+z-index: 9;
+opacity: 0.8;
+height: 100%;
+top: 0;
+left: 0;
+}

@@ -33,7 +33,7 @@ class Filters extends Component {
         <div className='mainFilters'>
           <Chip className='chip' label='sort by company' onClick={() => updateFilter('company')} />
           <Chip className='chip' label='sort by game' onClick={() => updateFilter('games')} />
-          <Chip className='chip' label='sort by people' onClick={() => updateFilter('members')} />
+          <Chip className='chip' label='sort by people' />
         </div>
         {filters.main === 'company' &&
           <div />
