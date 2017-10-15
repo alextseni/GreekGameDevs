@@ -32,7 +32,6 @@ app.get('/send', (req, res) => {
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
       console.log(error)
-      store.dispatch()
         res.end('error')
      } else {
        console.log('Message sent')
