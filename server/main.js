@@ -19,7 +19,9 @@ const smtpTransport = nodemailer.createTransport({
   }
 })
 
-app.use(compress())
+app.use(express.static(__dirname + '/public'))
+
+app.set('src', __dirname + '/src')
 
 app.get('/send', (req, res) => {
   console.log('data', req.query)
@@ -43,7 +45,6 @@ app.get('/send', (req, res) => {
 // ------------------------------------
 // Apply Webpack HMR Middleware
 // ------------------------------------
-if (project.env === 'development') {
   const compiler = webpack(webpackConfig)
 
   logger.info('Enabling webpack development and HMR middleware')
@@ -80,19 +81,5 @@ if (project.env === 'development') {
       res.end()
     })
   })
-} else {
-  logger.warn(
-    'Server is being run outside of live development mode, meaning it will ' +
-    'only serve the compiled application bundle in ~/dist. Generally you ' +
-    'do not need an application server for this and can instead use a web ' +
-    'server such as nginx to serve your static files. See the "deployment" ' +
-    'section in the README for more information on deployment strategies.'
-  )
-
-  // Serving ~/dist by default. Ideally these files should be served by
-  // the web server and not the app server, but this helps to demo the
-  // server in production.
-  app.use(express.static(path.resolve(project.basePath, project.outDir)))
-}
 
 module.exports = app
