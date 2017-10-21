@@ -78,6 +78,7 @@ const initialState = {
       genre: [], // platform. rpg, idle, action, puzzle,etc..
       status: [], // released, under development, stopped,etc..
       style: [], // 3D, 2D
+      mode: [],
     },
 
   },

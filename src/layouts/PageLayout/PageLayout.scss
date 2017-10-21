@@ -10,6 +10,7 @@
 .appbar {
   display: flex;
   align-items: center;
+  background-color: #0091EA !important;
 }
 .navbar {
   display: flex;
@@ -26,7 +27,6 @@
 display: flex;
 justify-content: center;
 font-weight: 800;
-margin-right: 50px;
 }
 .stat {
   width: 100px;

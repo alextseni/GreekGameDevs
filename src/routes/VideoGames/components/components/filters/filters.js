@@ -46,12 +46,8 @@ class Filters extends Component {
     this.setState({ open: !this.state.open })
   };
 
-  // handleDrawerClose = () => {
-  //   this.setState({ open: false })
-  // };
-
   handleViewChange = () => {
-    const {view, changeView} = this.props
+    const { view, changeView } = this.props
     view === 'list' ? changeView('grid') : changeView('list')
   }
 
@@ -59,19 +55,12 @@ class Filters extends Component {
     const { updateFilter, filters, resetAllFilters, view } = this.props
     return (
       <div className='filtersContainer'>
-        <Tooltip style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}} id="tooltip-icon" title="Open filters" placement="top">
-          <Button
-             aria-label='open drawer'
-             raised
-             onClick={this.handleDrawer}
-           >
-            <MenuIcon />
-           </Button>
-       </Tooltip>
         <div className='mainFilters'>
           <Chip className='chip' label='sort by company' onClick={() => updateFilter('company')} />
           <Chip className='chip' label='sort by game' onClick={() => updateFilter('games')} />
+          <Tooltip style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}} title="Coming soon!" placement="bottom">
           <Chip className='chip' label='sort by people' />
+          </Tooltip>
         </div>
         <Tooltip
           style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}
@@ -85,6 +74,17 @@ class Filters extends Component {
             {view === 'list' ? <GridOn /> : <ViewList /> }
            </Button>
        </Tooltip>
+       <div className='drawerHandle'>
+       <Tooltip style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}} id="tooltip-icon" title="Open filters" placement="top">
+         <Button
+            aria-label='open drawer'
+            raised
+            onClick={this.handleDrawer}
+          >
+           <MenuIcon />
+          </Button>
+      </Tooltip>
+       </div>
       <Drawer
         anchor={'top'}
         type='persistent'
@@ -118,7 +118,7 @@ class Filters extends Component {
                  >
                    <MenuItem value={'steam'}> Steam </MenuItem>
                    <MenuItem value={'pc'}> PC </MenuItem>
-                   <MenuItem value={'online'}> Web </MenuItem>
+                   <MenuItem value={'online'}> Online </MenuItem>
                    <MenuItem value={'playStore'}> Android </MenuItem>
                    <MenuItem value={'appStore'}> iOS </MenuItem>
                    <MenuItem value={'windowsStore'}> Windows </MenuItem>
@@ -146,6 +146,61 @@ class Filters extends Component {
                    <MenuItem value={'platform'}> Platform </MenuItem>
                  </Select>
                </FormControl>
+               <FormControl className='form'>
+                 <InputLabel htmlFor='name-multiple'>Style</InputLabel>
+                 <Select
+                   multiple
+                   style={{ width: '200px' }}
+                   value={filters.games.style}
+                   onChange={(event) => updateFilter(filters.main, 'style', event.target.value)}
+                   input={<Input id='name-multiple' />}
+                   MenuProps={{
+                     PaperProps: {
+                       style: { maxHeight: 224, width: 200, },
+                     },
+                   }}
+                 >
+                   <MenuItem value={'2d'}> {'2D'} </MenuItem>
+                   <MenuItem value={'3d'}> {'3D'} </MenuItem>
+                 </Select>
+               </FormControl>
+               <FormControl className='form'>
+                 <InputLabel htmlFor='name-multiple'>Status</InputLabel>
+                 <Select
+                   multiple
+                   style={{ width: '200px' }}
+                   value={filters.games.status}
+                   onChange={(event) => updateFilter(filters.main, 'status', event.target.value)}
+                   input={<Input id='name-multiple' />}
+                   MenuProps={{
+                     PaperProps: {
+                       style: { maxHeight: 224, width: 200, },
+                     },
+                   }}
+                 >
+                   <MenuItem value={'Under Development'}> Under Development </MenuItem>
+                   <MenuItem value={'released'}> Released </MenuItem>
+                 </Select>
+               </FormControl>
+               <FormControl className='form'>
+                 <InputLabel htmlFor='name-multiple'>Mode</InputLabel>
+                 <Select
+                   multiple
+                   style={{ width: '200px' }}
+                   value={filters.games.mode}
+                   onChange={(event) => updateFilter(filters.main, 'mode', event.target.value)}
+                   input={<Input id='name-multiple' />}
+                   MenuProps={{
+                     PaperProps: {
+                       style: { maxHeight: 224, width: 200, },
+                     },
+                   }}
+                 >
+                   <MenuItem value={'single'}> Single </MenuItem>
+                   <MenuItem value={'lan'}> Local Multiplayer </MenuItem>
+                   <MenuItem value={'mmo'}> MMO </MenuItem>
+                 </Select>
+               </FormControl>
               </div>
            }
             <div className='tools'>
@@ -155,11 +210,6 @@ class Filters extends Component {
                 </Button>
              </Tooltip>
            </div>
-        </div>
-        <div className={'drawerHeader'}>
-          <IconButton onClick={this.handleDrawer}>
-            <KeyboardArrowUp />
-          </IconButton>
         </div>
     </Drawer>
       </div>

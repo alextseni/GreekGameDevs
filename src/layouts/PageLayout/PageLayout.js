@@ -5,14 +5,13 @@ import './PageLayout.scss'
 import SwipeableViews from 'react-swipeable-views'
 import {
   Toolbar,
-  Typography,
   AppBar,
   IconButton,
 } from 'material-ui'
-
 import {
   VideoGames,
   BoardGames,
+  Mail,
 } from 'static/icons'
 
 import data from 'data/videogames.js'
@@ -26,12 +25,17 @@ export const PageLayout = ({ children }) => (
       <Toolbar className='navbar'>
         <IndexLink to='/' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <VideoGames width='64px' fill='white' />
+            <VideoGames width='50px' fill='white' />
           </IconButton>
         </IndexLink>
         <Link to='/boardgames' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <BoardGames width='50px' fill='white' />
+            <BoardGames width='38px' fill='white' />
+          </IconButton>
+        </Link>
+        <Link to='/contact' activeClassName='page-layout__nav-item--active'>
+          <IconButton className='menuItem' aria-label='Menu'>
+            <Mail width='38px' fill='white' />
           </IconButton>
         </Link>
       </Toolbar>

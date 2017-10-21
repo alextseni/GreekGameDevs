@@ -70,8 +70,8 @@ class VideoGames extends Component {
     if (filters.main === 'company') {
       items = data.map(d => ({
         name: d.company.name,
-        links: d.company.links,
-        content: d.games,
+        links: d.company.links || {},
+        content: d.games.map(g => ({ ...g, links: g.links || g.platforms })),
         footer: d.company.founded,
       }))
     }
@@ -84,6 +84,9 @@ class VideoGames extends Component {
          footer: g.released,
          platforms: g.platforms && Object.keys(g.platforms),
          genre: g.genre,
+         style: g.style,
+         status: g.released === 'Under Development' ? [g.released] : ['released'],
+         mode: g.mode,
        }))
     )))
     }

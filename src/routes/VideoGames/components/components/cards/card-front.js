@@ -81,7 +81,7 @@ class CardFront extends Component {
   <CardActions style={{ flexWrap:'wrap', minHeight: '52px', height: 'auto' }}>
     {content.map(item => (
       item.links
-      ? <Button target='_blank' href={item.links[Object.keys(item.links)[0]]} dense color='primary'>
+      ? <Button target='_blank' href={item.links[Object.keys(item.links)[0]]} dense color={item.released === 'Under Development' ? 'accent' : 'primary'}>
           {item.name}
         </Button>
       : <Button target='_blank' disabled dense color='primary'>

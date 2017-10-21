@@ -1,7 +1,7 @@
 
 .filtersContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 align-items: center;
 }
 
@@ -11,7 +11,6 @@ align-items: center;
 
 .mainFilters {
   display: flex;
-  width: 100%;
   justify-content: center;
 }
 
@@ -28,20 +27,26 @@ align-items: center;
 .tools {
 
 }
+.drawerHandle {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+}
 
 .drawerBox > div {
   overflow: hidden;
+  background-color: #E1F5FE;
+      padding-bottom: 20px;
+      padding-left: 88px;
 }
 
 .drawerInner {
-  background-color: #BBDEFB;
-  min-height: 53px;
   flex-direction: row;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 .drawerHeader {
-  background-color: #BBDEFB;
   height: 30px;
 }

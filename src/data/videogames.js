@@ -12,7 +12,10 @@ const videogames = [
       {
         name: 'PeaceOff',
         released: '2015',
-        genre: ['MMO', 'RPG'],
+        genre: ['rpg'],
+        mode: ['mmo', 'single'],
+        style: ['2d'],
+        price: ['free2play'],
         links: {
           website: 'https://www.tamasenco.com/project/peaceoff/',
           facebook: 'https://www.facebook.com/PeaceOFF.game',
@@ -28,6 +31,9 @@ const videogames = [
         name: 'Friend$Broker',
         released: '2012',
         genre: ['simulation'],
+        style: ['2d'],
+        mode: ['mmo'],
+        price: ['free2play'],
         links: {
           website: 'https://www.tamasenco.com/project/friendsbroker/',
         },
@@ -38,6 +44,9 @@ const videogames = [
       {
         name: 'Ricochet Revolt: Lights Out',
         genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         released: '2016 / Beta',
         links: {
           website: 'https://www.tamasenco.com/project/ricochet-revolt-lights-out/',
@@ -50,16 +59,23 @@ const videogames = [
         name: 'Wild West Saga',
         released: 'Under Development',
         genre: ['idle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'https://www.tamasenco.com/project/ricochet-revolt-lights-out/',
         },
         platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.tamasenco.wildwestsaga&hl=en',
         },
       },
       {
         name: 'River Quest',
         released: 'Under Development',
-        genre: ['casual', 'action'],
+        genre: ['runner'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'https://www.tamasenco.com/project/river-quest/',
         },
@@ -70,10 +86,30 @@ const videogames = [
         name: 'Casino Heist',
         released: 'Under Development',
         genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'https://www.tamasenco.com/project/casino-heist/',
         },
         platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.tamasenco.casinoheist&hl=en',
+        },
+      },
+      {
+        name: 'Wacky Potion District',
+        released: 'Under Development',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['mmo', 'single'],
+        price: ['free2play'],
+        links: {
+          facebook: 'https://www.facebook.com/WackyPotionDistrict',
+          twitter: 'https://twitter.com/WackyPotionDst',
+          youtube: 'https://www.youtube.com/channel/UCLz6cRbUIctCQf4JgFpmQJw',
+        },
+        platforms: {
+          steam: 'https://steamcommunity.com/sharedfiles/filedetails/?id=813875830',
         },
       },
     ],
@@ -103,7 +139,11 @@ const videogames = [
     games: [
       {
         name: 'Moribund',
-        released: '',
+        released: '2017',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['lan', 'single'],
+        price: ['buy'],
         links: {
           website: 'http://www.traptics.com/games/moribund/',
         },
@@ -113,7 +153,11 @@ const videogames = [
       },
       {
         name: 'Hunters Of The Dead',
-        released: '',
+        released: '2014',
+        genre: ['strategy'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://www.traptics.com/games/hunters-of-the-dead/',
         },
@@ -124,6 +168,10 @@ const videogames = [
       {
         name: 'Game Of Legions',
         released: '',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'http://www.traptics.com/games/game-of-legions/',
         },
@@ -135,6 +183,9 @@ const videogames = [
       {
         name: 'Ricochet Revolt: Lights Out',
         genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         released: '2016 / Beta',
         links: {
           website: 'http://www.traptics.com/games/ricochet-revolt-lights-out/',
@@ -187,6 +238,10 @@ const videogames = [
       {
         name: 'Bill Hill vs Aliens',
         released: '2014',
+        genre: ['platform'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         links: {
           website: 'https://gamejolt.com/games/bill-hill-vs-aliens/39695',
         },
@@ -209,6 +264,10 @@ const videogames = [
       {
         name: 'Conspiracies',
         released: '2003',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://www.anima-ppd.com/index.php?page=Show&id=0000&menu=2',
         },
@@ -219,6 +278,10 @@ const videogames = [
       {
         name: 'Conspiracies II - Lethal Networks',
         released: '2011',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://www.anima-ppd.com/index.php?page=Show&id=0001&menu=2',
         },
@@ -240,7 +303,21 @@ const videogames = [
         youTube: 'https://www.youtube.com/anothercircus/',
       }
     },
-    games: [],
+    games: [
+      {
+        name: 'Another Odyssey',
+        released: 'Under Development',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'https://www.anothercircus.com/another-odyssey',
+        },
+        platforms: {
+        },
+      },
+    ],
     members: [],
   },
   {
@@ -255,6 +332,10 @@ const videogames = [
       {
         name: 'Savage: Road To Darkness',
         released: 'Under Development',
+        genre: ['platform'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://www.artclestudios.com/savage',
           facebook: 'https://www.facebook.com/shinobiGator/',
@@ -262,6 +343,7 @@ const videogames = [
           youTube: 'https://www.youtube.com/channel/UCefgHFgsbufdcv16HkyUaaw/videos',
         },
         platforms: {
+          pc: '',
         },
       }
     ],
@@ -283,8 +365,12 @@ const videogames = [
       {
         name: 'RUN4IT',
         released: 'Under Development',
+        genre: ['runner'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
-          youTube: 'https://www.youtube.com/watch?v=NwceRboikHU',
+          website: 'http://artnrollmultimedia.com/portfolio/run4it/',
         },
         platforms: {
         },
@@ -304,13 +390,28 @@ const videogames = [
     games: [
       {
         name: 'Angry Parliament Fight',
+        released: '2013',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           facebook: 'https://www.facebook.com/angryparliamentfight/?hc_ref=ARRWL3SDDRuiCdtk3qjqOtNbB2WGfmFEtZi_xtlDy06RVi_a1_dPyZ-bAM12JszM-0U&fref=nf',
         },
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=gr.astragames.ParliamentFighterFull&hl=en',
         },
+      },
+      {
+        name: 'Hercules The True Story',
         released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=gr.astragames.Hercules',
+        },
       },
     ],
     members: [],
@@ -327,6 +428,10 @@ const videogames = [
       {
         name: 'Diamonds in the Rough',
         released: '',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://www.atropos-studios.com/order.html',
         },
@@ -339,17 +444,39 @@ const videogames = [
   {
     company: {
       name: 'Aventurine',
-      founded: '',
+      founded: '2003',
       links: {
-
+        website: 'http://www.aventurine.gr/',
       },
     },
     games: [
       {
         name: 'Darkfall',
-        released: '',
+        released: '2009',
+        genre: ['rpg'],
+        style: ['3d'],
+        mode: ['mmo'],
+        price: [''],
         links: {
+          website: 'http://www.aventurine.gr/about/darkfall.html',
         },
+        platforms: {
+          pc: '',
+        }
+      },
+      {
+        name: 'Darkfall Unholy Wars',
+        released: '2013',
+        genre: ['rpg'],
+        style: ['3d'],
+        mode: ['mmo'],
+        price: [''],
+        links: {
+          website: 'http://www.aventurine.gr/about/darkfall-unholy.html',
+        },
+        platforms: {
+          steam: 'http://store.steampowered.com/app/227400/Darkfall_Unholy_Wars/',
+        }
       },
     ],
     members: [],
@@ -367,8 +494,10 @@ const videogames = [
       {
         name: 'Sling Toss',
         released: '2017',
-        links: {
-        },
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.Berrynauts.SlingToss',
         },
@@ -376,8 +505,10 @@ const videogames = [
       {
         name: 'Lane Slide',
         released: '2016',
-        links: {
-        },
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.Berrynauts.LaneSlide',
         },
@@ -397,6 +528,10 @@ const videogames = [
       {
         name: 'Galactic Missile Defence',
         released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.BlackSheepGames.GMD',
           appStore: 'https://itunes.apple.com/gr/app/id737255889',
@@ -406,7 +541,11 @@ const videogames = [
       {
         name: 'Angry Chicken: Egg Madness!',
         released: '',
-        links: {
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.BlackSheepGames.Angry_Chicken_Egg_Madness',
           appStore: 'https://itunes.apple.com/us/app/angry-chicken-egg-madness/id817557088?mt=8',
         },
@@ -414,9 +553,121 @@ const videogames = [
       {
         name: 'Gonna Fly',
         released: '',
-        links: {
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.BlackSheepGames.GonnaFly',
           appStore: 'https://itunes.apple.com/app/id913568344',
+        },
+      },
+      {
+        name: 'Hexagon Pals',
+        released: '',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj007',
+          appStore: 'https://itunes.apple.com/us/app/hexagon-pals/id1240306820?mt=8',
+        },
+      },
+      {
+        name: 'Happy Bird Jump',
+        released: '',
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj005',
+          appStore: 'https://itunes.apple.com/us/app/happy-bird-jump/id1227133908?mt=8',
+        },
+      },
+      {
+        name: 'Angry Chicken: Classic!',
+        released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.acemcl',
+          appStore: 'https://itunes.apple.com/us/app/angry-chicken-classic/id1227233231?mt=8',
+        },
+      },
+      {
+        name: 'Hungry Lilly',
+        released: '',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj002',
+          appStore: 'https://itunes.apple.com/us/app/hungry-lilly/id1225691437?mt=8',
+        },
+      },
+      {
+        name: 'Brick Breaker 2018',
+        released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj008',
+          appStore: 'https://itunes.apple.com/us/app/brick-breaker-2018/id1278608510?mt=8',
+        },
+      },
+      {
+        name: 'Banana Copter Swing',
+        released: '',
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj004',
+          appStore: 'https://itunes.apple.com/us/app/banana-copter-swing/id1227006798?mt=8',
+        },
+      },
+      {
+        name: 'Ping Pong Goal',
+        released: '',
+        genre: ['sports'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj001',
+          appStore: 'https://itunes.apple.com/us/app/ping-pong-goal/id1225032376?mt=8',
+        },
+      },
+      {
+        name: 'Easter Bunny Fly',
+        released: '',
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj006',
+          appStore: 'https://itunes.apple.com/us/app/easter-bunny-fly/id1227160875?mt=8',
+        },
+      },
+      {
+        name: 'Easter Egg Bird',
+        released: '',
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.blacksheepgames.slproj003',
+          appStore: 'https://itunes.apple.com/us/app/easter-egg-bird/id1226929626?mt=8',
         },
       },
     ],
@@ -440,13 +691,16 @@ const videogames = [
         website: 'http://beyondthosehills.com/',
         facebook: 'https://www.facebook.com/beyondthosehills/',
         twitter: 'https://twitter.com/beyond_hills',
-
       },
     },
     games: [
       {
         name: 'The Minims',
         released: '2016',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://theminims.com/',
           facebook: 'https://www.facebook.com/TheMinims/',
@@ -454,17 +708,19 @@ const videogames = [
         platforms: {
           steam: 'http://store.steampowered.com/app/442770/The_Minims/',
           appStore: 'https://itunes.apple.com/us/app/the-minims/id595662877',
-          playStore: '',
         },
       },
       {
         name: 'Reky',
         released: 'Under Development',
+        genre: ['puzzle'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://rekygame.com/',
         },
         platforms: {
-
         },
       },
     ],
@@ -501,27 +757,33 @@ const videogames = [
     games: [
       {
         name: 'Pop Bubble',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         released: '',
-        links: {
-        },
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.condaxgames.popbubble',
         },
       },
       {
         name: 'Breakanoid',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         released: '',
-        links: {
-        },
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.condaxgames.breakanoid',
         },
       },
       {
         name: 'Ball Quest',
+        genre: ['action'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['free'],
         released: '',
-        links: {
-        },
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.condaxgames.ballquest',
         },
@@ -551,8 +813,10 @@ const videogames = [
       {
         name: 'Ethereal',
         released: '2014',
-        links: {
-        },
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         platforms: {
           appStore: 'https://itunes.apple.com/app/ethereal/id884502090?ls=1&mt=8',
         },
@@ -582,6 +846,10 @@ const videogames = [
       {
         name: 'Tulpa',
         released: '2015',
+        genre: ['platform'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://tulpagame.com/',
           facebook: 'https://www.facebook.com/tulpagame',
@@ -609,6 +877,10 @@ const videogames = [
       {
         name: 'Death And Beyond',
         released: '2015',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'http://www.envysoftworks.com/death-and-beyond-2/',
         },
@@ -671,8 +943,15 @@ const videogames = [
       {
         name: 'Anarchy Skies',
         released: 'Under Development',
+        genre: ['action'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://www.anarchyskies.com/',
+          facebook: 'https://www.facebook.com/AnarchySkies/',
+          twitter: 'https://twitter.com/anarchyskies',
+          youTube: 'https://www.youtube.com/user/AnarchySkies',
         },
         platforms: {
         },
@@ -680,6 +959,10 @@ const videogames = [
       {
         name: 'Airdrop',
         released: '2009',
+        genre: ['simulation'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://www.epicongames.com/our-games/advergames/83-airdrop',
         },
@@ -689,6 +972,10 @@ const videogames = [
       {
         name: 'OnTarget Superleague',
         released: '',
+        genre: ['trivia'],
+        style: ['2d'],
+        mode: ['lan'],
+        price: [''],
         links: {
           website: 'http://www.epicongames.com/our-games/advergames/85-ontarget-superleague',
         },
@@ -698,17 +985,12 @@ const videogames = [
       {
         name: 'Darts',
         released: '2009',
+        genre: ['sports'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://www.epicongames.com/our-games/advergames/84-darts',
-        },
-        platforms: {
-        },
-      },
-      {
-        name: 'Comic Genius',
-        released: '',
-        links: {
-          website: 'http://www.epicongames.com/our-games/advergames/86-comic-genius',
         },
         platforms: {
         },
@@ -728,6 +1010,10 @@ const videogames = [
       {
         name: 'Erannorth - The Unfinished Tales',
         released: '',
+        genre: ['rpg'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         links: {
           website: 'https://erannorth.com/loginForm.php',
         },
@@ -760,6 +1046,10 @@ const videogames = [
       {
         name: 'Bunny Maze 3D',
         released: '2011',
+        genre: ['runner'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'http://www.eyelead.com/sites/bunnymaze/',
           facebook: 'https://www.facebook.com/bunnymaze3d/',
@@ -785,6 +1075,10 @@ const videogames = [
       {
         name: 'Arc Around',
         released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         links: {
           website: 'https://masgamesblog.wordpress.com/2017/09/29/arcaround/',
         },
@@ -795,8 +1089,10 @@ const videogames = [
       {
         name: 'World Flags',
         released: '',
-        links: {
-        },
+        genre: ['trivia'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=cristof1977.gr.paintthatflag',
         },
@@ -804,6 +1100,10 @@ const videogames = [
       {
         name: 'M1ndshot',
         released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         links: {
           website: 'https://masgamesblog.wordpress.com/2016/02/09/25/',
         },
@@ -827,6 +1127,10 @@ const videogames = [
     games: [
       {
         name: 'Case32',
+        genre: ['horror'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         released: 'Under Development',
         links: {
           website: 'http://www.indiedb.com/games/case-32',
@@ -851,6 +1155,10 @@ const videogames = [
       {
         name: 'Basketball Duel',
         released: '2015',
+        genre: ['sports'],
+        style: ['2d'],
+        mode: ['single', 'lan'],
+        price: ['free', 'buy'],
         links: {
           website: 'http://vrbytes.eu/BasketballDuel/',
           facebook: 'https://www.facebook.com/basketballduel',
@@ -876,13 +1184,15 @@ const videogames = [
     company: {
       name: 'vdweller',
       founded: '',
-      links: {
-      }
     },
     games: [
       {
         name: 'Emerge: Cities Of Apocalypse',
-        released: '',
+        released: '2016',
+        genre: ['strategy'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://emilvdweller.wixsite.com/emerge-game',
           facebook: 'https://www.facebook.com/Emerge-Cities-of-the-Apocalypse-1106729612705462/',
@@ -890,11 +1200,16 @@ const videogames = [
         },
         platforms: {
           steam: 'http://store.steampowered.com/app/457600/Emerge_Cities_of_the_Apocalypse/',
+          demo: 'http://www.mediafire.com/file/1nmp6k11bl7qcup/Emerge_demo_0.9b5.zip',
         },
       },
       {
         name: 'Gleaner Heights',
         released: 'Under Development',
+        genre: ['rpg'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://gleanerheights.blogspot.gr/',
         },
@@ -919,6 +1234,10 @@ const videogames = [
       {
         name: 'Randix',
         released: '2016',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single', 'lan'],
+        price: ['free'],
         links: {
           website: 'http://tensaiprojects.weebly.com/randix.html',
         },
@@ -932,7 +1251,7 @@ const videogames = [
         fullName: 'Alexandra Tseniklidou',
         role: 'Designer / Developer',
         contact: {
-          mail: '',
+          mail: 'atseniklidou@live.com',
         }
       },
     ],
@@ -952,6 +1271,10 @@ const videogames = [
       {
         name: 'Goo Saga',
         released: '2016',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
         links: {
           website: 'http://www.tokaloka.com/sheet.php?p=goo_saga',
         },
@@ -964,6 +1287,10 @@ const videogames = [
       {
         name: 'The Bait',
         released: '2015',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'http://www.tokaloka.com/sheet.php?p=the_bait',
           facebook: 'https://www.facebook.com/thebaitgame',
@@ -988,6 +1315,10 @@ const videogames = [
       {
         name: 'Lifeless Life',
         released: 'Under Development',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'https://www.facebook.com/StoryTimeGames',
         },
@@ -1011,6 +1342,10 @@ const videogames = [
       {
         name: 'Project Origins',
         released: 'Under Development',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://hotgates.eu/project-origins-working-title/',
         },
@@ -1035,6 +1370,9 @@ const videogames = [
         name: 'Midas Gold Plus',
         released: '',
         genre: ['idle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'http://holydaygames.com/midas-gold-plus/',
         },
@@ -1047,6 +1385,10 @@ const videogames = [
       {
         name: 'Holyday City',
         released: '',
+        genre: ['idle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website:'http://holydaygames.com/holyday-city/'
         },
@@ -1057,6 +1399,10 @@ const videogames = [
       {
         name: 'Holyday City Reloaded',
         released: 'Beta',
+        genre: ['idle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
           website: 'http://holydaygames.com/holyday-city-reloaded/',
         },
@@ -1079,8 +1425,9 @@ const videogames = [
         name: 'Motivo',
         released: '',
         genre: ['puzzle'],
-        links: {
-        },
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free'],
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.lawfx.Motivo&hl=en',
         },
@@ -1102,6 +1449,10 @@ const videogames = [
       {
         name: 'Run Ram',
         released: 'Under Development',
+        genre: ['action'],
+        style: ['3d'],
+        mode: ['lan'],
+        price: [''],
         links: {
           website: 'http://lucidferret.com/rumram/',
         },
@@ -1112,6 +1463,10 @@ const videogames = [
       {
         name: 'PerspectivE',
         released: 'Under Development',
+        genre: ['platform'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'http://lucidferret.com/perspective/',
         },
@@ -1151,6 +1506,10 @@ const videogames = [
       {
         name: 'Plague',
         released: 'Under Development',
+        genre: ['horror'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           website: 'https://www.structs3d.com/',
         },
@@ -1180,6 +1539,10 @@ const videogames = [
       {
         name: 'Terataki',
         released: 'Under Development',
+        genre: ['simulation'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
         links: {
           facebook: 'https://www.facebook.com/Terataki.AR/',
         },
@@ -1198,7 +1561,18 @@ const videogames = [
         twitter: 'https://twitter.com/PaintlessGames',
       },
     },
-    games: [],
+    games: [
+      {
+        name: '???',
+        released: 'Under Development',
+        genre: ['horror'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
+        platforms: {
+        },
+      },
+    ],
     members: [],
   },
   {
@@ -1215,6 +1589,10 @@ const videogames = [
     games: [
       {
         name: 'Chubby Cat & The Catcakes',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         released: '2017',
         links: {
           website: 'http://www.chubby.cat/',
@@ -1228,8 +1606,10 @@ const videogames = [
       {
         name: 'Electro Pong',
         released: '2017',
-        links: {
-        },
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         platforms: {
           playStore: 'https://play.google.com/store/apps/details?id=com.pinnatta.battlepong',
         },
@@ -1249,10 +1629,389 @@ const videogames = [
       {
         name: 'Robbie Swifthand',
         released: 'Under Development',
-        links: {
-        },
+        genre: ['platform'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
         platforms: {
           demo: 'https://gamejolt.com/games/RobbieSwifthand/272862',
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Target3D',
+      founded: '',
+      links: {
+        twitter: 'https://twitter.com/@Target3dGames/',
+        youTube: 'https://www.youtube.com/channel/UCJi_Rpc8bSdXoMK5XC5uzPg/',
+      },
+    },
+    games: [
+      {
+        name: "Bibick's Adventures",
+        released: 'Under Development',
+        genre: ['action'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'https://bibicksadventures.wordpress.com/',
+          facebook: 'https://www.facebook.com/Bibicks-Adventures-1093973507283575/',
+        },
+        platforms: {
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Quizdom',
+      founded: '2014',
+      links: {
+        website: 'http://www.quizdom.com/',
+        facebook: 'https://www.facebook.com/QuizdomGreece/',
+      },
+    },
+    games: [
+      {
+        name: 'Quizdom - Greek',
+        released: '',
+        genre: ['trivia'],
+        style: ['2d'],
+        mode: ['mmo'],
+        price: ['free2play'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.quizdom',
+          appStore: 'https://itunes.apple.com/gr/app/quizdom-%CE%BD%CE%AD%CE%B1-groups-%CF%87%CF%81%CE%B7%CF%83%CF%84%CF%8E%CE%BD/id900255418?mt=8',
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Rotten Fish',
+      founded: '2010',
+      links: {
+        linkedIn: 'https://www.linkedin.com/company/rotten-fish-games/',
+      },
+    },
+    games: [],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Sick Rabbit Studios',
+      founded: '',
+      links: {
+        website: 'https://sickrabbitstudios.com/community/',
+        facebook: 'https://www.facebook.com/sickrabbitstudios/',
+        twitter: 'https://twitter.com/@SickRabbitSt/',
+        youTube: 'https://www.youtube.com/channel/UC0Jn0v7mB95zpIraiSnqL3A/',
+      },
+    },
+    games: [
+      {
+        name: 'Press To Play',
+        released: '2017',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['lan'],
+        price: ['free'],
+        links: {
+          website: 'https://sickrabbitstudios.com/community/games/press-to-play/',
+        },
+        platforms: {
+          online: 'https://sickrabbitstudios.com/community/games/press-to-play/play-it-press-to-play/',
+          online2: 'https://www.airconsole.com/play/party-games/press-to-play',
+        },
+      },
+      {
+        name: 'Physer',
+        released: 'Under Development',
+        genre: ['platform'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'https://sickrabbitstudios.com/community/games/physer-a-true-2d-platformer/',
+        },
+        platforms: {
+        },
+      },
+      {
+        name: 'Casino Heist',
+        released: 'Under Development',
+        genre: ['runner'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
+        links: {
+          website: 'https://sickrabbitstudios.com/community/games/casino-heist/',
+        },
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.tamasenco.casinoheist&hl=en',
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Two Crude Cubes',
+      founded: '2014',
+      links: {
+        website: 'http://twocrudecubes.com/',
+        facebook: 'https://www.facebook.com/TwoCrudeCubes',
+      },
+    },
+    games: [
+      {
+        name: 'PopDat!',
+        released: '',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['lan'],
+        price: ['free', 'buy'],
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.crudecubes.popdat',
+        },
+      },
+      {
+        name: 'The TakeOver',
+        released: '2016',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['lan', 'single'],
+        price: ['buy'],
+        platforms: {
+          steam: 'http://store.steampowered.com/app/418620/The_TakeOver/',
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Monsters',
+      founded: '2012',
+      links: {
+        website: 'http://monstersarehere.com/',
+        facebook: 'https://www.facebook.com/monstershq',
+        twitter: 'https://twitter.com/MonstersChatter',
+        youTube: 'https://www.youtube.com/user/PlayfulMonsters',
+      },
+    },
+    games: [
+      {
+        name: 'Hybris',
+        released: 'Under Development',
+        genre: ['puzzle'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'http://monstersarehere.com/en/games/hybris',
+        },
+        platforms: {
+        },
+      },
+      {
+        name: 'Apocalypse Cow',
+        released: '2016',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'http://monstersarehere.com/en/games/apocalypse-cow',
+        },
+        platforms: {
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Greek Wars',
+      founded: '2015',
+      links: {
+        website: 'https://thegreekwars.com/',
+        facebook: 'https://www.facebook.com/GreekWars2015',
+        twitter: 'https://twitter.com/TheGreekWars',
+        youTube: 'https://www.youtube.com/channel/UCdfDE_RbeglFL2qoMiyvQ9w/videos?ab_channel=GreekWars',
+      },
+    },
+    games: [
+      {
+        name: 'Greek Wars',
+        released: '2016',
+        genre: ['rpg'],
+        style: ['3d'],
+        mode: ['mmo'],
+        price: ['free2play'],
+        links: {
+          website: 'https://thegreekwars.com/',
+        },
+        platforms: {
+          online: 'https://thegreekwars.com/'
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Horos Interactive',
+      founded: '2015',
+      links: {
+        website: 'http://www.horosinteractive.com/',
+        facebook: 'https://www.facebook.com/HorosInteractive/',
+        twitter: 'https://twitter.com/HorosInteractiv',
+        youTube: 'https://www.youtube.com/channel/UCKCypLx-cHuJpETL6169ebw',
+      },
+    },
+    games: [
+      {
+        name: 'Catch The Head',
+        released: 'Under Development',
+        genre: ['action'],
+        style: ['3d'],
+        mode: ['single', 'lan'],
+        price: [''],
+        links: {
+          website: 'http://www.horosinteractive.com/catch-the-head',
+          facebook: 'https://www.facebook.com/CatchTheHead/',
+        },
+        platforms: {
+          steam: 'http://steamcommunity.com/sharedfiles/filedetails/?id=812850496',
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Kickback',
+      founded: '2010',
+      links: {
+        website: 'https://www.kickback-studios.com/',
+        facebook: 'https://www.facebook.com/KickBack.GameStudio',
+        twitter: 'https://twitter.com/KickBackStudios',
+        youTube: 'https://www.youtube.com/user/KickBackgamestudio',
+      },
+    },
+    games: [
+      {
+        name: 'Lost Echo',
+        released: '',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['buy'],
+        links: {
+          website: 'https://www.kickback-studios.com/',
+          facebook: 'https://www.facebook.com/lostecho.game',
+        },
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=com.KickBack.LostEchoAdventure',
+          appStore: 'https://itunes.apple.com/us/app/lost-echo/id693045097?mt=8',
+          windowsStore: 'https://www.microsoft.com/el-gr/store/p/lost-echo/9wzdncrdjnp8?rtc=1',
+        },
+      },
+      {
+        name: 'Lost Echo Resonance',
+        released: 'Under Development',
+        genre: ['adventure'],
+        style: ['3d'],
+        mode: ['single'],
+        price: ['free'],
+        platforms: {
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Loresoft',
+      founded: '2015',
+      links: {
+        website: 'http://loresoft.gr/',
+        facebook: 'https://www.facebook.com/LoreSoft/',
+        twitter: 'https://twitter.com/loresoftgr',
+        youTube: 'https://www.youtube.com/channel/UCQEPBJw8DQsSV_W4JXpNz4A',
+      },
+    },
+    games: [
+      {
+        name: 'Editors',
+        released: 'Under Development',
+        genre: ['rpg'],
+        style: ['3d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'https://loresoft.gr/editors/',
+          facebook: 'https://www.facebook.com/editorsthegame/',
+        },
+        platforms: {
+        },
+      },
+      {
+        name: 'Xenia',
+        released: '2017',
+        genre: ['platform'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
+        platforms: {
+          steam: 'http://store.steampowered.com/app/687310/Xenia/',
+        },
+      },
+      {
+        name: 'Katyusha',
+        released: 'Under Development',
+        genre: ['platform', 'rpg'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          facebook: 'https://www.facebook.com/katyushagame',
+          twitter: 'https://twitter.com/katyushathegame',
+        },
+      },
+    ],
+    members: [],
+  },
+  {
+    company: {
+      name: 'Matasoft Studios',
+      founded: '2014',
+      links: {
+        website: 'http://www.matasoftstudios.com/',
+        facebook: 'https://www.facebook.com/matasoftstudios',
+        twitter: 'https://twitter.com/MatasoftStudios',
+      },
+    },
+    games: [
+      {
+        name: 'Landfort',
+        released: '2015',
+        genre: ['strategy'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'http://www.matasoftstudios.com/games/landfort/',
+        },
+        platforms: {
+          playStore: 'https://play.google.com/store/apps/details?id=air.com.matasoftstudios.LandFort',
         },
       },
     ],
@@ -1272,18 +2031,70 @@ const videogames = [
     },
     games: [
       {
-        name: 'Robbie Swifthand',
-        released: 'Under Development',
+        name: 'A Clockwork Brain',
+        released: '2012',
+        genre: ['puzzle'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['free2play'],
         links: {
+          website: 'http://www.totaleclipsegames.com/our-games/a-clockwork-brain/',
         },
         platforms: {
-          demo: 'https://gamejolt.com/games/RobbieSwifthand/272862',
+          playStore: 'https://play.google.com/store/apps/details?id=com.totaleclipsegames.clkwrkbrain',
+          appStore: 'https://itunes.apple.com/app/id442745768?mt=8',
+          windowsStore: 'https://www.microsoft.com/el-gr/store/p/a-clockwork-brain/9wzdncrdhnql?rtc=1'
+        },
+      },
+      {
+        name: 'The Clockwork Man',
+        released: '2009',
+        genre: ['adventure'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
+        links: {
+          website: 'http://www.totaleclipsegames.com/our-games/the-clockwork-man/',
+
+        },
+        platforms: {
+          demo: 'http://store.steampowered.com/app/111000/The_Clockwork_Man/',
+          steam: 'http://store.steampowered.com/app/111000/The_Clockwork_Man/',
+        },
+      },
+      {
+        name: 'The Clockwork Man: The Hidden World',
+        released: '2010',
+        genre: ['adventure'],
+        style: ['2d'],
+        mode: ['single'],
+        price: ['buy'],
+        links: {
+          website: 'http://www.totaleclipsegames.com/our-games/the-clockwork-man-hidden-world/',
+
+        },
+        platforms: {
+          demo: 'http://store.steampowered.com/app/111010/The_Clockwork_Man_The_Hidden_World/',
+          steam: 'http://store.steampowered.com/app/111010/The_Clockwork_Man_The_Hidden_World/',
+        },
+      },
+      {/////////////////////////////////////
+        name: 'Monster Snack',
+        released: '2014',
+        genre: ['action'],
+        style: ['2d'],
+        mode: ['single'],
+        price: [''],
+        links: {
+          website: 'http://www.totaleclipsegames.com/our-games/monster-snack/',
+
+        },
+        platforms: {
         },
       },
     ],
     members: [],
   },
-  /////////////////////////////////////////////////////////////////////////////////
   {
     company: {
       name: 'CountNerdula',

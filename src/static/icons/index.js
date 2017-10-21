@@ -18,11 +18,13 @@ const BackToTop = InlineSvg(require('!!raw-loader!./topArrow.svg'))
 
 const VideoGames = InlineSvg(require('!!raw-loader!./gamepad.svg'))
 const BoardGames = InlineSvg(require('!!raw-loader!./pawn.svg'))
+const Mail = InlineSvg(require('!!raw-loader!./mail.svg'))
 
 export {
   Facebook,
   BackToTop,
   BoardGames,
+  Mail,
   VideoGames,
   Twitter,
   Youtube,
