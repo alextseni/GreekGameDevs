@@ -23,8 +23,8 @@ const videogames = [
         },
         platforms: {
           online: 'https://www.peaceoff.com/peaceoff/index',
-          facebook: 'https://apps.facebook.com/peaceoff',
           online2: 'http://www.kongregate.com/games/tamasenco/peaceoff',
+          facebook: 'https://apps.facebook.com/peaceoff',
         },
       },
       {
@@ -78,8 +78,6 @@ const videogames = [
         price: ['free2play'],
         links: {
           website: 'https://www.tamasenco.com/project/river-quest/',
-        },
-        platforms: {
         },
       },
       {
@@ -314,8 +312,6 @@ const videogames = [
         links: {
           website: 'https://www.anothercircus.com/another-odyssey',
         },
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -341,9 +337,6 @@ const videogames = [
           facebook: 'https://www.facebook.com/shinobiGator/',
           twitter: 'https://twitter.com/savagethegame',
           youTube: 'https://www.youtube.com/channel/UCefgHFgsbufdcv16HkyUaaw/videos',
-        },
-        platforms: {
-          pc: '',
         },
       }
     ],
@@ -371,8 +364,6 @@ const videogames = [
         price: [''],
         links: {
           website: 'http://artnrollmultimedia.com/portfolio/run4it/',
-        },
-        platforms: {
         },
       }
     ],
@@ -460,9 +451,6 @@ const videogames = [
         links: {
           website: 'http://www.aventurine.gr/about/darkfall.html',
         },
-        platforms: {
-          pc: '',
-        }
       },
       {
         name: 'Darkfall Unholy Wars',
@@ -720,8 +708,6 @@ const videogames = [
         links: {
           website: 'http://rekygame.com/',
         },
-        platforms: {
-        },
       },
     ],
     members: [
@@ -953,8 +939,6 @@ const videogames = [
           twitter: 'https://twitter.com/anarchyskies',
           youTube: 'https://www.youtube.com/user/AnarchySkies',
         },
-        platforms: {
-        },
       },
       {
         name: 'Airdrop',
@@ -965,8 +949,6 @@ const videogames = [
         price: [''],
         links: {
           website: 'http://www.epicongames.com/our-games/advergames/83-airdrop',
-        },
-        platforms: {
         },
       },
       {
@@ -979,8 +961,6 @@ const videogames = [
         links: {
           website: 'http://www.epicongames.com/our-games/advergames/85-ontarget-superleague',
         },
-        platforms: {
-        },
       },
       {
         name: 'Darts',
@@ -991,8 +971,6 @@ const videogames = [
         price: [''],
         links: {
           website: 'http://www.epicongames.com/our-games/advergames/84-darts',
-        },
-        platforms: {
         },
       },
     ],
@@ -1082,9 +1060,6 @@ const videogames = [
         links: {
           website: 'https://masgamesblog.wordpress.com/2017/09/29/arcaround/',
         },
-        platforms: {
-
-        },
       },
       {
         name: 'World Flags',
@@ -1136,8 +1111,6 @@ const videogames = [
           website: 'http://www.indiedb.com/games/case-32',
           twitter: 'https://twitter.com/case32game',
         },
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -1175,7 +1148,7 @@ const videogames = [
         fullName: 'Dimitrios Christopoulos',
         role: 'Developer',
         contact: {
-          mail: '	d_christop@hotmail.com',
+          mail: 'd_christop@hotmail.com',
         }
       }
     ],
@@ -1212,8 +1185,6 @@ const videogames = [
         price: [''],
         links: {
           website: 'http://gleanerheights.blogspot.gr/',
-        },
-        platforms: {
         },
       },
     ],
@@ -1322,8 +1293,6 @@ const videogames = [
         links: {
           website: 'https://www.facebook.com/StoryTimeGames',
         },
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -1348,8 +1317,6 @@ const videogames = [
         price: [''],
         links: {
           website: 'http://hotgates.eu/project-origins-working-title/',
-        },
-        platforms: {
         },
       },
     ],
@@ -1405,8 +1372,6 @@ const videogames = [
         price: ['free2play'],
         links: {
           website: 'http://holydaygames.com/holyday-city-reloaded/',
-        },
-        platforms: {
         },
       },
     ],
@@ -1470,8 +1435,6 @@ const videogames = [
         links: {
           website: 'http://lucidferret.com/perspective/',
         },
-        platforms: {
-        },
       },
     ],
     members: [
@@ -1513,8 +1476,6 @@ const videogames = [
         links: {
           website: 'https://www.structs3d.com/',
         },
-        platforms: {
-        },
       },
     ],
     members: [
@@ -1546,8 +1507,6 @@ const videogames = [
         links: {
           facebook: 'https://www.facebook.com/Terataki.AR/',
         },
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -1569,8 +1528,6 @@ const videogames = [
         style: ['3d'],
         mode: ['single'],
         price: [''],
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -1661,8 +1618,6 @@ const videogames = [
           website: 'https://bibicksadventures.wordpress.com/',
           facebook: 'https://www.facebook.com/Bibicks-Adventures-1093973507283575/',
         },
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -1740,8 +1695,6 @@ const videogames = [
         links: {
           website: 'https://sickrabbitstudios.com/community/games/physer-a-true-2d-platformer/',
         },
-        platforms: {
-        },
       },
       {
         name: 'Casino Heist',
@@ -1817,8 +1770,6 @@ const videogames = [
         links: {
           website: 'http://monstersarehere.com/en/games/hybris',
         },
-        platforms: {
-        },
       },
       {
         name: 'Apocalypse Cow',
@@ -1829,8 +1780,6 @@ const videogames = [
         price: [''],
         links: {
           website: 'http://monstersarehere.com/en/games/apocalypse-cow',
-        },
-        platforms: {
         },
       },
     ],
@@ -1931,8 +1880,6 @@ const videogames = [
         style: ['3d'],
         mode: ['single'],
         price: ['free'],
-        platforms: {
-        },
       },
     ],
     members: [],
@@ -1959,8 +1906,6 @@ const videogames = [
         links: {
           website: 'https://loresoft.gr/editors/',
           facebook: 'https://www.facebook.com/editorsthegame/',
-        },
-        platforms: {
         },
       },
       {
