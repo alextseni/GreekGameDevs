@@ -1,6 +1,7 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/PageLayout/PageLayout'
 import VideoGamesRoute from './VideoGames'
+import BoardGamesRoute from './BoardGames'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
@@ -9,7 +10,7 @@ export const createRoutes = (store) => ({
   component   : CoreLayout,
   indexRoute  : VideoGamesRoute(store),
   childRoutes : [
-    VideoGamesRoute(store),
+    BoardGamesRoute(store),
   ]
 })
 
