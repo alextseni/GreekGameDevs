@@ -1,9 +1,8 @@
 .cardContainer {
-  width: 100%;
-  min-height: 190px;
-  margin: 20px;
+width: 100%;
   padding: 10px;
       background-color: #f4f5f7 !important;
+
 }
 .header {
   display: flex;
@@ -15,16 +14,12 @@
 .year {
   display: flex;
 justify-content: flex-end;
-height: 0px;
-}
-
-.contentContainer {
-  height:100vh;
-  overflow: auto;
-      padding: 10px 30px;
 }
 
 .socialIcon {
   margin: 2px;
   fill: #34a56f;
+}
+.socialIcon > svg {
+  width: 28px;
 }

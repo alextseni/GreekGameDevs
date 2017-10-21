@@ -2,6 +2,8 @@
 // Constants
 // ------------------------------------
 export const UPDATE_FILTER = 'UPDATE_FILTER'
+export const RESET_FILTERS = 'RESET_FILTERS'
+export const CHANGE_VIEW = 'CHANGE_VIEW'
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -11,6 +13,18 @@ export function updateFilter (category, subcategory = '', value = '') {
     payload : { category, subcategory, value },
   }
 }
+export function resetAllFilters (category) {
+  return {
+    type    : RESET_FILTERS,
+    payload : { category },
+  }
+}
+export function changeView (view) {
+  return {
+    type    : CHANGE_VIEW,
+    payload : { view },
+  }
+}
 
 /*  This is a thunk, meaning it is a function that immediately
     returns a function for lazy evaluation. It is incredibly useful for
@@ -18,6 +32,7 @@ export function updateFilter (category, subcategory = '', value = '') {
 
 export const actions = {
   updateFilter,
+  resetAllFilters,
 }
 
 // ------------------------------------
@@ -35,19 +50,34 @@ const ACTION_HANDLERS = {
       }
     },
   }),
+  [RESET_FILTERS] : (state, action) => ({
+    ...state,
+    filters: {
+      ...state.filters,
+      [action.payload.category] : initialState.filters[action.payload.category],
+    },
+  }),
+  [CHANGE_VIEW] : (state, action) => ({
+    ...state,
+    view: action.payload.view,
+  }),
 }
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
 const initialState = {
+  view: 'list',
   filters: {
     main: 'company',
     company: {
 
     },
     games: {
-      links: ['all'],
+      platforms: [], // ios, windows, steam, etc..
+      genre: [], // platform. rpg, idle, action, puzzle,etc..
+      status: [], // released, under development, stopped,etc..
+      style: [], // 3D, 2D
     },
 
   },

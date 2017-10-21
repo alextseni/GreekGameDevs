@@ -13,9 +13,17 @@ const Demo = InlineSvg(require('!!raw-loader!./demo.svg'))
 const Online = InlineSvg(require('!!raw-loader!./online.svg'))
 
 const Info = InlineSvg(require('!!raw-loader!./info.svg'))
+const NoFilter = InlineSvg(require('!!raw-loader!./nofilter.svg'))
+const BackToTop = InlineSvg(require('!!raw-loader!./topArrow.svg'))
+
+const VideoGames = InlineSvg(require('!!raw-loader!./gamepad.svg'))
+const BoardGames = InlineSvg(require('!!raw-loader!./pawn.svg'))
 
 export {
   Facebook,
+  BackToTop,
+  BoardGames,
+  VideoGames,
   Twitter,
   Youtube,
   Website,
@@ -27,4 +35,5 @@ export {
   Online,
   Demo,
   Info,
+  NoFilter,
 }

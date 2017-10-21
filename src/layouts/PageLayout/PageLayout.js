@@ -6,10 +6,14 @@ import SwipeableViews from 'react-swipeable-views'
 import {
   Toolbar,
   Typography,
-  Tabs,
-  Tab,
-  AppBar
+  AppBar,
+  IconButton,
 } from 'material-ui'
+
+import {
+  VideoGames,
+  BoardGames,
+} from 'static/icons'
 
 import data from 'data/videogames.js'
 
@@ -18,21 +22,25 @@ const totalGames = data.map(d => d.games.length).reduce((accumulator, currentVal
 
 export const PageLayout = ({ children }) => (
   <div className='text-center'>
-    <AppBar position='static' color='default'>
-      <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <Tabs value={window.location.pathname}>
-        <Tab label='Video Games' value='/'><IndexLink to='/' activeClassName='page-layout__nav-item--active' /></Tab>
-        <Tab label='Board Games' value='/history'> <Link to='/history' activeClassName='page-layout__nav-item--active' /></Tab>
-        <Tab label='Connect' value='/history'> <Link to='/history' activeClassName='page-layout__nav-item--active' /></Tab>
-        <Tab label='Contact' value='/history'> <Link to='/history' activeClassName='page-layout__nav-item--active' /></Tab>
-      </Tabs>
+    <AppBar className='appbar'>
+      <Toolbar className='navbar'>
+        <IndexLink to='/' activeClassName='page-layout__nav-item--active'>
+          <IconButton className='menuItem' aria-label='Menu'>
+            <VideoGames width='64px' fill='white' />
+          </IconButton>
+        </IndexLink>
+        <Link to='/boardgames' activeClassName='page-layout__nav-item--active'>
+          <IconButton className='menuItem' aria-label='Menu'>
+            <BoardGames width='50px' fill='white' />
+          </IconButton>
+        </Link>
+      </Toolbar>
       {window.location.pathname === '/' &&
-      <div className='stats'>
-        <div className='stat'> Teams: {totalTeams} </div>
-        <div className='stat'> Games: {totalGames} </div>
-      </div>
+        <div className='stats'>
+          <div className='stat'> Teams: {totalTeams} </div>
+          <div className='stat'> Games: {totalGames} </div>
+        </div>
       }
-    </Toolbar>
     </AppBar>
     <div className='page-layout__viewport'>
       {children}

@@ -91,23 +91,23 @@ class Form extends Component {
             ? <div className='popupStatus' style={{backgroundColor: '#70d188'}}>
                 <CheckCircle style={{width:'50px', height: '50px'}} />
                 <Typography type='headline' component='h4'>
-                  Success!
+                  Success
+                </Typography>
+                <Typography type='headline' component='h4'>
+                  Thank you!
                 </Typography>
               </div>
             : this.state.hasSubmitted
               ? <div className='popupStatus' style={{backgroundColor: '#db8787'}}>
                     <Error style={{width:'50px', height: '50px'}} />
                     <Typography type='headline' component='h4'>
-                      Email was not sent!
+                      Email was not sent
                     </Typography>
                 </div>
               : <div style={{ width: 0, height: 0 }} />
         }
         <Typography type='headline' component='h4'>
-          Is this card missing info?
-        </Typography>
-        <Typography type='headline'>
-          Add or correct it below.
+          Missing or incorrect info on this card?
         </Typography>
         <form
           className='infoForm'
@@ -138,7 +138,7 @@ class Form extends Component {
             labelClassName='label'
             name='comment'
             id='multiline-flexible'
-            label='Any links, games, info you wish to add or correct?'
+            label='Fill in anything you wish to add or correct.'
             InputLabelProps={{
               shrink: true,
             }}

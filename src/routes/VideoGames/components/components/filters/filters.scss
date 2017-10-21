@@ -1,14 +1,47 @@
 
 .filtersContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+align-items: center;
+}
 
+.form {
+  margin: 0px 20px !important;
 }
 
 .mainFilters {
   display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .chip {
   margin-left: 10px;
+}
+
+.subfilters {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tools {
+
+}
+
+.drawerBox > div {
+  overflow: hidden;
+}
+
+.drawerInner {
+  background-color: #BBDEFB;
+  min-height: 53px;
+  flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.drawerHeader {
+  background-color: #BBDEFB;
+  height: 30px;
 }

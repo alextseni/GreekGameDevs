@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { updateFilter } from '../modules/videogames'
+import { updateFilter, resetAllFilters, changeView } from '../modules/videogames'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -14,11 +14,14 @@ import VideoGames from '../components/VideoGames'
 
 const mapDispatchToProps = {
   updateFilter : (category, subcategory, value) => updateFilter(category, subcategory, value),
+  resetAllFilters: (category) => resetAllFilters(category),
+  changeView: (view) => changeView(view),
 }
 
 const mapStateToProps = (state) => {
   return ({
     filters: state.videogames.filters,
+    view: state.videogames.view,
   })
 }
 

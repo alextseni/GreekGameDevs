@@ -26,18 +26,9 @@ import {
   Paper,
   Typography,
   IconButton,
-  Checkbox,
   Button,
-  Badge,
   TextField,
-  Chip,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Card,
   Popover,
-  DropDownMenu,
-  MenuItem,
 } from 'material-ui'
 
 import data from 'data/videogames.js'
@@ -50,16 +41,17 @@ class VideoGames extends Component {
       anchorEl: null,
       selectedItem: {},
       formItem: {},
+      listView: true,
     }
   }
 
   handleFormChange = name => event => {
-  this.setState({
-    formItem: {
-      [name]: event.target.value,
-    }
-  });
-};
+    this.setState({
+      formItem: {
+        [name]: event.target.value,
+      }
+    })
+  }
 
   handleInfoButton = (event, index, selectedItem) => {
     console.log(index)
@@ -74,6 +66,7 @@ class VideoGames extends Component {
 
   transformData = (filters) => {
     let items
+    const activeFilters = Object.keys(filters[filters.main]).filter(c => filters[filters.main][c] && filters[filters.main][c].length !== 0)
     if (filters.main === 'company') {
       items = data.map(d => ({
         name: d.company.name,
@@ -89,16 +82,18 @@ class VideoGames extends Component {
          links: g.platforms || g.links,
          content: [d.company],
          footer: g.released,
+         platforms: g.platforms && Object.keys(g.platforms),
+         genre: g.genre,
        }))
     )))
-      items = filters.games.links.includes('all') ? items :
-        items.filter(i => filters.games.links.find(l => i.links[l]))
     }
-    return _.sortBy(items, 'name')
+    items = activeFilters.length === 0 ? items
+      :  _.intersectionBy(...activeFilters.map(f => items.filter(i => filters[filters.main][f].find(l => i[f] && i[f].find(e => e === l)))), 'name')
+    return _.sortBy(items, (i) => i.name.toLowerCase())
   }
 
   render () {
-    const { filters, updateFilter } = this.props
+    const { filters, updateFilter, resetAllFilters, view, changeView } = this.props
     const items = this.transformData(filters)
     return (
       <div>
@@ -118,8 +113,9 @@ class VideoGames extends Component {
           <Form selectedItem={this.state.selectedItem} />
         </Popover>
         <Paper style={{ height: '100%', padding: '20px 20px 80px' }} elevation={2}>
-          <div className='contentContainer'>
-            <Filters updateFilter={updateFilter} filters={filters} />
+          <div className='contentContainer' id='scrollContainer'>
+            <Filters updateFilter={updateFilter} filters={filters} resetAllFilters={resetAllFilters} view={view} changeView={changeView} />
+            <div className={view === 'list' ? 'cardsContainerList' : 'cardsContainerGrid'}>
             {items.map((item, index) => (
               <div className='btnandcard'>
                 <Button className='info'
@@ -142,6 +138,7 @@ class VideoGames extends Component {
               }
               </div>
             ))}
+            </div>
           </div>
         </Paper>
       </div>
@@ -152,6 +149,9 @@ class VideoGames extends Component {
 VideoGames.propTypes = {
   filters: PropTypes.object.isRequired,
   updateFilter: PropTypes.func.isRequired,
+  resetAllFilters: PropTypes.func.isRequired,
+  view: PropTypes.string.isRequired,
+  changeView: PropTypes.func.isRequired,
 }
 
 export default VideoGames

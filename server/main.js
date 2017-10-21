@@ -32,10 +32,10 @@ app.get('/send', (req, res) => {
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
       console.log(error)
-        res.end('error')
-     } else {
-       console.log('Message sent')
-       res.end('sent')
+      res.end('error')
+    } else {
+      console.log('Message sent')
+      res.end('sent')
     }
   })
 })
