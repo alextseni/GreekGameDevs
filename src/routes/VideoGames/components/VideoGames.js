@@ -79,7 +79,7 @@ class VideoGames extends Component {
       items = [].concat(...data.map(d => (
        d.games.map(g => ({
          name: g.name,
-         links: g.platforms || g.links,
+         links: g.platforms || g.links || {},
          content: [d.company],
          footer: g.released,
          platforms: g.platforms && Object.keys(g.platforms),
