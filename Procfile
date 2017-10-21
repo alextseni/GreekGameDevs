@@ -1,1 +1,1 @@
-web: node server/main.js
+web: node build/scripts/start.js
