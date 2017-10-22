@@ -58,8 +58,8 @@ class Filters extends Component {
         <div className='mainFilters'>
           <Chip className='chip' label='sort by company' onClick={() => updateFilter('company')} />
           <Chip className='chip' label='sort by game' onClick={() => updateFilter('games')} />
-          <Tooltip style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}} title="Coming soon!" placement="bottom">
-          <Chip className='chip' label='sort by people' />
+          <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} title='Coming soon!' placement='bottom'>
+            <Chip className='chip' label='sort by people' />
           </Tooltip>
         </div>
         <Tooltip
@@ -72,146 +72,146 @@ class Filters extends Component {
             onClick={this.handleViewChange}
            >
             {view === 'list' ? <GridOn /> : <ViewList /> }
-           </Button>
-       </Tooltip>
-       <div className='drawerHandle'>
-       <Tooltip style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}} id="tooltip-icon" title="Open filters" placement="top">
-         <Button
-            aria-label='open drawer'
-            raised
-            onClick={this.handleDrawer}
-          >
-           <MenuIcon />
           </Button>
-      </Tooltip>
-       </div>
-      <Drawer
-        anchor={'top'}
-        type='persistent'
-        open={this.state.open}
-        className={'drawerBox'}
+        </Tooltip>
+        <div className='drawerHandle'>
+          <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} id='tooltip-icon' title='Open filters' placement='top'>
+            <Button
+              aria-label='open drawer'
+              raised
+              onClick={this.handleDrawer}
+          >
+              <MenuIcon />
+            </Button>
+          </Tooltip>
+        </div>
+        <Drawer
+          anchor={'top'}
+          type='persistent'
+          open={this.state.open}
+          className={'drawerBox'}
       >
-        <div className={'drawerInner'}>
-          {filters.main === 'company' &&
+          <div className={'drawerInner'}>
+            {filters.main === 'company' &&
             <div />
           }
-          {filters.main === 'games' &&
+            {filters.main === 'games' &&
             <div className='subfilters'>
               <Tooltip id='tooltip-icon2' title='Remove all filters' placement='bottom'>
-                 <Button raised  onClick={() => resetAllFilters('games')} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
-                   <NoFilter />
-                 </Button>
+                <Button raised onClick={() => resetAllFilters('games')} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
+                  <NoFilter />
+                </Button>
               </Tooltip>
               <FormControl className='form'>
-                 <InputLabel htmlFor='name-multiple'>Platforms</InputLabel>
-                 <Select
-                   multiple
-                   style={{ width: '200px' }}
-                   value={filters.games.platforms}
-                   onChange={(event) => updateFilter(filters.main, 'platforms', event.target.value)}
-                   input={<Input id='name-multiple' />}
-                   MenuProps={{
-                     PaperProps: {
-                       style: { maxHeight: 224, width: 200, },
-                     },
-                   }}
+                <InputLabel htmlFor='name-multiple'>Platforms</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.games.platforms}
+                  onChange={(event) => updateFilter(filters.main, 'platforms', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
                  >
-                   <MenuItem value={'steam'}> Steam </MenuItem>
-                   <MenuItem value={'pc'}> PC </MenuItem>
-                   <MenuItem value={'online'}> Online </MenuItem>
-                   <MenuItem value={'playStore'}> Android </MenuItem>
-                   <MenuItem value={'appStore'}> iOS </MenuItem>
-                   <MenuItem value={'windowsStore'}> Windows </MenuItem>
-                 </Select>
-               </FormControl>
-               <FormControl className='form'>
-                 <InputLabel htmlFor='name-multiple'>Genres</InputLabel>
-                 <Select
-                   multiple
-                   style={{ width: '200px' }}
-                   value={filters.games.genre}
-                   onChange={(event) => updateFilter(filters.main, 'genre', event.target.value)}
-                   input={<Input id='name-multiple' />}
-                   MenuProps={{
-                     PaperProps: {
-                       style: { maxHeight: 224, width: 200, },
-                     },
-                   }}
+                  <MenuItem value={'steam'}> Steam </MenuItem>
+                  <MenuItem value={'pc'}> PC </MenuItem>
+                  <MenuItem value={'online'}> Online </MenuItem>
+                  <MenuItem value={'playStore'}> Android </MenuItem>
+                  <MenuItem value={'appStore'}> iOS </MenuItem>
+                  <MenuItem value={'windowsStore'}> Windows </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl className='form'>
+                <InputLabel htmlFor='name-multiple'>Genres</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.games.genre}
+                  onChange={(event) => updateFilter(filters.main, 'genre', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
                  >
-                   <MenuItem value={'puzzle'}> Puzzle </MenuItem>
-                   <MenuItem value={'adventure'}> Adventure </MenuItem>
-                   <MenuItem value={'idle'}> Idle </MenuItem>
-                   <MenuItem value={'rpg'}> RPG </MenuItem>
-                   <MenuItem value={'horror'}> Horror </MenuItem>
-                   <MenuItem value={'platform'}> Platform </MenuItem>
-                 </Select>
-               </FormControl>
-               <FormControl className='form'>
-                 <InputLabel htmlFor='name-multiple'>Style</InputLabel>
-                 <Select
-                   multiple
-                   style={{ width: '200px' }}
-                   value={filters.games.style}
-                   onChange={(event) => updateFilter(filters.main, 'style', event.target.value)}
-                   input={<Input id='name-multiple' />}
-                   MenuProps={{
-                     PaperProps: {
-                       style: { maxHeight: 224, width: 200, },
-                     },
-                   }}
+                  <MenuItem value={'puzzle'}> Puzzle </MenuItem>
+                  <MenuItem value={'adventure'}> Adventure </MenuItem>
+                  <MenuItem value={'idle'}> Idle </MenuItem>
+                  <MenuItem value={'rpg'}> RPG </MenuItem>
+                  <MenuItem value={'horror'}> Horror </MenuItem>
+                  <MenuItem value={'platform'}> Platform </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl className='form'>
+                <InputLabel htmlFor='name-multiple'>Style</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.games.style}
+                  onChange={(event) => updateFilter(filters.main, 'style', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
                  >
-                   <MenuItem value={'2d'}> {'2D'} </MenuItem>
-                   <MenuItem value={'3d'}> {'3D'} </MenuItem>
-                 </Select>
-               </FormControl>
-               <FormControl className='form'>
-                 <InputLabel htmlFor='name-multiple'>Status</InputLabel>
-                 <Select
-                   multiple
-                   style={{ width: '200px' }}
-                   value={filters.games.status}
-                   onChange={(event) => updateFilter(filters.main, 'status', event.target.value)}
-                   input={<Input id='name-multiple' />}
-                   MenuProps={{
-                     PaperProps: {
-                       style: { maxHeight: 224, width: 200, },
-                     },
-                   }}
+                  <MenuItem value={'2d'}> {'2D'} </MenuItem>
+                  <MenuItem value={'3d'}> {'3D'} </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl className='form'>
+                <InputLabel htmlFor='name-multiple'>Status</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.games.status}
+                  onChange={(event) => updateFilter(filters.main, 'status', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
                  >
-                   <MenuItem value={'Under Development'}> Under Development </MenuItem>
-                   <MenuItem value={'released'}> Released </MenuItem>
-                 </Select>
-               </FormControl>
-               <FormControl className='form'>
-                 <InputLabel htmlFor='name-multiple'>Mode</InputLabel>
-                 <Select
-                   multiple
-                   style={{ width: '200px' }}
-                   value={filters.games.mode}
-                   onChange={(event) => updateFilter(filters.main, 'mode', event.target.value)}
-                   input={<Input id='name-multiple' />}
-                   MenuProps={{
-                     PaperProps: {
-                       style: { maxHeight: 224, width: 200, },
-                     },
-                   }}
+                  <MenuItem value={'Under Development'}> Under Development </MenuItem>
+                  <MenuItem value={'released'}> Released </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl className='form'>
+                <InputLabel htmlFor='name-multiple'>Mode</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.games.mode}
+                  onChange={(event) => updateFilter(filters.main, 'mode', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
                  >
-                   <MenuItem value={'single'}> Single </MenuItem>
-                   <MenuItem value={'lan'}> Local Multiplayer </MenuItem>
-                   <MenuItem value={'mmo'}> MMO </MenuItem>
-                 </Select>
-               </FormControl>
+                  <MenuItem value={'single'}> Single </MenuItem>
+                  <MenuItem value={'lan'}> Local Multiplayer </MenuItem>
+                  <MenuItem value={'mmo'}> MMO </MenuItem>
+                </Select>
+              </FormControl>
               </div>
            }
             <div className='tools'>
               <Tooltip id='tooltip-icon3' title='Return to top' placement='bottom'>
-                <Button raised  onClick={() => window.scrollTo(0, 0)} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
+                <Button raised onClick={() => window.scrollTo(0, 0)} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
                   <BackToTop />
                 </Button>
-             </Tooltip>
-           </div>
-        </div>
-    </Drawer>
+              </Tooltip>
+            </div>
+          </div>
+        </Drawer>
       </div>
     )
   }

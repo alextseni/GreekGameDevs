@@ -2,7 +2,7 @@
 import CoreLayout from '../layouts/PageLayout/PageLayout'
 import VideoGamesRoute from './VideoGames'
 import BoardGamesRoute from './BoardGames'
-import ContactRoute from './Contact'
+import CommunicationRoute from './Contact'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
@@ -12,7 +12,7 @@ export const createRoutes = (store) => ({
   indexRoute  : VideoGamesRoute(store),
   childRoutes : [
     BoardGamesRoute(store),
-    ContactRoute(store),
+    CommunicationRoute(store),
   ]
 })
 

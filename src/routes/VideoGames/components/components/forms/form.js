@@ -13,7 +13,7 @@ import {
   TextField,
   CircularProgress,
 } from 'material-ui'
-import {CheckCircle, Error} from 'material-ui-icons'
+import { CheckCircle, Error } from 'material-ui-icons'
 
 let xhttp
 
@@ -69,7 +69,7 @@ class Form extends Component {
           isLoading: false,
         })
       }
-   }
+    }
     xhttp.open(
       'GET',
       '/send?' +
@@ -84,26 +84,23 @@ class Form extends Component {
     return (
       <div className='infoContainer'>
         {this.state.isLoading
-          ? <div className='popupStatus' style={{backgroundColor: 'white'}}>
-              <CircularProgress size={80} />
-            </div>
+          ? <div className='popupStatus' style={{ backgroundColor: 'white' }}>
+            <CircularProgress size={80} />
+          </div>
           : this.state.success
-            ? <div className='popupStatus' style={{backgroundColor: '#70d188'}}>
-                <CheckCircle style={{width:'50px', height: '50px'}} />
-                <Typography type='headline' component='h4'>
-                  Success
-                </Typography>
-                <Typography type='headline' component='h4'>
+            ? <div className='popupStatus' style={{ backgroundColor: '#70d188' }}>
+              <CheckCircle style={{ width:'50px', height: '50px' }} />
+              <Typography type='headline' component='h4'>
                   Thank you!
                 </Typography>
-              </div>
+            </div>
             : this.state.hasSubmitted
-              ? <div className='popupStatus' style={{backgroundColor: '#db8787'}}>
-                    <Error style={{width:'50px', height: '50px'}} />
-                    <Typography type='headline' component='h4'>
-                      Email was not sent
+              ? <div className='popupStatus' style={{ backgroundColor: '#db8787' }}>
+                <Error style={{ width:'50px', height: '50px' }} />
+                <Typography type='headline' component='h4'>
+                      Email not sent
                     </Typography>
-                </div>
+              </div>
               : <div style={{ width: 0, height: 0 }} />
         }
         <Typography type='headline' component='h4'>

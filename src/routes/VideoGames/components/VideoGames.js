@@ -5,12 +5,6 @@ import _ from 'lodash'
 import { findDOMNode } from 'react-dom'
 
 import {
-  AddIcon,
-  AddBox,
-  IndeterminateCheckBox
-} from 'material-ui-icons'
-
-import {
   CardFront,
   CardBack,
   Filters,
@@ -22,12 +16,8 @@ import {
 } from 'static/icons'
 
 import {
-  Icon,
   Paper,
-  Typography,
-  IconButton,
   Button,
-  TextField,
   Popover,
 } from 'material-ui'
 
@@ -91,7 +81,7 @@ class VideoGames extends Component {
     )))
     }
     items = activeFilters.length === 0 ? items
-      :  _.intersectionBy(...activeFilters.map(f => items.filter(i => filters[filters.main][f].find(l => i[f] && i[f].find(e => e === l)))), 'name')
+      : _.intersectionBy(...activeFilters.map(f => items.filter(i => filters[filters.main][f].find(l => i[f] && i[f].find(e => e === l)))), 'name')
     return _.sortBy(items, (i) => i.name.toLowerCase())
   }
 
@@ -119,27 +109,27 @@ class VideoGames extends Component {
           <div className='contentContainer' id='scrollContainer'>
             <Filters updateFilter={updateFilter} filters={filters} resetAllFilters={resetAllFilters} view={view} changeView={changeView} />
             <div className={view === 'list' ? 'cardsContainerList' : 'cardsContainerGrid'}>
-            {items.map((item, index) => (
-              <div className='btnandcard'>
-                <Button className='info'
-                  onClick={() => this.handleInfoButton(event, index, item)}
-                  ref={node => { this.button[index] = node }}>
-                  <Info />
-                </Button>
+              {items.map((item, index) => (
+                <div className='btnandcard'>
+                  <Button className='info'
+                    onClick={() => this.handleInfoButton(event, index, item)}
+                    ref={node => { this.button[index] = node }}>
+                    <Info />
+                  </Button>
 
-                <CardFront
-                  title={item.name}
-                  links={item.links}
-                  content={item.content}
-                  footer={item.footer}
+                  <CardFront
+                    title={item.name}
+                    links={item.links}
+                    content={item.content}
+                    footer={item.footer}
                 />
-                {this.state.back &&
-                <CardBack
-                  title={item.name}
-                  content={item.content}
+                  {this.state.back &&
+                  <CardBack
+                    title={item.name}
+                    content={item.content}
                   />
               }
-              </div>
+                </div>
             ))}
             </div>
           </div>

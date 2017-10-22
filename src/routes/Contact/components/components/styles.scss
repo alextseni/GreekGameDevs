@@ -1,0 +1,45 @@
+.description {
+  text-align: left;
+  margin: auto !important;
+  margin-top: 20px !important;
+}
+.title {
+  text-align: center;
+}
+
+.newsletter {
+  margin: 30px;
+}
+.contact {
+  margin: 30px;
+}
+
+.credits {
+  margin-bottom: 50px;
+}
+.creditsList {
+  margin: 15px 0px;
+}
+
+.popupStatusForm {
+  position: absolute;
+  flex-direction: column;
+display: flex;
+justify-content: center;
+align-items: center;
+    height: 357px;
+    width: 560px;
+z-index: 9;
+opacity: 0.8;
+}
+.popupStatusNews {
+  position: absolute;
+  flex-direction: row;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 75px;
+    width: 491px;
+z-index: 9;
+opacity: 0.8;
+}
