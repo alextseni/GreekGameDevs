@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer')
 const app = express()
 
 const { Pool, Client } = require('pg')
-const connectionString = process.env.DATABASE_URL?ssl=true || 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
+const connectionString = (process.env.DATABASE_URL + '?ssl=true') || 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
 
 const pool = new Pool({
   connectionString: connectionString,
