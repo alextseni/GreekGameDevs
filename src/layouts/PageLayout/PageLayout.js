@@ -10,14 +10,13 @@ import {
 } from 'material-ui'
 import {
   VideoGames,
-  BoardGames,
+  Tools,
   Mail,
 } from 'static/icons'
 
-import data from 'data/videogames.js'
 
-const totalTeams = data.length
-const totalGames = data.map(d => d.games.length).reduce((accumulator, currentValue) => accumulator + currentValue)
+const totalTeams = 0
+const totalGames = 0
 
 export const PageLayout = ({ children }) => (
   <div className='text-center'>
@@ -28,12 +27,12 @@ export const PageLayout = ({ children }) => (
             <VideoGames width='50px' fill='white' />
           </IconButton>
         </IndexLink>
-        <Link to='/boardgames' activeClassName='page-layout__nav-item--active'>
+        <Link to='/tools' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <BoardGames width='38px' fill='white' />
+            <Tools width='32px' fill='white' />
           </IconButton>
         </Link>
-        <Link to='/contact' activeClassName='page-layout__nav-item--active'>
+        <Link to='/communication' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
             <Mail width='38px' fill='white' />
           </IconButton>

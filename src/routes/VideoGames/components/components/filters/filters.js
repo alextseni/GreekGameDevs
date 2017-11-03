@@ -56,7 +56,7 @@ class Filters extends Component {
     return (
       <div className='filtersContainer'>
         <div className='mainFilters'>
-          <Chip className='chip' label='sort by company' onClick={() => updateFilter('company')} />
+          <Chip className='chip' label='sort by company' onClick={() => updateFilter('companies')} />
           <Chip className='chip' label='sort by game' onClick={() => updateFilter('games')} />
           <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} title='Coming soon!' placement='bottom'>
             <Chip className='chip' label='sort by people' />
@@ -92,7 +92,7 @@ class Filters extends Component {
           className={'drawerBox'}
       >
           <div className={'drawerInner'}>
-            {filters.main === 'company' &&
+            {filters.main === 'companies' &&
             <div />
           }
             {filters.main === 'games' &&

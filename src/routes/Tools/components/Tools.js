@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const BoardGames = () => (
+export const Tools = () => (
   <div style={{ margin: '0 auto' }} >
     <h1> Coming soon! </h1>
   </div>
 )
-BoardGames.propTypes = {
+Tools.propTypes = {
 }
 
-export default BoardGames
+export default Tools

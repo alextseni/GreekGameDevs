@@ -15,39 +15,29 @@ import {
   Demo,
   Online,
   PC,
+  IndieDB,
 } from 'static/icons'
 
 import {
-  Icon,
   Paper,
   Typography,
-  IconButton,
-  Checkbox,
   Button,
-  Badge,
-  TextField,
-  Chip,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Card,
-  Popover,
 } from 'material-ui'
 
 const getMediaIcon = (media) => ({
   website: <Website className='socialIcon' />,
   facebook: <Facebook className='socialIcon' />,
   twitter: <Twitter className='socialIcon' />,
-  youTube: <Youtube className='socialIcon' />,
+  youtube: <Youtube className='socialIcon' />,
   steam: <Steam className='socialIcon' />,
   pc: <PC className='socialIcon' />,
-  playStore: <PlayStore className='socialIcon' />,
+  playstore: <PlayStore className='socialIcon' />,
   appStore: <AppStore className='socialIcon' />,
-  linkedIn: <LinkedIn className='socialIcon' />,
-  windowsStore: <WindowsStore className='socialIcon' />,
+  linkedin: <LinkedIn className='socialIcon' />,
+  windowstore: <WindowsStore className='socialIcon' />,
   demo: <Demo className='socialIcon' />,
   online: <Online className='socialIcon' />,
-  online2: <Online className='socialIcon' />,
+  indiedb: <IndieDB className='socialIcon' />,
 })[media]
 
 class CardFront extends Component {
@@ -55,45 +45,52 @@ class CardFront extends Component {
     super(props)
     this.state = {
       filter: 'companies',
-
     }
   }
   render () {
-    const { title, content, links, footer } = this.props
+    const { title, description, image, links1, links2, content, footer, tags} = this.props
     return (
-
-      <Card className='cardContainer'>
-        <CardContent>
+      <Paper className='cardContainer'>
           <div className='header'>
-            <Typography type='Title' component='h4'>
-              {title}
-            </Typography>
-            <div className='social'>
-              {Object.keys(links).map(linkType =>
-                <Button target='_blank' href={links[linkType]} dense color='primary'>
-                  {getMediaIcon(linkType)}
-                </Button>
-        )}
+            <div className='logo'>
+              <div className='icon' style={{ backgroundImage: 'url(' + image || '/static/images/missing.png' + ')' }} />
+                <div className='title'>
+                  <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
+                    {title}
+                  </Typography>
+                  <Typography type='caption' style={{ textAlign: 'left', marginTop: '5px' }}>
+                    {description}
+                  </Typography>
+                </div>
             </div>
           </div>
-        </CardContent>
-        <CardActions style={{ flexWrap:'wrap', minHeight: '52px', height: 'auto' }}>
-          {content.map(item => (
-      item.links
-      ? <Button target='_blank' href={item.links[Object.keys(item.links)[0]]} dense color={item.released === 'Under Development' ? 'accent' : 'primary'}>
-        {item.name}
-      </Button>
-      : <Button target='_blank' disabled dense color='primary'>
-        {item.name}
-      </Button>
-  ))}
-        </CardActions>
-        <div className='year'>
-          <Typography type='body2' component='h2'>
+          <div className='social'>
+          {links1 && links1.map(link => (
+              <Button target='_blank' href={link.link} dense color='primary'>
+                {getMediaIcon(link.type)}
+              </Button>
+          ))}
+          </div>
+        <div className='content'>
+          {content && content.map(item => (
+            <Button
+              target='_blank'
+              href={item.link}
+              //disabled={!item.link}
+              style={{ textAlign: 'left' }}
+              dense
+              color={item.status === 'Under Development' ? 'accent' : 'primary'}
+            >
+              {item.name}
+            </Button>
+          ))}
+        </div>
+        <div className='footer'>
+          <Typography type='body2' component='h2' style={{ marginRight: '10px' }}>
             {footer}
           </Typography>
         </div>
-      </Card>
+      </Paper>
     )
   }
 }

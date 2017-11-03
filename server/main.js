@@ -7,9 +7,52 @@ const webpackConfig = require('../build/webpack.config')
 const project = require('../project.config')
 const compress = require('compression')
 const nodemailer = require('nodemailer')
-
 const app = express()
 
+const { Pool, Client } = require('pg')
+const connectionString = 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
+
+const pool = new Pool({
+  connectionString: connectionString,
+})
+const queryCompanies = "SELECT vgcom.*, json_build_object('games',json_build_object('name', vg.name,'status', vg.status)) FROM vgcom INNER JOIN vg ON vgcom.name = vg.developer"
+
+app.get('/api/companies', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.connect().then(client => {
+    let links = []
+    let games = []
+    client.query('SELECT * FROM vgcom ORDER BY name ASC').then(resCompanies => {
+      Promise.all(resCompanies.rows.map(company => {
+        client.query('SELECT name, status FROM vg WHERE developer= $1 ORDER BY name ASC', [company.name]).then(resGames => {
+          games.push(resGames.rows)
+        })
+        return client.query('SELECT type, link FROM vgcomlinks WHERE company= $1 ORDER BY type ASC ', [company.name]).then(resLinks => {
+          links.push(resLinks.rows)
+        })
+      })).then(e => {
+        client.release()
+        res.json(resCompanies.rows.map((c, index) => ({company: c, games: games[index], links: links[index]})))
+      })
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    })
+  })
+})
+
+app.get('/api/games', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.query('SELECT * FROM vg ORDER BY name ASC', (err, result) => {
+    if (err) {
+      throw err
+    }
+    res.json(result.rows)
+  })
+})
+
+/// REMOVE THIS AFTER MAIL
 const smtpTransport = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
@@ -18,29 +61,28 @@ const smtpTransport = nodemailer.createTransport({
     pass: credentials.pass,
   }
 })
+////
 
 app.use(express.static(__dirname + '/public'))
 
 app.set('src', __dirname + '/src')
 
+/// REMOVE THIS AFTER MAIL
 app.get('/send', (req, res) => {
-  console.log('data', req.query)
   const mailOptions = {
     to : credentials.mail,
     subject : req.query.title,
     text : 'From ' + req.query.mail + ': ' + req.query.comment,
   }
-  console.log(mailOptions)
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
-      console.log(error)
       res.end('error')
     } else {
-      console.log('Message sent')
       res.end('sent')
     }
   })
 })
+//////
 
 // ------------------------------------
 // Apply Webpack HMR Middleware

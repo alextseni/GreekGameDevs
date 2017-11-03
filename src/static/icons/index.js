@@ -17,14 +17,16 @@ const NoFilter = InlineSvg(require('!!raw-loader!./nofilter.svg'))
 const BackToTop = InlineSvg(require('!!raw-loader!./topArrow.svg'))
 
 const VideoGames = InlineSvg(require('!!raw-loader!./gamepad.svg'))
-const BoardGames = InlineSvg(require('!!raw-loader!./pawn.svg'))
+const Tools = InlineSvg(require('!!raw-loader!./tools.svg'))
 const Mail = InlineSvg(require('!!raw-loader!./mail.svg'))
 const PC = InlineSvg(require('!!raw-loader!./computer.svg'))
+const IndieDB = InlineSvg(require('!!raw-loader!./indiedb.svg'))
 
 export {
   Facebook,
   BackToTop,
-  BoardGames,
+  IndieDB,
+  Tools,
   PC,
   Mail,
   VideoGames,

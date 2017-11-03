@@ -21,7 +21,8 @@ import {
   Popover,
 } from 'material-ui'
 
-import data from 'data/videogames.js'
+//import data from 'data/videogames.js'
+const axios = require('axios');
 
 class VideoGames extends Component {
   constructor (props: VideoGames.propTypes) {
@@ -54,40 +55,23 @@ class VideoGames extends Component {
   }
   button = []
 
+  componentWillMount = () => {
+    this.transformData({ main: 'companies' })
+  }
+
   transformData = (filters) => {
-    let items
-    const activeFilters = Object.keys(filters[filters.main]).filter(c => filters[filters.main][c] && filters[filters.main][c].length !== 0)
-    if (filters.main === 'company') {
-      items = data.map(d => ({
-        name: d.company.name,
-        links: d.company.links || {},
-        content: d.games.map(g => ({ ...g, links: g.links || g.platforms })),
-        footer: d.company.founded,
-      }))
-    }
-    if (filters.main === 'games') {
-      items = [].concat(...data.map(d => (
-       d.games.map(g => ({
-         name: g.name,
-         links: g.platforms || g.links || {},
-         content: [d.company],
-         footer: g.released,
-         platforms: g.platforms && Object.keys(g.platforms),
-         genre: g.genre,
-         style: g.style,
-         status: g.released === 'Under Development' ? [g.released] : ['released'],
-         mode: g.mode,
-       }))
-    )))
-    }
-    items = activeFilters.length === 0 ? items
-      : _.intersectionBy(...activeFilters.map(f => items.filter(i => filters[filters.main][f].find(l => i[f] && i[f].find(e => e === l)))), 'name')
-    return _.sortBy(items, (i) => i.name.toLowerCase())
+    axios.get('/api/' + filters.main)
+      .then((response) => {
+        console.log('resp', response.data)
+        this.props.updateData(response.data, filters.main)
+      })
+      .catch((error) => {
+        console.log('ERROR', error)
+      })
   }
 
   render () {
-    const { filters, updateFilter, resetAllFilters, view, changeView } = this.props
-    const items = this.transformData(filters)
+    const { filters, updateFilter, resetAllFilters, view, changeView, data } = this.props
     return (
       <div>
         <Popover
@@ -107,28 +91,42 @@ class VideoGames extends Component {
         </Popover>
         <Paper style={{ height: '100%', padding: '20px 20px 80px' }} elevation={2}>
           <div className='contentContainer' id='scrollContainer'>
-            <Filters updateFilter={updateFilter} filters={filters} resetAllFilters={resetAllFilters} view={view} changeView={changeView} />
+            <Filters
+              updateFilter={updateFilter}
+              filters={filters}
+              resetAllFilters={resetAllFilters}
+              view={view}
+              changeView={changeView}
+              transformData={this.transformData} />
             <div className={view === 'list' ? 'cardsContainerList' : 'cardsContainerGrid'}>
-              {items.map((item, index) => (
-                <div className='btnandcard'>
+              {data && data.map((item, index) => (
+                <div className={view === 'list' ? 'btnandcardList' : 'btnandcardGrid'}>
                   <Button className='info'
                     onClick={() => this.handleInfoButton(event, index, item)}
                     ref={node => { this.button[index] = node }}>
                     <Info />
                   </Button>
-
-                  <CardFront
-                    title={item.name}
-                    links={item.links}
-                    content={item.content}
-                    footer={item.footer}
-                />
-                  {this.state.back &&
-                  <CardBack
-                    title={item.name}
-                    content={item.content}
-                  />
-              }
+                  {filters.main === 'companies' &&
+                    <CardFront
+                      title={item.company.name}
+                      description={item.company.description}
+                      image={item.company.image}
+                      links1={item.links}
+                      content={item.games}
+                      footer={item.company.founded}
+                    />
+                  }
+                  {filters.main === 'games' &&
+                    <CardFront
+                      title={item.game.name}
+                      image={item.game.image}
+                      links1={item.media}
+                      links2={item.platforms}
+                      content={item.companies}
+                      footer={item.game.released || item.game.status}
+                      tags={[]}
+                    />
+                  }
                 </div>
             ))}
             </div>
@@ -145,6 +143,8 @@ VideoGames.propTypes = {
   resetAllFilters: PropTypes.func.isRequired,
   view: PropTypes.string.isRequired,
   changeView: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
+  updateData: PropTypes.func.isRequired,
 }
 
 export default VideoGames

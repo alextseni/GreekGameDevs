@@ -94,7 +94,7 @@ class Newsletter extends Component {
               ? <div className='popupStatusNews' style={{ backgroundColor: '#db8787' }}>
                 <Error style={{ width:'50px', height: '50px' }} />
                 <Typography type='headline' component='h4'>
-                  Could not subscribe
+                      Could not subscribe
                 </Typography>
               </div>
               : <div style={{ width: 0, height: 0 }} />

@@ -4,9 +4,16 @@
 export const UPDATE_FILTER = 'UPDATE_FILTER'
 export const RESET_FILTERS = 'RESET_FILTERS'
 export const CHANGE_VIEW = 'CHANGE_VIEW'
+export const UPDATE_DATA = 'UPDATE_DATA'
 // ------------------------------------
 // Actions
 // ------------------------------------
+export function updateData (data, filters) {
+  return {
+    type    : UPDATE_DATA,
+    payload : { data, filters },
+  }
+}
 export function updateFilter (category, subcategory = '', value = '') {
   return {
     type    : UPDATE_FILTER,
@@ -61,6 +68,10 @@ const ACTION_HANDLERS = {
     ...state,
     view: action.payload.view,
   }),
+  [UPDATE_DATA] : (state, action) => ({
+    ...state,
+    data: action.payload.data,
+  }),
 }
 
 // ------------------------------------
@@ -68,9 +79,10 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   view: 'list',
+  data: [],
   filters: {
-    main: 'company',
-    company: {
+    main: 'companies',
+    companies: {
 
     },
     games: {

@@ -1,7 +1,7 @@
 import { injectReducer } from '../../store/reducers'
 
 export default (store) => ({
-  path : 'boardgames',
+  path : 'tools',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point
@@ -9,16 +9,16 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const BoardGames = require('./containers/BoardGamesContainer').default
-      const reducer = require('./modules/boardgames').default
+      const Tools = require('./containers/ToolsContainer').default
+      const reducer = require('./modules/tools').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'boardgames', reducer })
+      injectReducer(store, { key: 'tools', reducer })
 
       /*  Return getComponent   */
-      cb(null, BoardGames)
+      cb(null, Tools)
 
     /* Webpack named bundle   */
-    }, 'boardgames')
+    }, 'tools')
   }
 })
