@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer')
 const app = express()
 
 const { Pool, Client } = require('pg')
-const connectionString = (process.env.DATABASE_URL + '?ssl=true') || 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
+const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true') : 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
 
 const pool = new Pool({
   connectionString: connectionString,
@@ -44,11 +44,30 @@ app.get('/api/companies', (req, res, next) => {
 
 app.get('/api/games', (req, res, next) => {
   // Get a Postgres client from the connection pool
-  pool.query('SELECT * FROM vg ORDER BY name ASC', (err, result) => {
-    if (err) {
-      throw err
-    }
-    res.json(result.rows)
+  pool.connect().then(client => {
+    let result = []
+    client.query('SELECT * FROM vg ORDER BY name ASC').then(resGames => {
+      Promise.all(resGames.rows.map(game =>
+        client.query('SELECT type, link, category FROM vglinks WHERE gameid= $1 ORDER BY type ASC ', [game.id]).then(resLinks => {
+          result.push({
+            game: {name: game.name, image: game.image, released: game.released, status: game.status},
+            tags: (game.genre + ',' + game.modes + ',' + game.style).split(','),
+            media: resLinks.rows.filter(r => r.category === 'media'),
+            platforms: resLinks.rows.filter(r => r.category === 'platform'),
+            companies: game.publisher && game.publisher !== game.developer
+            ? [{name: game.developer}, {name:game.publisher}] : [{name: game.developer}],
+
+          })
+        })
+      )).then(e => {
+        client.release()
+        res.json(result)
+      })
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    })
   })
 })
 

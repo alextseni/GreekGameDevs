@@ -11,6 +11,7 @@ import {
 import {
   VideoGames,
   Tools,
+  News,
   Mail,
 } from 'static/icons'
 
@@ -24,14 +25,20 @@ export const PageLayout = ({ children }) => (
       <Toolbar className='navbar'>
         <IndexLink to='/' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <VideoGames width='50px' fill='white' />
+            <News width='38px' fill='white' />
           </IconButton>
         </IndexLink>
-        <Link to='/tools' activeClassName='page-layout__nav-item--active'>
+        <Link to='/videogames' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <Tools width='32px' fill='white' />
+            <VideoGames width='50px' fill='white' />
           </IconButton>
         </Link>
+        {/* <Link to='/tools' activeClassName='page-layout__nav-item--active'>
+            <IconButton className='menuItem' aria-label='Menu'>
+            <Tools width='32px' fill='white' />
+            </IconButton>
+          </Link>
+        */}
         <Link to='/communication' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
             <Mail width='38px' fill='white' />

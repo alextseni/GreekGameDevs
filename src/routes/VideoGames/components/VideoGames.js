@@ -21,8 +21,7 @@ import {
   Popover,
 } from 'material-ui'
 
-//import data from 'data/videogames.js'
-const axios = require('axios');
+const axios = require('axios')
 
 class VideoGames extends Component {
   constructor (props: VideoGames.propTypes) {
@@ -45,7 +44,6 @@ class VideoGames extends Component {
   }
 
   handleInfoButton = (event, index, selectedItem) => {
-    console.log(index)
     this.setState({
       openPopover: true,
       anchorEl: findDOMNode(this.button[index]),
@@ -55,23 +53,24 @@ class VideoGames extends Component {
   }
   button = []
 
-  componentWillMount = () => {
-    this.transformData({ main: 'companies' })
+  getData = (type) => {
+    axios.get('/api/' + type)
+    .then((res) => {
+      console.log('resp', res.data)
+      this.props.initializeData(type, res.data)
+    })
+    .catch((error) => {
+      console.log('ERROR', error)
+    })
   }
 
-  transformData = (filters) => {
-    axios.get('/api/' + filters.main)
-      .then((response) => {
-        console.log('resp', response.data)
-        this.props.updateData(response.data, filters.main)
-      })
-      .catch((error) => {
-        console.log('ERROR', error)
-      })
+  componentWillMount = () => {
+    this.getData('companies')
+    this.getData('games')
   }
 
   render () {
-    const { filters, updateFilter, resetAllFilters, view, changeView, data } = this.props
+    const { filters, updateFilter, resetAllFilters, view, changeView, currentData, updateData, } = this.props
     return (
       <div>
         <Popover
@@ -93,13 +92,13 @@ class VideoGames extends Component {
           <div className='contentContainer' id='scrollContainer'>
             <Filters
               updateFilter={updateFilter}
+              updateData={updateData}
               filters={filters}
               resetAllFilters={resetAllFilters}
               view={view}
-              changeView={changeView}
-              transformData={this.transformData} />
+              changeView={changeView} />
             <div className={view === 'list' ? 'cardsContainerList' : 'cardsContainerGrid'}>
-              {data && data.map((item, index) => (
+              {currentData && currentData.map((item, index) => (
                 <div className={view === 'list' ? 'btnandcardList' : 'btnandcardGrid'}>
                   <Button className='info'
                     onClick={() => this.handleInfoButton(event, index, item)}
@@ -112,6 +111,7 @@ class VideoGames extends Component {
                       description={item.company.description}
                       image={item.company.image}
                       links1={item.links}
+                      links2={[]}
                       content={item.games}
                       footer={item.company.founded}
                     />
@@ -123,8 +123,8 @@ class VideoGames extends Component {
                       links1={item.media}
                       links2={item.platforms}
                       content={item.companies}
-                      footer={item.game.released || item.game.status}
-                      tags={[]}
+                      footer={item.game.released ? (item.game.status + ' (' + item.game.released + ')') : item.game.status}
+                      tags={item.tags}
                     />
                   }
                 </div>
@@ -143,7 +143,7 @@ VideoGames.propTypes = {
   resetAllFilters: PropTypes.func.isRequired,
   view: PropTypes.string.isRequired,
   changeView: PropTypes.func.isRequired,
-  data: PropTypes.array.isRequired,
+  currentData: PropTypes.array.isRequired,
   updateData: PropTypes.func.isRequired,
 }
 

@@ -3,15 +3,17 @@ import CoreLayout from '../layouts/PageLayout/PageLayout'
 import VideoGamesRoute from './VideoGames'
 import ToolsRoute from './Tools'
 import CommunicationRoute from './Communication'
+import HomeRoute from './Home'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute  : VideoGamesRoute(store),
+  indexRoute  : HomeRoute(store),
   childRoutes : [
     ToolsRoute(store),
+    VideoGamesRoute(store),
     CommunicationRoute(store),
   ]
 })

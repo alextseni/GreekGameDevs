@@ -1,17 +1,26 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
+import _ from 'lodash'
+
 export const UPDATE_FILTER = 'UPDATE_FILTER'
 export const RESET_FILTERS = 'RESET_FILTERS'
 export const CHANGE_VIEW = 'CHANGE_VIEW'
 export const UPDATE_DATA = 'UPDATE_DATA'
+export const INITIAL_DATA = 'INITIAL_DATA'
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function updateData (data, filters) {
+export function initializeData (type, data) {
+  return {
+    type    : INITIAL_DATA,
+    payload : { type, data },
+  }
+}
+export function updateData (sortBy, filters) {
   return {
     type    : UPDATE_DATA,
-    payload : { data, filters },
+    payload : { sortBy, filters },
   }
 }
 export function updateFilter (category, subcategory = '', value = '') {
@@ -63,6 +72,7 @@ const ACTION_HANDLERS = {
       ...state.filters,
       [action.payload.category] : initialState.filters[action.payload.category],
     },
+    currentData: state.data[action.payload.category],
   }),
   [CHANGE_VIEW] : (state, action) => ({
     ...state,
@@ -70,7 +80,17 @@ const ACTION_HANDLERS = {
   }),
   [UPDATE_DATA] : (state, action) => ({
     ...state,
-    data: action.payload.data,
+    currentData: action.payload.filters
+      ? state.data[action.payload.sortBy].filter(d => _.difference(action.payload.filters, d.tags).length === 0)
+      : state.data[action.payload.sortBy],
+  }),
+  [INITIAL_DATA] : (state, action) => ({
+    ...state,
+    data: {
+      ...state.data,
+      [action.payload.type]: action.payload.data,
+    },
+    currentData: state.filters.main === action.payload.type ? action.payload.data : state.currentData,
   }),
 }
 
@@ -79,17 +99,21 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   view: 'list',
-  data: [],
+  data: {
+    companies: [],
+    games: [],
+    people: [],
+  },
+  currentData: null,
   filters: {
     main: 'companies',
     companies: {
-
     },
     games: {
       platforms: [], // ios, windows, steam, etc..
       genre: [], // platform. rpg, idle, action, puzzle,etc..
       status: [], // released, under development, stopped,etc..
-      style: [], // 3D, 2D
+      style: [], // 3D, 2D, VR, etc..
       mode: [],
     },
 

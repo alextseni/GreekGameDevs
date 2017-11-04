@@ -17,7 +17,6 @@ import {
   Badge,
   TextField,
   Chip,
-  IconButton,
   Select,
   FormControl,
   MenuItem,
@@ -51,13 +50,18 @@ class Filters extends Component {
     view === 'list' ? changeView('grid') : changeView('list')
   }
 
+  transformData = (mainCategory, subcategory = null, filterValues = null) => {
+    this.props.updateFilter(mainCategory, subcategory, filterValues)
+    this.props.updateData(mainCategory, filterValues)
+  }
+
   render () {
-    const { updateFilter, filters, resetAllFilters, view } = this.props
+    const { updateFilter, filters, resetAllFilters, view, updateData } = this.props
     return (
       <div className='filtersContainer'>
         <div className='mainFilters'>
-          <Chip className='chip' label='sort by company' onClick={() => updateFilter('companies')} />
-          <Chip className='chip' label='sort by game' onClick={() => updateFilter('games')} />
+          <Chip className='chip' label='sort by company' onClick={() => this.transformData('companies')} />
+          <Chip className='chip' label='sort by game' onClick={() => this.transformData('games')} />
           <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} title='Coming soon!' placement='bottom'>
             <Chip className='chip' label='sort by people' />
           </Tooltip>
@@ -108,7 +112,7 @@ class Filters extends Component {
                   multiple
                   style={{ width: '200px' }}
                   value={filters.games.platforms}
-                  onChange={(event) => updateFilter(filters.main, 'platforms', event.target.value)}
+                  onChange={(event) => this.transformData(filters.main, 'platforms', event.target.value)}
                   input={<Input id='name-multiple' />}
                   MenuProps={{
                     PaperProps: {
@@ -130,7 +134,7 @@ class Filters extends Component {
                   multiple
                   style={{ width: '200px' }}
                   value={filters.games.genre}
-                  onChange={(event) => updateFilter(filters.main, 'genre', event.target.value)}
+                  onChange={(event) => this.transformData(filters.main, 'genre', event.target.value)}
                   input={<Input id='name-multiple' />}
                   MenuProps={{
                     PaperProps: {
@@ -152,7 +156,7 @@ class Filters extends Component {
                   multiple
                   style={{ width: '200px' }}
                   value={filters.games.style}
-                  onChange={(event) => updateFilter(filters.main, 'style', event.target.value)}
+                  onChange={(event) => this.transformData(filters.main, 'style', event.target.value)}
                   input={<Input id='name-multiple' />}
                   MenuProps={{
                     PaperProps: {
@@ -170,7 +174,7 @@ class Filters extends Component {
                   multiple
                   style={{ width: '200px' }}
                   value={filters.games.status}
-                  onChange={(event) => updateFilter(filters.main, 'status', event.target.value)}
+                  onChange={(event) => this.transformData(filters.main, 'status', event.target.value)}
                   input={<Input id='name-multiple' />}
                   MenuProps={{
                     PaperProps: {
@@ -188,7 +192,7 @@ class Filters extends Component {
                   multiple
                   style={{ width: '200px' }}
                   value={filters.games.mode}
-                  onChange={(event) => updateFilter(filters.main, 'mode', event.target.value)}
+                  onChange={(event) => this.transformData(filters.main, 'mode', event.target.value)}
                   input={<Input id='name-multiple' />}
                   MenuProps={{
                     PaperProps: {

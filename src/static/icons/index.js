@@ -11,6 +11,8 @@ const LinkedIn = InlineSvg(require('!!raw-loader!./linkedin.svg'))
 const WindowsStore = InlineSvg(require('!!raw-loader!./windowsstore.svg'))
 const Demo = InlineSvg(require('!!raw-loader!./demo.svg'))
 const Online = InlineSvg(require('!!raw-loader!./online.svg'))
+const PC = InlineSvg(require('!!raw-loader!./computer.svg'))
+const IndieDB = InlineSvg(require('!!raw-loader!./indiedb.svg'))
 
 const Info = InlineSvg(require('!!raw-loader!./info.svg'))
 const NoFilter = InlineSvg(require('!!raw-loader!./nofilter.svg'))
@@ -19,11 +21,11 @@ const BackToTop = InlineSvg(require('!!raw-loader!./topArrow.svg'))
 const VideoGames = InlineSvg(require('!!raw-loader!./gamepad.svg'))
 const Tools = InlineSvg(require('!!raw-loader!./tools.svg'))
 const Mail = InlineSvg(require('!!raw-loader!./mail.svg'))
-const PC = InlineSvg(require('!!raw-loader!./computer.svg'))
-const IndieDB = InlineSvg(require('!!raw-loader!./indiedb.svg'))
+const News = InlineSvg(require('!!raw-loader!./news.svg'))
 
 export {
   Facebook,
+  News,
   BackToTop,
   IndieDB,
   Tools,

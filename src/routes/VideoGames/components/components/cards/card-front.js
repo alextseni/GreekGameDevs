@@ -22,10 +22,13 @@ import {
   Paper,
   Typography,
   Button,
+  Chip,
 } from 'material-ui'
 
 const getMediaIcon = (media) => ({
   website: <Website className='socialIcon' />,
+  websiteD: <Website className='socialIcon' />,
+  websiteP: <Website className='socialIcon' />,
   facebook: <Facebook className='socialIcon' />,
   twitter: <Twitter className='socialIcon' />,
   youtube: <Youtube className='socialIcon' />,
@@ -48,12 +51,12 @@ class CardFront extends Component {
     }
   }
   render () {
-    const { title, description, image, links1, links2, content, footer, tags} = this.props
+    const { title, description, image, links1, links2, content, footer, tags } = this.props
     return (
       <Paper className='cardContainer'>
           <div className='header'>
             <div className='logo'>
-              <div className='icon' style={{ backgroundImage: 'url(' + image || '/static/images/missing.png' + ')' }} />
+              <div className='icon' style={{ backgroundImage: 'url(' + (image || 'missing.png') + ')' }} />
                 <div className='title'>
                   <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
                     {title}
@@ -71,8 +74,17 @@ class CardFront extends Component {
               </Button>
           ))}
           </div>
+          {links1.length !== 0 && links2.length !== 0 && <div className='line' />}
+          <div className='social'>
+          {links2 && links2.map(link => (
+              <Button target='_blank' href={link.link} dense color='primary'>
+                {getMediaIcon(link.type)}
+              </Button>
+          ))}
+          </div>
         <div className='content'>
           {content && content.map(item => (
+            item &&
             <Button
               target='_blank'
               href={item.link}
@@ -86,7 +98,12 @@ class CardFront extends Component {
           ))}
         </div>
         <div className='footer'>
-          <Typography type='body2' component='h2' style={{ marginRight: '10px' }}>
+          <div className='tags'>
+            {tags && tags.map(t =>
+              <Chip className='tag' label={t} />
+            )}
+          </div>
+          <Typography type='body2' component='h2' style={{ marginRight: '10px', marginLeft: '15px' }}>
             {footer}
           </Typography>
         </div>
