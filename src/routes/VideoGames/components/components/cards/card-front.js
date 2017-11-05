@@ -100,6 +100,7 @@ class CardFront extends Component {
         <div className='footer'>
           <div className='tags'>
             {tags && tags.map(t =>
+              t !== 'null' &&
               <Chip className='tag' label={t} />
             )}
           </div>

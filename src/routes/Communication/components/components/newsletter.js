@@ -17,7 +17,7 @@ class Newsletter extends Component {
           id='subscriptionForm'
           src='https://my.sendinblue.com/users/subscribe/js_id/2ys50/id/2'
           iframeResizerEnable
-          style={{ maxWidth: '540px', width: '100%', height: '415px', border: '1px solid', marginLeft: 'auto', marginRight: 'auto' }}
+          style={{ width: '100%', height: '500px', border: 'none', marginLeft: 'auto', marginRight: 'auto' }}
         />
       </div>
     )

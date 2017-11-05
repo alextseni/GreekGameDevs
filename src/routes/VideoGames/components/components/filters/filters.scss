@@ -12,10 +12,17 @@ align-items: center;
 .mainFilters {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
-
+.filtersToolbar {
+  display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+width: 100%;
+align-items: center;
+}
 .chip {
-  margin-left: 10px;
+  margin: 5px;
 }
 
 .subfilters {

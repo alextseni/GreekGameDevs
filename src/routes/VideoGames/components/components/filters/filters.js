@@ -25,12 +25,11 @@ import {
   Drawer,
   Divider,
 } from 'material-ui'
-
-import MenuIcon from 'material-ui-icons/Menu'
 import {
   KeyboardArrowUp,
   GridOn,
-  ViewList
+  ViewList,
+  FilterList
 } from 'material-ui-icons'
 
 class Filters extends Component {
@@ -59,33 +58,36 @@ class Filters extends Component {
     const { updateFilter, filters, resetAllFilters, view, updateData } = this.props
     return (
       <div className='filtersContainer'>
-        <div className='mainFilters'>
-          <Chip className='chip' label='sort by company' onClick={() => this.transformData('companies')} />
-          <Chip className='chip' label='sort by game' onClick={() => this.transformData('games')} />
-          <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} title='Coming soon!' placement='bottom'>
-            <Chip className='chip' label='sort by people' />
+        <div className='filtersToolbar'>
+          <div className='mainFilters'>
+            <Chip className='chip' label='sort by company' onClick={() => this.transformData('companies')} />
+            <Chip className='chip' label='sort by game' onClick={() => this.transformData('games')} />
+            <Tooltip title='Coming soon!' placement='bottom'>
+              <Chip className='chip' label='sort by people' />
+            </Tooltip>
+          </div>
+          <Tooltip
+            style={{ display: 'flex', justifyContent: 'flex-end', marginLeft: '10px' }}
+            id='tooltip-icon1'
+            title='Change view'
+            placement='top'>
+            <Button
+              raised
+              onClick={this.handleViewChange}
+             >
+              {view === 'list' ? <GridOn /> : <ViewList /> }
+            </Button>
           </Tooltip>
         </div>
-        <Tooltip
-          style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}
-          id='tooltip-icon1'
-          title='Change view'
-          placement='top'>
-          <Button
-            raised
-            onClick={this.handleViewChange}
-           >
-            {view === 'list' ? <GridOn /> : <ViewList /> }
-          </Button>
-        </Tooltip>
         <div className='drawerHandle'>
           <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} id='tooltip-icon' title='Open filters' placement='top'>
             <Button
               aria-label='open drawer'
               raised
+              style={{ minHeight: '36px', height: '36px', width: '44px', minWidth: '44px' }}
               onClick={this.handleDrawer}
           >
-              <MenuIcon />
+              <FilterList />
             </Button>
           </Tooltip>
         </div>
@@ -96,16 +98,16 @@ class Filters extends Component {
           className={'drawerBox'}
       >
           <div className={'drawerInner'}>
+            <Tooltip id='tooltip-icon2' title='Remove all filters' placement='bottom' style={{ display: 'flex', alignSelf: 'center' }}>
+              <Button raised onClick={() => resetAllFilters(filters.main)} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
+                <NoFilter />
+              </Button>
+            </Tooltip>
             {filters.main === 'companies' &&
             <div />
           }
             {filters.main === 'games' &&
             <div className='subfilters'>
-              <Tooltip id='tooltip-icon2' title='Remove all filters' placement='bottom'>
-                <Button raised onClick={() => resetAllFilters('games')} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
-                  <NoFilter />
-                </Button>
-              </Tooltip>
               <FormControl className='form'>
                 <InputLabel htmlFor='name-multiple'>Platforms</InputLabel>
                 <Select
@@ -123,9 +125,9 @@ class Filters extends Component {
                   <MenuItem value={'steam'}> Steam </MenuItem>
                   <MenuItem value={'pc'}> PC </MenuItem>
                   <MenuItem value={'online'}> Online </MenuItem>
-                  <MenuItem value={'playStore'}> Android </MenuItem>
+                  <MenuItem value={'playstore'}> Android </MenuItem>
                   <MenuItem value={'appStore'}> iOS </MenuItem>
-                  <MenuItem value={'windowsStore'}> Windows </MenuItem>
+                  <MenuItem value={'windowstore'}> Windows </MenuItem>
                 </Select>
               </FormControl>
               <FormControl className='form'>
@@ -148,6 +150,12 @@ class Filters extends Component {
                   <MenuItem value={'rpg'}> RPG </MenuItem>
                   <MenuItem value={'horror'}> Horror </MenuItem>
                   <MenuItem value={'platform'}> Platform </MenuItem>
+                  <MenuItem value={'action'}> Action </MenuItem>
+                  <MenuItem value={'simulation'}> Simulation </MenuItem>
+                  <MenuItem value={'strategy'}> Strategy </MenuItem>
+                  <MenuItem value={'runner'}> Runner </MenuItem>
+                  <MenuItem value={'sports'}> Sports </MenuItem>
+                  <MenuItem value={'educational'}> Educational </MenuItem>
                 </Select>
               </FormControl>
               <FormControl className='form'>
@@ -166,6 +174,7 @@ class Filters extends Component {
                  >
                   <MenuItem value={'2d'}> {'2D'} </MenuItem>
                   <MenuItem value={'3d'}> {'3D'} </MenuItem>
+                  <MenuItem value={'vr'}> {'VR'} </MenuItem>
                 </Select>
               </FormControl>
               <FormControl className='form'>
@@ -183,7 +192,9 @@ class Filters extends Component {
                   }}
                  >
                   <MenuItem value={'Under Development'}> Under Development </MenuItem>
-                  <MenuItem value={'released'}> Released </MenuItem>
+                  <MenuItem value={'Released'}> Released </MenuItem>
+                  <MenuItem value={'Beta'}> Beta </MenuItem>
+                  <MenuItem value={'Unavailable'}> Unavailable </MenuItem>
                 </Select>
               </FormControl>
               <FormControl className='form'>
@@ -200,9 +211,9 @@ class Filters extends Component {
                     },
                   }}
                  >
-                  <MenuItem value={'single'}> Single </MenuItem>
-                  <MenuItem value={'lan'}> Local Multiplayer </MenuItem>
-                  <MenuItem value={'mmo'}> MMO </MenuItem>
+                  <MenuItem value={'singlePlayer'}> Single </MenuItem>
+                  <MenuItem value={'localMultiplayer'}> Local Multiplayer </MenuItem>
+                  <MenuItem value={'onlineMultiplayer'}> MMO </MenuItem>
                 </Select>
               </FormControl>
               </div>

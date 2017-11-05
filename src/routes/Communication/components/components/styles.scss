@@ -8,7 +8,23 @@
 }
 
 .contact {
-  margin: 30px;
+  margin: 0px 30px 30px;
+  padding: 52px 20px;
+background-color: #efefef;
+/* width: 100%; */
+clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 76% 6%, 48% 0, 24% 5%);
+}
+.donation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px 30px;
+  padding: 52px 20px;
+  clip-path: polygon(0 88%, 0 0, 100% 0, 100% 91%, 74% 100%, 52% 91%, 28% 100%);
+    background-color: #f3f3f3;
+}
+.textContent {
+  margin-bottom: 20px;
 }
 .newsletter {
   display: flex;

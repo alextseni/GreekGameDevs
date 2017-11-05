@@ -13,7 +13,7 @@ import {
 } from 'material-ui'
 import data from './content'
 
-class Newsletter extends Component {
+class Credits extends Component {
   constructor (props: Newsletter.propTypes) {
     super(props)
     this.state = {
@@ -47,7 +47,7 @@ class Newsletter extends Component {
   }
 }
 
-Newsletter.propTypes = {
+Credits.propTypes = {
 }
 
-export default Newsletter
+export default Credits

@@ -6,6 +6,7 @@ import {
   Newsletter,
   Contact,
   Credits,
+  Donation,
 } from './components'
 
 class Communication extends Component {
@@ -17,6 +18,7 @@ class Communication extends Component {
   render () {
     return (
       <div className='container'>
+        <Donation />
         <Newsletter />
         <Contact />
         <Credits />

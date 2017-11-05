@@ -1,6 +1,7 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
+
 import _ from 'lodash'
 
 export const UPDATE_FILTER = 'UPDATE_FILTER'
@@ -20,7 +21,7 @@ export function initializeData (type, data) {
 export function updateData (sortBy, filters) {
   return {
     type    : UPDATE_DATA,
-    payload : { sortBy, filters },
+    payload : { sortBy },
   }
 }
 export function updateFilter (category, subcategory = '', value = '') {
@@ -55,17 +56,24 @@ export const actions = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [UPDATE_FILTER] : (state, action) => ({
-    ...state,
-    filters: {
-      ...state.filters,
-      main: action.payload.category || state.filters.main,
-      [action.payload.category] : {
-        ...state.filters[action.payload.category],
-        [action.payload.subcategory]: action.payload.value || state.filters[action.payload.category][action.payload.subcategory],
-      }
-    },
-  }),
+  [UPDATE_FILTER] : (state, action) =>
+    action.payload.subcategory ? ({
+      ...state,
+      filters: {
+        ...state.filters,
+        main: action.payload.category || state.filters.main,
+        [action.payload.category] : {
+          ...state.filters[action.payload.category],
+          [action.payload.subcategory]: action.payload.value || state.filters[action.payload.category][action.payload.subcategory],
+        }
+      },
+    }) : ({
+      ...state,
+      filters: {
+        ...state.filters,
+        main: action.payload.category || state.filters.main,
+      },
+    }),
   [RESET_FILTERS] : (state, action) => ({
     ...state,
     filters: {
@@ -78,12 +86,12 @@ const ACTION_HANDLERS = {
     ...state,
     view: action.payload.view,
   }),
-  [UPDATE_DATA] : (state, action) => ({
-    ...state,
-    currentData: action.payload.filters
-      ? state.data[action.payload.sortBy].filter(d => _.difference(action.payload.filters, d.tags).length === 0)
-      : state.data[action.payload.sortBy],
-  }),
+  [UPDATE_DATA] : (state, action) => {
+    return ({
+      ...state,
+      currentData: state.data[action.payload.sortBy].filter(d => _.difference(_.flattenDeep(Object.values(state.filters[action.payload.sortBy])), d.tags).length === 0),
+    })
+  },
   [INITIAL_DATA] : (state, action) => ({
     ...state,
     data: {
