@@ -1,6 +1,11 @@
 import React from 'react'
 
 const data = [
+  { credit: <div>Site created & curated by
+    <a href='https://www.tensaiprojects.weebly.com'
+      title='AT'> Alexandra Tseniklidou </a>
+  </div>
+  },
   { credit: <div>Icons made by
     <a href='https://www.flaticon.com/authors/lucy-g'
       title='Lucy G'> Lucy G </a>
@@ -26,28 +31,28 @@ const data = [
   </div>
   },
   {
-    credit: <div>{"Project's boilerplate"}
+    credit: <div>
     <a href='https://github.com/davezuko/react-redux-starter-kit'
-      title='Starter Kit'> davezuko/react-redux-starter-kit </a>
-    from <a href='Github'
-      title='Github'>www.github.com </a>
+      title='Starter Kit'> {"Project's boilerplate"} </a>
+    from <a href='https://github.com/davezuko'
+      title='Github'>David Zukowski </a>
     licensed under the MIT License
     </div>
   },
   {
-    credit: <div>Additional info by
+    credit: <div>Content by
     <a href='http://aboutgamedev.weebly.com/greek-games-2014.html'
       title='Games 2014'> Greek Games 2014</a>
     </div>
   },
   {
-    credit: <div>Additional info by
+    credit: <div>Content by
     <a href='http://alt-tab.gr/greek-games-database/'
       title='alt-tab'> alt-tab databae</a>
     </div>
   },
   {
-    credit: <div>Additional info by
+    credit: <div>Content by
     <a href='https://allianceive.wordpress.com/%CE%BF%CE%BC%CE%AC%CE%B4%CE%B5%CF%82-%CE%B1%CE%BD%CE%AC%CF%80%CF%84%CF%85%CE%BE%CE%B7%CF%82-video-games/'
       title='GamesInGreece'> Game in Greece 3.0</a>
     </div>

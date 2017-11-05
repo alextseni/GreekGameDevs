@@ -12,7 +12,7 @@ export const Home = () => (
   <div className='homecontainer'>
     <div className='title'>
       <Typography type='Title' component='h3' style={{ textAlign: 'left' }}>
-        Welcome to GGD database!
+        Welcome to the GGD database!
       </Typography>
       <Typography type='headline' component='h4' style={{ textAlign: 'left' }}>
         Here you can find all sorts of information about the greek game development scene.

@@ -1,6 +1,7 @@
 .polls {
   text-align: left;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 .homecontainer {
   margin: 40px;
@@ -9,7 +10,7 @@
 .title {
   text-align: center;
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

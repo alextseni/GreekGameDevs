@@ -9,6 +9,7 @@ import {
   TableCell,
   Paper,
   TableBody,
+  TableHead,
 } from 'material-ui'
 import data from './content'
 
@@ -21,11 +22,15 @@ class Newsletter extends Component {
   render () {
     return (
       <div className='credits'>
-        <Typography type='headline' component='h4' className='title'>
-          Credits
-        </Typography>
         <Paper className='creditsList'>
           <Table className='creditsTable'>
+            <TableHead>
+               <TableRow>
+                 <TableCell style={{textAlign: 'center', fontSize: '16px', fontWeight: 600}}>
+                  Credits
+                 </TableCell>
+               </TableRow>
+            </TableHead>
             <TableBody>
               {data.map((c, index) => {
                 return (
