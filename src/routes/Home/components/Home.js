@@ -18,11 +18,6 @@ export const Home = () => (
         Here you can find all sorts of information about the greek game development scene.
       </Typography>
     </div>
-    <div className='sectionTitle'>
-      <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
-        Ongoing Polls. Vote for the next feature!
-      </Typography>
-    </div>
     <Polls />
   </div>
 

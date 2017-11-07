@@ -7,6 +7,7 @@ import {
   Toolbar,
   AppBar,
   IconButton,
+  Typography,
 } from 'material-ui'
 import {
   VideoGames,
@@ -25,13 +26,19 @@ export const PageLayout = ({ children }) => (
       <Toolbar className='navbar'>
         <IndexLink to='/' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <News width='38px' fill='white' />
+            <News width='38px' height='50px' fill='white' />
+            <Typography type='title' component='h4' className='menuLabel'>
+              Dashboard
+            </Typography>
           </IconButton>
         </IndexLink>
         <Link to='/videogames' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
             <VideoGames width='50px' fill='white' />
           </IconButton>
+          <Typography type='title' component='h4' className='menuLabel'>
+            Video Games
+          </Typography>
         </Link>
         {/* <Link to='/tools' activeClassName='page-layout__nav-item--active'>
             <IconButton className='menuItem' aria-label='Menu'>
@@ -41,16 +48,13 @@ export const PageLayout = ({ children }) => (
         */}
         <Link to='/communication' activeClassName='page-layout__nav-item--active'>
           <IconButton className='menuItem' aria-label='Menu'>
-            <Mail width='38px' fill='white' />
+            <Mail width='38px' height='50px' fill='white' />
           </IconButton>
+          <Typography type='title' component='h4' className='menuLabel'>
+            Contact
+          </Typography>
         </Link>
       </Toolbar>
-      {window.location.pathname === '/' &&
-        <div className='stats'>
-          <div className='stat'> Teams: {totalTeams} </div>
-          <div className='stat'> Games: {totalGames} </div>
-        </div>
-      }
     </AppBar>
     <div className='page-layout__viewport'>
       {children}

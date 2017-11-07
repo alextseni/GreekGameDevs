@@ -21,6 +21,7 @@ class Communication extends Component {
         <Donation />
         <Newsletter />
         <Contact />
+        <hr />
         <Credits />
       </div>
     )

@@ -4,25 +4,30 @@
 
 .page-layout__nav-item--active {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none !important;
 }
 
 .appbar {
-  display: flex;
   align-items: center;
   background-color: #0091EA !important;
 }
 .navbar {
-  display: flex;
-
-    flex-direction: row;
+  flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
 }
-
+.menuLabel {
+   color: white !important;
+   font-weight: 700 !important;
+   font-size: 16px !important;
+   padding: 0 !important;
+ }
 .menuItem {
   width: 100% !important;
   height: 100% !important;
+}
+.menuItem > span {
+  flex-direction: column;
 }
 
 .stats {

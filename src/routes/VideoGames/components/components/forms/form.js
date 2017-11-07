@@ -32,7 +32,7 @@ class Form extends Component {
   componentWillMount = () => {
     xhttp = new XMLHttpRequest()
     this.setState({
-      formItem: this.props.selectedItem,
+      formItem: this.props.selectedItem.company || this.props.selectedItem.game,
       hasSubmitted: false,
       success: false,
     })
@@ -104,7 +104,7 @@ class Form extends Component {
               : <div style={{ width: 0, height: 0 }} />
         }
         <Typography type='headline' component='h4'>
-          Missing or incorrect info on this card?
+          Wrong or missing info on this card? Send an email with your comments.
         </Typography>
         <form
           className='infoForm'
@@ -112,12 +112,13 @@ class Form extends Component {
           <TextField
             id='name'
             name='name'
+            style={{ width: '100%' }}
             value={this.state.formItem.name}
             onChange={this.handleFormChange('name')}
             disabled
             margin='normal'
           />
-          <TextField
+        {/*  <TextField
             id='mail'
             label='Your email'
             name='mail'
@@ -129,9 +130,10 @@ class Form extends Component {
             InputLabelProps={{
               shrink: true,
             }}
-          />
+          /> */}
           <TextField
             className='multiline'
+            style={{ width: '100%' }}
             labelClassName='label'
             name='comment'
             id='multiline-flexible'
@@ -141,6 +143,7 @@ class Form extends Component {
             }}
             multiline
             rowsMax='4'
+            rows='5'
             value={this.state.formItem.comment}
             onChange={this.handleFormChange('comment')}
             margin='normal'
@@ -149,7 +152,7 @@ class Form extends Component {
             style={{ width: '50px', margin: '20px', alignSelf: 'flex-end' }}
             raised
             onClick={this.sendMail}
-            disabled={!this.state.formItem.mail || !this.state.formItem.comment || this.state.hasSubmitted}>
+            disabled={!this.state.formItem.comment || this.state.hasSubmitted}>
             Send!
           </Button>
         </form>

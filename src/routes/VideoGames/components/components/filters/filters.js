@@ -98,11 +98,9 @@ class Filters extends Component {
           className={'drawerBox'}
       >
           <div className={'drawerInner'}>
-            <Tooltip id='tooltip-icon2' title='Remove all filters' placement='bottom' style={{ display: 'flex', alignSelf: 'center' }}>
-              <Button raised onClick={() => resetAllFilters(filters.main)} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
-                <NoFilter />
+              <Button raised onClick={() => resetAllFilters(filters.main)} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
+                {'Clear filters'}
               </Button>
-            </Tooltip>
             {filters.main === 'companies' &&
             <div />
           }

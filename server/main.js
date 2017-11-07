@@ -51,12 +51,12 @@ app.get('/api/games', (req, res, next) => {
         client.query('SELECT type, link, category FROM vglinks WHERE gameid= $1 ORDER BY type ASC ', [game.id]).then(resLinks => {
           result.push({
             game: {name: game.name, image: game.image, released: game.released, status: game.status},
-            tags: (game.genre + ',' + game.modes + ',' + game.style).split(','),
+            tags: (game.genre + ',' + game.modes + ',' + game.style).split(',').concat([game.status].concat(resLinks.rows.map(l => l.type))),
+            displayedtags: (game.genre + ',' + game.modes + ',' + game.style).split(','),
             media: resLinks.rows.filter(r => r.category === 'media'),
             platforms: resLinks.rows.filter(r => r.category === 'platform'),
             companies: game.publisher && game.publisher !== game.developer
             ? [{name: game.developer}, {name:game.publisher}] : [{name: game.developer}],
-
           })
         })
       )).then(e => {
