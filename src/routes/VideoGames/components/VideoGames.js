@@ -19,7 +19,10 @@ import {
   Paper,
   Button,
   Popover,
+  CircularProgress,
 } from 'material-ui'
+
+import InfiniteScroll from 'react-infinite-scroller'
 
 const axios = require('axios')
 
@@ -32,6 +35,9 @@ class VideoGames extends Component {
       selectedItem: {},
       formItem: {},
       listView: true,
+      contentToLoad: [],
+      endOfContent: false,
+      lastItemIndex: 0,
     }
   }
 
@@ -64,6 +70,30 @@ class VideoGames extends Component {
     })
   }
 
+  resetContent = () => {
+    this.setState({
+      endOfContent: false,
+      contentToLoad: [],
+      lastItemIndex: 0,
+    })
+  }
+
+  loadMoreItems = (page) => {
+    const startingPoint = this.state.lastItemIndex
+    const { currentData } = this.props
+    const itemsToLoad = 20
+    if(currentData) {
+    this.setState({
+      lastItemIndex: startingPoint + itemsToLoad,
+      contentToLoad: this.state.contentToLoad.concat(
+        currentData.slice(
+          startingPoint,
+          (startingPoint + itemsToLoad) >= currentData.length ? currentData.length : startingPoint + itemsToLoad)),
+      endOfContent: (startingPoint + itemsToLoad) >= currentData.length,
+    })
+  }
+  }
+
   componentWillMount = () => {
     this.getData('companies')
     this.getData('games')
@@ -91,6 +121,7 @@ class VideoGames extends Component {
         <Paper style={{ height: '100%', padding: '20px 20px 80px' }} elevation={2}>
           <div className='contentContainer' id='scrollContainer'>
             <Filters
+              resetContent={this.resetContent}
               updateFilter={updateFilter}
               updateData={updateData}
               filters={filters}
@@ -98,37 +129,44 @@ class VideoGames extends Component {
               view={view}
               changeView={changeView} />
             <div className={view === 'list' ? 'cardsContainerList' : 'cardsContainerGrid'}>
-              {currentData && currentData.map((item, index) => (
-                <div className={view === 'list' ? 'btnandcardList' : 'btnandcardGrid'}>
-                  <Button className='info'
-                    onClick={() => this.handleInfoButton(event, index, item)}
-                    ref={node => { this.button[index] = node }}>
-                    <Info />
-                  </Button>
-                  {filters.main === 'companies' &&
-                    <CardFront
-                      title={item.company.name}
-                      description={item.company.description}
-                      image={item.company.image}
-                      links1={item.links}
-                      links2={[]}
-                      content={item.games}
-                      footer={item.company.founded}
-                    />
-                  }
-                  {filters.main === 'games' &&
-                    <CardFront
-                      title={item.game.name}
-                      image={item.game.image}
-                      links1={item.media}
-                      links2={item.platforms}
-                      content={item.companies}
-                      footer={item.game.released ? (item.game.status + ' (' + item.game.released + ')') : item.game.status}
-                      tags={item.displayedtags}
-                    />
-                  }
-                </div>
-            ))}
+              <InfiniteScroll
+                pageStart={0}
+                loadMore={this.loadMoreItems}
+                hasMore={!this.state.endOfContent}
+                loader={<CircularProgress className='contentLoader' size={50} thickness={8} />}
+                >
+                {this.state.contentToLoad && this.state.contentToLoad.map((item, index) => (
+                  <div className={view === 'list' ? 'btnandcardList' : 'btnandcardGrid'}>
+                    <Button className='info'
+                      onClick={() => this.handleInfoButton(event, index, item)}
+                      ref={node => { this.button[index] = node }}>
+                      <Info />
+                    </Button>
+                    {filters.main === 'companies' &&
+                      <CardFront
+                        title={item.company.name}
+                        description={item.company.description}
+                        image={item.company.image}
+                        links1={item.links}
+                        links2={[]}
+                        content={item.games}
+                        footer={item.company.founded}
+                      />
+                    }
+                    {filters.main === 'games' &&
+                      <CardFront
+                        title={item.game.name}
+                        image={item.game.image}
+                        links1={item.media}
+                        links2={item.platforms}
+                        content={item.companies}
+                        footer={item.game.released ? (item.game.status + ' (' + item.game.released + ')') : item.game.status}
+                        tags={item.displayedtags}
+                      />
+                    }
+                  </div>
+              ))}
+            </InfiniteScroll>
             </div>
           </div>
         </Paper>

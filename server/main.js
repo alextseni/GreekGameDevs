@@ -17,6 +17,26 @@ const pool = new Pool({
 })
 const queryCompanies = "SELECT vgcom.*, json_build_object('games',json_build_object('name', vg.name,'status', vg.status)) FROM vgcom INNER JOIN vg ON vgcom.name = vg.developer"
 
+app.get('/api/calendar', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.connect().then(client =>
+    client.query('SELECT * FROM calendar').then(resEvents => {
+      res.json(resEvents.rows.map(e => (
+        {
+          title: e.name,
+          start: e.date,
+          end: e.end,
+          desc: e.location,
+        }
+      )))
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    }))
+  })
+
 app.get('/api/companies', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client => {
@@ -24,12 +44,12 @@ app.get('/api/companies', (req, res, next) => {
     let games = []
     client.query('SELECT * FROM vgcom ORDER BY name ASC').then(resCompanies => {
       Promise.all(resCompanies.rows.map(company => {
-        client.query('SELECT name, status FROM vg WHERE developer= $1 ORDER BY name ASC', [company.name]).then(resGames => {
+        client.query('SELECT type, link FROM vgcomlinks WHERE company= $1 ORDER BY type ASC ', [company.name]).then(resLinks => {
+         links.push(resLinks.rows)
+       })
+        return client.query('SELECT name, status FROM vg WHERE developer= $1 ORDER BY name ASC', [company.name]).then(resGames => {
           games.push(resGames.rows)
-        })
-        return client.query('SELECT type, link FROM vgcomlinks WHERE company= $1 ORDER BY type ASC ', [company.name]).then(resLinks => {
-          links.push(resLinks.rows)
-        })
+      })
       })).then(e => {
         client.release()
         res.json(resCompanies.rows.map((c, index) => ({company: c, games: games[index], links: links[index]})))

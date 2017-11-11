@@ -22,6 +22,9 @@
   width: 100%;
     margin: 0px 10px;
 }
+.contentLoader {
+  margin: 40px;
+}
 
 .btnandcardList {
   display: flex;
@@ -37,6 +40,12 @@
   justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.cardsContainerGrid > div {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .cardsContainerList {

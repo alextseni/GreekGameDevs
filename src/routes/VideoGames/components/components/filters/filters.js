@@ -52,10 +52,11 @@ class Filters extends Component {
   transformData = (mainCategory, subcategory = null, filterValues = null) => {
     this.props.updateFilter(mainCategory, subcategory, filterValues)
     this.props.updateData(mainCategory, filterValues)
+    this.props.resetContent()
   }
 
   render () {
-    const { updateFilter, filters, resetAllFilters, view, updateData } = this.props
+    const { updateFilter, filters, resetAllFilters, view, updateData, resetContent } = this.props
     return (
       <div className='filtersContainer'>
         <div className='filtersToolbar'>
