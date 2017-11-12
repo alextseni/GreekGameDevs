@@ -40,7 +40,8 @@ const queryCompanies =
 'LEFT JOIN vg on vgcom.name = vg.developer ' +
 'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
 'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
-'GROUP BY vgcom.name'
+'GROUP BY vgcom.name ' +
+'ORDER BY vgcom.name ASC'
 
 const queryGames =
 'SELECT ' +
@@ -71,7 +72,8 @@ const queryGames =
 'LEFT JOIN vgcom on vgcom.name = vg.developer OR vgcom.name = vg.publisher ' +
 'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
 'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
-'GROUP BY vg.id'
+'GROUP BY vg.id ' +
+'ORDER BY vg.name ASC'
 
 const queryCalendar =
 'SELECT ' +
@@ -100,6 +102,30 @@ app.get('/api/calendar', (req, res, next) => {
     }))
 })
 
+app.get('/api/totalGames', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.connect().then(client =>
+    client.query('SELECT COUNT(*) FROM vg').then(result => {
+      res.json(result.rows[0])
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    }))
+})
+app.get('/api/totalTeams', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.connect().then(client =>
+    client.query('SELECT COUNT(*) FROM vgcom').then(result => {
+      res.json(result.rows[0])
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    }))
+})
 app.get('/api/companies', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>

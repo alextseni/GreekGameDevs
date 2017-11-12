@@ -62,7 +62,7 @@ class VideoGames extends Component {
   getData = (type) => {
     axios.get('/api/' + type)
     .then((res) => {
-      console.log('resp', res.data)
+  //    console.log('resp', res.data)
       this.props.initializeData(type, res.data)
     })
     .catch((error) => {
