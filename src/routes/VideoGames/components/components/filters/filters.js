@@ -49,6 +49,12 @@ class Filters extends Component {
     view === 'list' ? changeView('grid') : changeView('list')
   }
 
+  reset = () => {
+    const {resetAllFilters, filters, resetContent} = this.props
+    resetAllFilters(filters.main)
+    resetContent()
+  }
+
   transformData = (mainCategory, subcategory = null, filterValues = null) => {
     this.props.updateFilter(mainCategory, subcategory, filterValues)
     this.props.updateData(mainCategory, filterValues)
@@ -99,11 +105,11 @@ class Filters extends Component {
           className={'drawerBox'}
       >
           <div className={'drawerInner'}>
-              <Button raised onClick={() => resetAllFilters(filters.main)} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
+              <Button raised onClick={() => this.reset()} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
                 {'Clear filters'}
               </Button>
             {filters.main === 'companies' &&
-            <div />
+            <div>No filters yet to display. Try sorting by games.</div>
           }
             {filters.main === 'games' &&
             <div className='subfilters'>

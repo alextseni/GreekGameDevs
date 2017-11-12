@@ -32,7 +32,7 @@ class Form extends Component {
   componentWillMount = () => {
     xhttp = new XMLHttpRequest()
     this.setState({
-      formItem: this.props.selectedItem.company || this.props.selectedItem.game,
+      formItem: this.props.selectedItem,
       hasSubmitted: false,
       success: false,
     })

@@ -43,6 +43,14 @@ const getMediaIcon = (media) => ({
   indiedb: <IndieDB className='socialIcon' />,
 })[media]
 
+const getColorCode = (status) => ({
+  'Active': 'primary',
+  'Inactive': 'default',
+  'Under Development': 'accent',
+  'Unavailable': 'default',
+  'Released': 'primary',
+})[status]
+
 class CardFront extends Component {
   constructor (props: CardFront.propTypes) {
     super(props)
@@ -51,33 +59,36 @@ class CardFront extends Component {
     }
   }
   render () {
-    const { title, description, image, links1, links2, content, footer, tags } = this.props
+    const { title, description, image, links1, links2, content, footer, tags, view } = this.props
     return (
       <Paper className='cardContainer'>
           <div className='header'>
-            <div className='logo'>
-              <div className='icon' style={{ backgroundImage: 'url(' + (image || 'missing.png') + ')' }} />
-                <div className='title'>
-                  <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
-                    {title}
-                  </Typography>
-                  <Typography type='caption' style={{ textAlign: 'left', marginTop: '5px' }}>
-                    {description}
-                  </Typography>
-                </div>
+            <div className={view === 'grid' ? 'logoGrid' : 'logo'}>
+              <div
+                className={view === 'grid' ? 'iconGrid' : 'icon'}
+                style={{ backgroundImage: 'url(' + (image || 'missing.png') + ')' }}
+              />
+              <div className='title'>
+                <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
+                  {title}
+                </Typography>
+                <Typography type='caption' style={{ textAlign: 'left', marginTop: '5px' }}>
+                  {description}
+                </Typography>
+              </div>
             </div>
           </div>
           <div className='social'>
           {links1 && links1.map(link => (
-              <Button target='_blank' href={link.link} dense color='primary'>
+              <Button target='_blank' disabled={!link.link} href={link.link} dense color='primary'>
                 {getMediaIcon(link.type)}
               </Button>
           ))}
           </div>
-          {links1.length !== 0 && links2.length !== 0 && <div className='line' />}
+          {links1 && links2 && <div className='line' />}
           <div className='social'>
           {links2 && links2.map(link => (
-              <Button target='_blank' href={link.link} dense color='primary'>
+              <Button target='_blank' disabled={!link.link} href={link.link} dense color='primary'>
                 {getMediaIcon(link.type)}
               </Button>
           ))}
@@ -86,12 +97,13 @@ class CardFront extends Component {
           {content && content.map(item => (
             item &&
             <Button
+              className='itemButton'
               target='_blank'
               href={item.link}
-              //disabled={!item.link}
+              disabled={!item.link}
               style={{ textAlign: 'left' }}
               dense
-              color={item.status === 'Under Development' ? 'accent' : 'primary'}
+              color={getColorCode(item.status)}
             >
               {item.name}
             </Button>

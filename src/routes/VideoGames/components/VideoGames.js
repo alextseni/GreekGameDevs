@@ -142,28 +142,17 @@ class VideoGames extends Component {
                       ref={node => { this.button[index] = node }}>
                       <Info />
                     </Button>
-                    {filters.main === 'companies' &&
-                      <CardFront
-                        title={item.company.name}
-                        description={item.company.description}
-                        image={item.company.image}
-                        links1={item.links}
-                        links2={[]}
-                        content={item.games}
-                        footer={item.company.founded}
-                      />
-                    }
-                    {filters.main === 'games' &&
-                      <CardFront
-                        title={item.game.name}
-                        image={item.game.image}
-                        links1={item.media}
-                        links2={item.platforms}
-                        content={item.companies}
-                        footer={item.game.released ? (item.game.status + ' (' + item.game.released + ')') : item.game.status}
-                        tags={item.displayedtags}
-                      />
-                    }
+                    <CardFront
+                      view={view}
+                      title={item.name}
+                      description={item.description}
+                      image={item.image}
+                      links1={item.media}
+                      links2={item.platforms}
+                      content={item.companies || item.games}
+                      footer={(item.date || '') + ' | ' + (item.status || ' ') }
+                      tags={item.displayedtags}
+                    />
                   </div>
               ))}
             </InfiniteScroll>

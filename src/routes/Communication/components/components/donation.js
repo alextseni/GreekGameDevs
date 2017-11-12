@@ -19,21 +19,16 @@ class Donation extends Component {
             Your support is invaluable!
           </Typography>
           <Typography type='subheading' component='h4'>
-            If you like this site, you can help keep the content fresh and the features coming by making a small donation.
+            You can help keep the content fresh and the features coming by making a small donation.
           </Typography>
         </div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-        <input type="hidden" name="business" value="contact@greekgamedevs.com"/>
-        <input type="hidden" name="cmd" value="_donations"/>
-        <input type="hidden" name="item_name" value="Donation"/>
-        <input type="hidden" name="item_number" value="Donate for Greek Game Devs site"/>
-        <input type="hidden" name="currency_code" value="EUR"/>
-        <input type="image" name="submit"
-        src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png"
-        alt="Donate"/>
-        <img alt="" width="1" height="1"
-        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" />
-  </form>
+        <form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_blank'>
+          <input type='hidden' name='cmd' value='_s-xclick' />
+          <input type='hidden' name='hosted_button_id' value='SHUSXA975383A' />
+          <input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif' border='0'
+            name='submit' alt='PayPal - The safer, easier way to pay online!' />
+          <img alt='' border='0' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1' />
+        </form>
 
       </div>
     )

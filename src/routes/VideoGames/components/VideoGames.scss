@@ -44,8 +44,10 @@
 
 .cardsContainerGrid > div {
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .cardsContainerList {
