@@ -8,7 +8,9 @@ import {
   Polls,
   Calendar,
 } from './components'
-
+import {
+//  Label,
+} from 'static/icons'
 
 class Home extends Component {
   constructor (props: Home.propTypes) {
@@ -20,10 +22,13 @@ class Home extends Component {
     const { setCalendarEvents, events } = this.props
     return (
   <div className='homecontainer'>
+
     <div className='title'>
-      <Typography type='Title' component='h3' style={{ textAlign: 'left' }}>
+      <div className='welcome' style={{ backgroundImage: 'url(signpost.png)' }}>
+      <Typography type='Title' component='h3' style={{ textAlign: 'center', maxWidth: '200px' }}>
         Welcome to the GGD database!
       </Typography>
+      </div>
       <Typography type='headline' component='h4' style={{ textAlign: 'left' }}>
         Here you can find all sorts of information about the greek game development scene.
       </Typography>

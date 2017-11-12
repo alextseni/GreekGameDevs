@@ -4,7 +4,7 @@
   flex-wrap: wrap;
 }
 .homecontainer {
-  padding: 40px;
+  padding: 0px 40px;
 }
 .title {
   text-align: center;
@@ -12,6 +12,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.welcome {
+  background-repeat: no-repeat;
+height: 174px;
+width: 420px;
+background-size: contain;
+display: flex;
+align-items: center;
+background-position: center;
+justify-content: center;
+margin-bottom: 20px;
 }
 
 .sectionTitle {

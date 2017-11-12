@@ -6,7 +6,7 @@ import '!style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.c
 import {
   Typography,
 } from 'material-ui'
-import './Calendar.scss'
+import './calendar.scss'
 const axios = require('axios')
 
 BigCalendar.setLocalizer(

@@ -22,11 +22,13 @@ const VideoGames = InlineSvg(require('!!raw-loader!./gamepad.svg'))
 const Tools = InlineSvg(require('!!raw-loader!./tools.svg'))
 const Mail = InlineSvg(require('!!raw-loader!./mail.svg'))
 const News = InlineSvg(require('!!raw-loader!./news.svg'))
+//const Label = InlineSvg(require('!!raw-loader!./signpost.svg'))
 
 export {
   Facebook,
   News,
   BackToTop,
+  //Label,
   IndieDB,
   Tools,
   PC,
