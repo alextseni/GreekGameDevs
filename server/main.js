@@ -16,29 +16,30 @@ const pool = new Pool({
   connectionString: connectionString,
 })
 const queryCompanies =
-'SELECT '+
-'vgcom.name,'+
-'vgcom.image,'+
-'vgcom.founded AS date,'+
-'vgcom.status,'+
-'vgcom.description,'+
-'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object('+
-'\'link\', vgcomlinks.link,'+
-'\'type\', vgcomlinks.type'+
-')),\',\')AS links,'+
-'jsonb_build_array( array_agg (DISTINCT jsonb_build_object('+
-'\'status\', vg.status,'+
-'\'name\', vg.name'+
-')),\',\')AS games,'+
-'jsonb_build_array( array_agg (DISTINCT jsonb_build_object('+
-'\'link\',vglinks.link,'+
-'\'type\',vglinks.type,'+
-'\'id\', vg.id'+
-')),\',\')AS gamelinks '+
-'FROM vgcom '+
-'LEFT JOIN vg on vgcom.name = vg.developer '+
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name '+
-'LEFT JOIN vglinks on vglinks.gameid = vg.id '+
+'SELECT ' +
+'vgcom.name,' +
+'vgcom.image,' +
+'vgcom.founded AS date,' +
+'vgcom.status,' +
+'vgcom.description,' +
+'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
+'\'link\', vgcomlinks.link,' +
+'\'type\', vgcomlinks.type' +
+')),\',\')AS links,' +
+'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
+'\'status\', vg.status,' +
+'\'name\', vg.name,' +
+'\'id\', vg.id' +
+')),\',\')AS games,' +
+'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
+'\'url\',vglinks.link,' +
+'\'type\',vglinks.type,' +
+'\'id\', vglinks.gameid' +
+')),\',\')AS gamelinks ' +
+'FROM vgcom ' +
+'LEFT JOIN vg on vgcom.name = vg.developer ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
+'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
 'GROUP BY vgcom.name'
 
 const queryGames =
@@ -62,23 +63,29 @@ const queryGames =
 '\'name\', vgcom.name' +
 ')),\',\')AS companies,' +
 'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
-'\'link\',vgcomlinks.link,' +
-'\'name\', vgcomlinks.company,' +
+'\'url\',vgcomlinks.link,' +
+'\'id\', vgcomlinks.company,' +
 '\'type\', vgcomlinks.type' +
 ')),\',\')AS comlinks ' +
 'FROM vg ' +
-'LEFT JOIN vgcom on vgcom.name = vg.developer ' +
+'LEFT JOIN vgcom on vgcom.name = vg.developer OR vgcom.name = vg.publisher ' +
 'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
 'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
 'GROUP BY vg.id'
 
 const queryCalendar =
-'SELECT '+
-'calendar.name AS title,'+
-'calendar.date AS start,'+
-'calendar.end,'+
-'calendar.location AS descr '+
+'SELECT ' +
+'calendar.name AS title,' +
+'calendar.date AS start,' +
+'calendar.end,' +
+'calendar.location AS descr ' +
 'FROM calendar '
+
+const getLink = (links, id) =>
+    links[0].find(l => l.id === id && l.type === 'website') ||
+    links[0].find(l => l.id === id && l.type === 'indiedb') ||
+    links[0].find(l => l.id === id && l.type === 'facebook') ||
+    links[0].find(l => l.id === id)
 
 app.get('/api/calendar', (req, res, next) => {
   // Get a Postgres client from the connection pool
@@ -106,16 +113,14 @@ app.get('/api/companies', (req, res, next) => {
           status,
           description,
           media: links[0],
-          games: games[0].map(g => (
-            {
+          games: games[0].map(g => {
+            const link = getLink(gamelinks, g.id)
+            return ({
               name: g.name,
               status: g.status,
-              link: (gamelinks[0].find(l => l.gameid === g.id && l.type === 'website') ||
-                gamelinks[0].find(l => l.gameid === g.id && l.type === 'indiedb') ||
-                gamelinks[0].find(l => l.gameid === g.id && l.type === 'facebook') ||
-                gamelinks[0].find(l => l.gameid === g.id)).link
-            }
-            )),
+              link: link && link.url,
+            })
+          }),
         })
       }))
       client.release()
@@ -141,17 +146,14 @@ app.get('/api/games', (req, res, next) => {
           description,
           media: links[0].filter(l => l.category === 'media'),
           platforms: links[0].filter(l => l.category === 'platform'),
-          companies: companies[0].map(c => (
-            {
+          companies: companies[0].map(c => {
+            const link = getLink(comlinks, c.name)
+            return ({
               name: c.name,
               status: c.status,
-              link: (comlinks[0].find(l => l.name === c.name && l.type === 'website') ||
-                comlinks[0].find(l => l.name === c.name && l.type === 'indiedb') ||
-                comlinks[0].find(l => l.name === c.name && l.type === 'facebook') ||
-                comlinks[0].find(l => l.name === c.name) ||
-                comlinks[0].find(l => l.name === null)).link
-            }
-            )),
+              link: link && link.url,
+            })
+          }),
           tags: (status + ',' + genre + ',' + modes + ',' + style).split(',').concat(links[0].map(l => l.type)),
           displayedtags: (genre + ',' + modes + ',' + style).split(','),
         })
