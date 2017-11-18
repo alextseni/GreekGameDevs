@@ -139,7 +139,7 @@ app.get('/api/companies', (req, res, next) => {
           status,
           description,
           media: links[0],
-          games: games[0].map(g => {
+          content: games[0].map(g => {
             const link = getLink(gamelinks, g.id)
             return ({
               name: g.name,
@@ -172,7 +172,7 @@ app.get('/api/games', (req, res, next) => {
           description,
           media: links[0].filter(l => l.category === 'media'),
           platforms: links[0].filter(l => l.category === 'platform'),
-          companies: companies[0].map(c => {
+          content: companies[0].map(c => {
             const link = getLink(comlinks, c.name)
             return ({
               name: c.name,

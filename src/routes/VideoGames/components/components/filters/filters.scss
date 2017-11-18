@@ -8,7 +8,9 @@ align-items: center;
 .form {
   margin: 0px 20px !important;
 }
-
+.noDrawer {
+  display: none;
+}
 .mainFilters {
   display: flex;
   justify-content: center;
@@ -23,6 +25,9 @@ align-items: center;
 }
 .chip {
   margin: 5px;
+}
+.chip:hover {
+  background-color: #eaeaea !important;
 }
 
 .subfilters {
@@ -45,7 +50,7 @@ align-items: center;
   overflow: hidden;
   background-color: #E1F5FE;
       padding-bottom: 20px;
-      padding-left: 88px;
+      padding-left: 110px;
 }
 
 .drawerInner {

@@ -1,21 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './filters.scss'
-
+import _ from 'lodash'
 import {
   NoFilter,
   BackToTop,
 } from 'static/icons'
+import {
+  getViewIcon,
+} from 'utils/helpers'
 
 import {
-  Icon,
-  Paper,
-  Typography,
   Tooltip,
-  Checkbox,
   Button,
-  Badge,
-  TextField,
   Chip,
   Select,
   FormControl,
@@ -23,14 +20,7 @@ import {
   InputLabel,
   Input,
   Drawer,
-  Divider,
 } from 'material-ui'
-import {
-  KeyboardArrowUp,
-  GridOn,
-  ViewList,
-  FilterList
-} from 'material-ui-icons'
 
 class Filters extends Component {
   constructor (props: Filters.propTypes) {
@@ -46,7 +36,11 @@ class Filters extends Component {
 
   handleViewChange = () => {
     const { view, changeView } = this.props
-    view === 'list' ? changeView('grid') : changeView('list')
+    changeView({
+      'list': 'grid',
+      'grid': 'table',
+      'table': 'list',
+    }[view])
   }
 
   reset = () => {
@@ -82,7 +76,7 @@ class Filters extends Component {
               raised
               onClick={this.handleViewChange}
              >
-              {view === 'list' ? <GridOn /> : <ViewList /> }
+              {getViewIcon(view)}
             </Button>
           </Tooltip>
         </div>
@@ -91,10 +85,10 @@ class Filters extends Component {
             <Button
               aria-label='open drawer'
               raised
-              style={{ minHeight: '36px', height: '36px', width: '44px', minWidth: '44px' }}
+              style={{ minHeight: '36px', height: '36px' }}
               onClick={this.handleDrawer}
           >
-              <FilterList />
+              {'Filters'}
             </Button>
           </Tooltip>
         </div>
@@ -102,12 +96,14 @@ class Filters extends Component {
           anchor={'top'}
           type='persistent'
           open={this.state.open}
-          className={'drawerBox'}
+          className={this.state.open ? 'drawerBox' : 'noDrawer'}
       >
           <div className={'drawerInner'}>
+          {_.flattenDeep(Object.values(filters[filters.main])).length !== 0 &&
               <Button raised onClick={() => this.reset()} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
                 {'Clear filters'}
               </Button>
+          }
             {filters.main === 'companies' &&
             <div>No filters yet to display. Try sorting by games.</div>
           }

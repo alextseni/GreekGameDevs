@@ -3,20 +3,9 @@ import PropTypes from 'prop-types'
 import './Card.scss'
 
 import {
-  Facebook,
-  Twitter,
-  Youtube,
-  Website,
-  Steam,
-  PlayStore,
-  AppStore,
-  LinkedIn,
-  WindowsStore,
-  Demo,
-  Online,
-  PC,
-  IndieDB,
-} from 'static/icons'
+  getColorCode,
+  getMediaIcon,
+} from 'utils/helpers'
 
 import {
   Paper,
@@ -24,32 +13,6 @@ import {
   Button,
   Chip,
 } from 'material-ui'
-
-const getMediaIcon = (media) => ({
-  website: <Website className='socialIcon' />,
-  websiteD: <Website className='socialIcon' />,
-  websiteP: <Website className='socialIcon' />,
-  facebook: <Facebook className='socialIcon' />,
-  twitter: <Twitter className='socialIcon' />,
-  youtube: <Youtube className='socialIcon' />,
-  steam: <Steam className='socialIcon' />,
-  pc: <PC className='socialIcon' />,
-  playstore: <PlayStore className='socialIcon' />,
-  appStore: <AppStore className='socialIcon' />,
-  linkedin: <LinkedIn className='socialIcon' />,
-  windowstore: <WindowsStore className='socialIcon' />,
-  demo: <Demo className='socialIcon' />,
-  online: <Online className='socialIcon' />,
-  indiedb: <IndieDB className='socialIcon' />,
-})[media]
-
-const getColorCode = (status) => ({
-  'Active': 'primary',
-  'Inactive': 'default',
-  'Under Development': 'accent',
-  'Unavailable': 'default',
-  'Released': 'primary',
-})[status]
 
 class CardFront extends Component {
   constructor (props: CardFront.propTypes) {

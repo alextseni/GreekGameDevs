@@ -9,6 +9,7 @@ import {
   CardBack,
   Filters,
   Form,
+  Table,
 } from './components'
 
 import {
@@ -135,7 +136,13 @@ class VideoGames extends Component {
                 hasMore={!this.state.endOfContent}
                 loader={<CircularProgress className='contentLoader' size={50} thickness={8} />}
                 >
-                {this.state.contentToLoad && this.state.contentToLoad.map((item, index) => (
+                {view === 'table' ?
+                  <Table
+                    content={this.state.contentToLoad}
+                    category={filters.main}
+                  />
+                :
+                this.state.contentToLoad && this.state.contentToLoad.map((item, index) => (
                   <div className={view === 'list' ? 'btnandcardList' : 'btnandcardGrid'}>
                     <Button className='info'
                       onClick={() => this.handleInfoButton(event, index, item)}
@@ -149,8 +156,8 @@ class VideoGames extends Component {
                       image={item.image}
                       links1={item.media}
                       links2={item.platforms}
-                      content={item.companies || item.games}
-                      footer={(item.date || '') + ' | ' + (item.status || ' ') }
+                      content={item.content}
+                      footer={(item.date || '') + '  ' + (item.status || ' ') }
                       tags={item.displayedtags}
                     />
                   </div>
