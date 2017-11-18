@@ -78,10 +78,18 @@ const queryGames =
 const queryCalendar =
 'SELECT ' +
 'calendar.name AS title,' +
+'calendar.type,' +
 'calendar.date AS start,' +
 'calendar.end,' +
-'calendar.location AS descr ' +
+'calendar.location,' +
+'calendar.description AS descr ' +
 'FROM calendar '
+
+const queryHistory =
+'SELECT ' +
+'milestones.date,' +
+'milestones.description ' +
+'FROM milestones '
 
 const getLink = (links, id) =>
     links[0].find(l => l.id === id && l.type === 'website') ||
@@ -94,6 +102,19 @@ app.get('/api/calendar', (req, res, next) => {
   pool.connect().then(client =>
     client.query(queryCalendar).then(resEvents => {
       res.json(resEvents.rows)
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    }))
+})
+
+app.get('/api/history', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.connect().then(client =>
+    client.query(queryHistory).then(resHis => {
+      res.json(resHis.rows)
       client.release()
     })
     .catch(e => {

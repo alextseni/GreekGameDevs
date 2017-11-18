@@ -105,7 +105,7 @@ class Filters extends Component {
               </Button>
           }
             {filters.main === 'companies' &&
-            <div>No filters yet to display. Try sorting by games.</div>
+            <div>No filters yet to display. Try sorting by game first.</div>
           }
             {filters.main === 'games' &&
             <div className='subfilters'>

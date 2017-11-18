@@ -2,7 +2,7 @@
 // Constants
 // ------------------------------------
 export const UPDATE_EVENTS = 'UPDATE_EVENTS'
-
+export const UPDATE_HISTORY = 'UPDATE_HISTORY'
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -12,6 +12,14 @@ export function setCalendarEvents (data) {
     payload : { data },
   }
 }
+
+export function setHistory (data) {
+  return {
+    type    : UPDATE_HISTORY,
+    payload : { data },
+  }
+}
+
 
 /*  This is a thunk, meaning it is a function that immediately
     returns a function for lazy evaluation. It is incredibly useful for
@@ -29,6 +37,10 @@ const ACTION_HANDLERS = {
     ...state,
     events: action.payload.data,
   }),
+  [UPDATE_HISTORY] : (state, action) => ({
+    ...state,
+    history: action.payload.data,
+  }),
 }
 
 // ------------------------------------
@@ -36,6 +48,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   events: [],
+  history: [],
 }
 
 export default function counterReducer (state = initialState, action) {

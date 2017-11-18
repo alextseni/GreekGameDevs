@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import {
   setCalendarEvents,
+  setHistory,
 } from '../modules/home'
 
 /*  This is a container component. Notice it does not contain any JSX,
@@ -16,11 +17,13 @@ import Home from '../components/Home'
 
 const mapDispatchToProps = {
   setCalendarEvents : (data) => setCalendarEvents(data),
+  setHistory : (data) => setHistory(data),
 }
 
 const mapStateToProps = (state) => {
   return ({
     events: state.home.events,
+    history: state.home.history,
   })
 }
 

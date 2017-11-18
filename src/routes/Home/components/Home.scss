@@ -24,7 +24,10 @@ background-position: center;
 justify-content: center;
 margin-bottom: 20px;
 }
-
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+}
 .sectionTitle {
   background-color: rgba(93,93,93,.06);
   padding: 20px;
