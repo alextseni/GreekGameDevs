@@ -61,6 +61,7 @@ const getColorCode = (status) => ({
   'Unavailable': 'default',
   'Released': 'primary',
   'null': 'primary',
+  'Beta': 'primary',
 })[status]
 
 export {

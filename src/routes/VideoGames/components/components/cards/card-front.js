@@ -60,13 +60,11 @@ class CardFront extends Component {
           {content && content.map(item => (
             item &&
             <Button
-              className='itemButton'
+              className={getColorCode(item.status) + ' ' + 'itemButton'}
               target='_blank'
               href={item.link}
               disabled={!item.link}
-              style={{ textAlign: 'left' }}
               dense
-              color={getColorCode(item.status)}
             >
               {item.name}
             </Button>

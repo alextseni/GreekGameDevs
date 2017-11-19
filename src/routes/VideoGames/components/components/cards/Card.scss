@@ -17,6 +17,9 @@ width: 100%;
   padding: 10px;
   flex-wrap: wrap;
 }
+.itemButton {
+  text-align: left;
+}
 
 .logoGrid {
   display: flex;
@@ -52,6 +55,7 @@ width: 100%;
   background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: white;
     width: 76px;
 height: 76px;
 //border: 1px solid rgba(0,0,0,0.64);

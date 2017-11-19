@@ -14,8 +14,29 @@ const questions = [
     question: "I have some information on a game/team but I am not sure if it's in the scope of the database.",
     answer: "If it is a digital game (video game, serious game, etc) then it probably is. " +
     "The database includes both released and under development games or games published once but no longer available. " +
+    "The only type of game not supoorted for the time being are betting games. " +
     "Any teams (not necessarily companies) or people creating games are also welcome. " +
-    "I will also be creating a list with tools and assets sometime soon, so you can share information on that too.",
+    "I will also be creating a list with tools and assets sometime soon, so you can share information on that too. " +
+    'Here is a list with the kind of information that the database currently supports. ',
+    extra: <ul>
+              <li>For games:</li>
+                <ul>
+                  <li>name</li>
+                  <li> an image/logo. Send a url to the image, not the image itself </li>
+                  <li>status: released, under developement, unavailable, beta and release year if there is one </li>
+                  <li>developer and publisher name</li>
+                  <li>media links: websites, facebook, indiedb, twitter, youtube, linkedin</li>
+                  <li>For released games only, links to platforms it was released to: app store, play store, windows store, pc, available demo, online</li>
+                </ul>
+              <li>For teams: </li>
+              <ul>
+                <li>name</li>
+                <li> an image/logo. Send a url to the image, not the image itself </li>
+                <li>status: active, inactive and year founded</li>
+                <li>their games if any</li>
+                <li>media links: websites, facebook, indiedb, twitter, youtube, linkedin</li>
+              </ul>
+          </ul>
   },
   {
     question: "Some of the data here is outdated, wrong or missing..are you going to update it?",
