@@ -5,7 +5,6 @@ import './Communication.scss'
 import {
   Newsletter,
   Contact,
-  Credits,
   Donation,
 } from './components'
 
@@ -22,7 +21,6 @@ class Communication extends Component {
         <Newsletter />
         <Contact />
         <hr />
-        <Credits />
       </div>
     )
   }

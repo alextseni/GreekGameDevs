@@ -4,6 +4,7 @@ import VideoGamesRoute from './VideoGames'
 import ToolsRoute from './Tools'
 import CommunicationRoute from './Communication'
 import HomeRoute from './Home'
+import InfoRoute from './Info'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
@@ -15,6 +16,7 @@ export const createRoutes = (store) => ({
     ToolsRoute(store),
     VideoGamesRoute(store),
     CommunicationRoute(store),
+    InfoRoute(store),
   ]
 })
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const data = [
+const credits = [
   { credit: <div>Site created & curated by
     <a href='https://www.tensaiprojects.weebly.com'
       title='AT'> Alexandra Tseniklidou </a>
@@ -59,4 +59,4 @@ const data = [
   },
 ]
 
-export default data
+export default credits

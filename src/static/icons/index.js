@@ -22,12 +22,13 @@ const VideoGames = InlineSvg(require('!!raw-loader!./gamepad.svg'))
 const Tools = InlineSvg(require('!!raw-loader!./tools.svg'))
 const Mail = InlineSvg(require('!!raw-loader!./mail.svg'))
 const News = InlineSvg(require('!!raw-loader!./news.svg'))
-
+const Question = InlineSvg(require('!!raw-loader!./faq.svg'))
 const ViewTable = InlineSvg(require('!!raw-loader!./table.svg'))
 //const Label = InlineSvg(require('!!raw-loader!./signpost.svg'))
 
 export {
   Facebook,
+  Question,
   News,
   BackToTop,
   ViewTable,

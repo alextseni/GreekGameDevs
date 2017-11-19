@@ -15,6 +15,7 @@ import {
   Tools,
   News,
   Mail,
+  Question,
 } from 'static/icons'
 
 const axios = require('axios')
@@ -77,6 +78,14 @@ class PageLayout extends Component {
           </IconButton>
           <Typography type='title' component='h4' className='menuLabel'>
             Contact
+          </Typography>
+        </Link>
+        <Link to='/info' activeClassName='page-layout__nav-item--active'>
+          <IconButton className='menuItem' aria-label='Menu'>
+            <Question width='38px' height='50px' fill='white' />
+          </IconButton>
+          <Typography type='title' component='h4' className='menuLabel'>
+            F.A.Q
           </Typography>
         </Link>
       </Toolbar>

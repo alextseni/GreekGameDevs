@@ -59,6 +59,7 @@ const getColorCode = (status) => ({
   'Under Development': 'accent',
   'Unavailable': 'default',
   'Released': 'primary',
+  'null': 'primary',
 })[status]
 
 export {

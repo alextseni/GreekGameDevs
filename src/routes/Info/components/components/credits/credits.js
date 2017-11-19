@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './styles.scss'
+import './credits.scss'
 
 import {
   Typography,
@@ -11,10 +11,10 @@ import {
   TableBody,
   TableHead,
 } from 'material-ui'
-import data from './content'
+import credits from './content'
 
 class Credits extends Component {
-  constructor (props: Newsletter.propTypes) {
+  constructor (props: Credits.propTypes) {
     super(props)
     this.state = {
     }
@@ -32,7 +32,7 @@ class Credits extends Component {
                </TableRow>
             </TableHead>
             <TableBody>
-              {data.map((c, index) => {
+              {credits.map((c, index) => {
                 return (
                   <TableRow key={index}>
                     <TableCell>{c.credit}</TableCell>
