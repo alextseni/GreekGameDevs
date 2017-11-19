@@ -35,8 +35,9 @@ clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 76% 6%, 48% 0, 24% 5%);
 display: flex;
 justify-content: center;
 align-items: center;
-    height: 357px;
-    width: 560px;
+height: 440px;
+max-width: 560px;
+width: 100%;
 z-index: 9;
 opacity: 0.8;
 }

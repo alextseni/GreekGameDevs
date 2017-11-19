@@ -15,6 +15,7 @@ import {
 } from 'material-ui'
 import { CheckCircle, Error } from 'material-ui-icons'
 
+import ReCAPTCHA from 'react-google-recaptcha'
 let xhttp
 
 class Form extends Component {
@@ -69,13 +70,22 @@ class Form extends Component {
           isLoading: false,
         })
       }
+      setTimeout(() => {
+        this.setState({
+          hasSubmitted: false,
+        })
+        if(this.state.success) {
+          this.props.closePopover()
+        }
+      }, 3500)
     }
     xhttp.open(
       'GET',
       '/send?' +
       'title=' + this.state.formItem.name +
       '&comment=' + this.state.formItem.comment +
-      '&mail=' + this.state.formItem.mail,
+      '&mail=' + this.state.formItem.mail +
+      '&verification=' + this.state['verification'],
       true)
     xhttp.send()
   }
@@ -118,7 +128,7 @@ class Form extends Component {
             disabled
             margin='normal'
           />
-        {/*  <TextField
+          <TextField
             id='mail'
             label='Your email'
             name='mail'
@@ -130,8 +140,9 @@ class Form extends Component {
             InputLabelProps={{
               shrink: true,
             }}
-          /> */}
+          />
           <TextField
+            required
             className='multiline'
             style={{ width: '100%' }}
             labelClassName='label'
@@ -148,11 +159,19 @@ class Form extends Component {
             onChange={this.handleFormChange('comment')}
             margin='normal'
            />
+          <ReCAPTCHA
+            ref='recaptcha'
+            sitekey='6LejpjUUAAAAAJ2v82XR4TQ6fV3gJOASXEYInUUW'
+            onChange={(response) => { this.setState({ 'verification': response }) }} />
           <Button
             style={{ width: '50px', margin: '20px', alignSelf: 'flex-end' }}
             raised
             onClick={this.sendMail}
-            disabled={!this.state.formItem.comment || this.state.hasSubmitted}>
+            disabled={
+              !this.state.formItem.comment ||
+              !this.state.formItem.mail ||
+              this.state.hasSubmitted ||
+              !this.state['verification']}>
             Send!
           </Button>
         </form>

@@ -5,7 +5,7 @@ import './styles.scss'
 import {
   Info,
 } from 'static/icons'
-
+import ReCAPTCHA from 'react-google-recaptcha'
 import {
   Typography,
   Button,
@@ -66,13 +66,19 @@ class Contact extends Component {
           isLoading: false,
         })
       }
+      setTimeout(() => {this.setState({
+                hasSubmitted: false,
+                success: false,
+              })}, 4000)
     }
+    console.log(this.state.verification)
     xhttp.open(
       'GET',
       '/send?' +
       'title=' + 'Contact Form' +
       '&comment=' + this.state.contactItem.comment +
-      '&mail=' + this.state.contactItem.mail,
+      '&mail=' + this.state.contactItem.mail +
+      '&verification=' + this.state['verification'],
       true)
     xhttp.send()
   }
@@ -133,10 +139,18 @@ class Contact extends Component {
             value={this.state.contactItem.comment}
             onChange={this.handleFormChange('comment')}
     />
+          <ReCAPTCHA
+            ref='recaptcha'
+            sitekey='6LejpjUUAAAAAJ2v82XR4TQ6fV3gJOASXEYInUUW'
+            onChange={(response) => { this.setState({ 'verification': response }) }} />
           <Button
             style={{ width: '50px', margin: '20px', alignSelf: 'flex-end' }}
             raised
-            disabled={!this.state.contactItem.mail || !this.state.contactItem.comment}
+            disabled={
+              !this.state.contactItem.mail ||
+              !this.state.contactItem.comment ||
+              this.state.hasSubmitted ||
+              !this.state['verification']}
             onClick={this.sendMail}>
       Send!
     </Button>

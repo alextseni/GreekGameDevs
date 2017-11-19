@@ -1,4 +1,3 @@
-const credentials = require('./cred')
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack')
@@ -8,90 +7,14 @@ const project = require('../project.config')
 const compress = require('compression')
 const nodemailer = require('nodemailer')
 const app = express()
-
+const request = require('request')
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true') : 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
-
+const credentials = require('./cred')
+const queries = require('./queries')
 const pool = new Pool({
   connectionString: connectionString,
 })
-const queryCompanies =
-'SELECT ' +
-'vgcom.name,' +
-'vgcom.image,' +
-'vgcom.founded AS date,' +
-'vgcom.status,' +
-'vgcom.location,' +
-'vgcom.description,' +
-'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
-'\'link\', vgcomlinks.link,' +
-'\'type\', vgcomlinks.type' +
-')),\',\')AS links,' +
-'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
-'\'status\', vg.status,' +
-'\'name\', vg.name,' +
-'\'id\', vg.id' +
-')),\',\')AS games,' +
-'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
-'\'url\',vglinks.link,' +
-'\'type\',vglinks.type,' +
-'\'id\', vglinks.gameid' +
-')),\',\')AS gamelinks ' +
-'FROM vgcom ' +
-'LEFT JOIN vg on vgcom.name = vg.developer ' +
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
-'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
-'GROUP BY vgcom.name ' +
-'ORDER BY vgcom.name ASC'
-
-const queryGames =
-'SELECT ' +
-'vg.name,' +
-'vg.image,' +
-'vg.released AS date,' +
-'vg.status,' +
-'vg.description,' +
-'vg.id,' +
-'vg.genre,' +
-'vg.modes,' +
-'vg.style,' +
-'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
-'\'link\', vglinks.link,' +
-'\'type\', vglinks.type,' +
-'\'category\', vglinks.category' +
-')),\',\')AS links,' +
-'jsonb_build_array(array_agg (DISTINCT jsonb_build_object(' +
-'\'status\', vgcom.status,' +
-'\'name\', vgcom.name' +
-')),\',\')AS companies,' +
-'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
-'\'url\',vgcomlinks.link,' +
-'\'id\', vgcomlinks.company,' +
-'\'type\', vgcomlinks.type' +
-')),\',\')AS comlinks ' +
-'FROM vg ' +
-'LEFT JOIN vgcom on vgcom.name = vg.developer OR vgcom.name = vg.publisher ' +
-'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
-'GROUP BY vg.id ' +
-'ORDER BY vg.name ASC'
-
-const queryCalendar =
-'SELECT ' +
-'calendar.name AS title,' +
-'calendar.type,' +
-'calendar.date AS start,' +
-'calendar.end,' +
-'calendar.location,' +
-'calendar.description AS descr ' +
-'FROM calendar '
-
-const queryHistory =
-'SELECT ' +
-'milestones.date,' +
-'milestones.description ' +
-'FROM milestones ' +
-'ORDER BY milestones.date DESC'
 
 const getLink = (links, id) =>
     links[0].find(l => l.id === id && l.type === 'website') ||
@@ -102,7 +25,7 @@ const getLink = (links, id) =>
 app.get('/api/calendar', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>
-    client.query(queryCalendar).then(resEvents => {
+    client.query(queries.queryCalendar).then(resEvents => {
       res.json(resEvents.rows)
       client.release()
     })
@@ -115,7 +38,7 @@ app.get('/api/calendar', (req, res, next) => {
 app.get('/api/history', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>
-    client.query(queryHistory).then(resHis => {
+    client.query(queries.queryHistory).then(resHis => {
       res.json(resHis.rows)
       client.release()
     })
@@ -152,7 +75,7 @@ app.get('/api/totalTeams', (req, res, next) => {
 app.get('/api/companies', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>
-    client.query(queryCompanies).then(resCompanies => {
+    client.query(queries.queryCompanies).then(resCompanies => {
       res.json(resCompanies.rows.map(c => {
         const { name, image, date, status, description, links, gamelinks, games, location } = c
         return ({
@@ -186,7 +109,7 @@ app.get('/api/companies', (req, res, next) => {
 app.get('/api/games', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>
-    client.query(queryGames).then(resGames => {
+    client.query(queries.queryGames).then(resGames => {
       res.json(resGames.rows.map(g => {
         const { name, style, genre, modes, image, date, status, description, links, comlinks, companies } = g
         return ({
@@ -240,15 +163,28 @@ app.get('/send', (req, res) => {
     subject : req.query.title,
     text : 'From ' + req.query.mail + ': ' + req.query.comment,
   }
-  smtpTransport.sendMail(mailOptions, (error, response) => {
-    if (error) {
-      res.end('error')
-    } else {
-      res.end('sent')
+  console.log('data', req.query.verification, req.connection.remoteAddress )
+  request.post('https://www.google.com/recaptcha/api/siteverify', {
+    form: {
+      secret: '6LejpjUUAAAAAFxxvha5U1o4cHKbwpWC_w0KX4gX',
+      response: req.query.verification,
+      remoteip: req.connection.remoteAddress,
     }
+  }, function (error, response, body) {
+    body = JSON.parse(body)
+    if (body.success !== undefined && !body.success) {
+      console.log('captcha')
+      return res.end('error')
+    }
+    smtpTransport.sendMail(mailOptions, (error, response) => {
+      if (error) {
+        res.end('error')
+      } else {
+        res.end('sent')
+      }
+    })
   })
 })
-/// ///
 
 // ------------------------------------
 // Apply Webpack HMR Middleware

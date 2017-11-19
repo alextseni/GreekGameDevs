@@ -95,6 +95,9 @@ class VideoGames extends Component {
   }
   }
 
+  closePopover = () => {
+    this.setState({ openPopover: false })
+  }
   componentWillMount = () => {
     this.getData('companies')
     this.getData('games')
@@ -107,7 +110,7 @@ class VideoGames extends Component {
         <Popover
           open={this.state.openPopover}
           anchorEl={this.state.anchorEl}
-          onRequestClose={() => this.setState({ openPopover: false })}
+          onRequestClose={() => this.closePopover()}
           anchorOrigin={{
             vertical: 'top',
             horizontal: 'right',
@@ -117,7 +120,7 @@ class VideoGames extends Component {
             horizontal: 'left',
           }}
         >
-          <Form selectedItem={this.state.selectedItem} />
+          <Form selectedItem={this.state.selectedItem} closePopover={this.closePopover} />
         </Popover>
         <Paper style={{ height: '100%', padding: '20px 20px 80px' }} elevation={2}>
           <div className='contentContainer' id='scrollContainer'>
