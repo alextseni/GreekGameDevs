@@ -15,11 +15,11 @@ const questions = [
     answer: "If it is a digital game (video game, serious game, etc) then it probably is. " +
     "The database includes both released and under development games or games published once but no longer available. " +
     "Any teams (not necessarily companies) or people creating games are also welcome. " +
-    "I will also be creating a list with tools and assets sometime soon, so you can share information on that too",
+    "I will also be creating a list with tools and assets sometime soon, so you can share information on that too.",
   },
   {
     question: "Some of the data here is outdated, wrong or missing..are you going to update it?",
-    answer: "I am actively tending to this site for the time being so if anything catches my attention. I'll take care of it as soon as possible. " +
+    answer: "I am actively tending to this site so if anything catches my attention, I'll take care of it as soon as possible. " +
     "However, there are bound to be mistakes and missing info due to the large scale of the data (it is hard to keep track of everything on my own) " +
     "so your help in keeping the content fresh is invaluable. If you spot anything suspicious don't hesitate to contact me. " +
     "Use the info button on the top left of the card to send me corrections or additions for that card. " +
@@ -27,9 +27,9 @@ const questions = [
   },
   {
     question: 'Who is behind this?',
-    answer: "It's just me for now. I am a software engineer with a passion for games and I started this site out of love for the community. " +
+    answer: "It's just me for now. I am a software engineer with a passion for games and I created this site out of love for the community. " +
     "I created a list of game development teams a long time ago intended for personal use but since some people found it useful, " +
-    "I decided to make it more formal and complete " +
+    "I decided to make it more formal and complete. " +
     "On the way though, I have used other online resources and help that I should give credit to. You can check them out at the table following this FAQ.",
   },
   {
