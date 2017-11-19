@@ -90,7 +90,8 @@ const queryHistory =
 'SELECT ' +
 'milestones.date,' +
 'milestones.description ' +
-'FROM milestones '
+'FROM milestones ' +
+'ORDER BY milestones.date DESC'
 
 const getLink = (links, id) =>
     links[0].find(l => l.id === id && l.type === 'website') ||
