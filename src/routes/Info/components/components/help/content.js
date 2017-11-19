@@ -25,7 +25,7 @@ const help = [
     explanation: "one is for the developer's website and the other for the publisher's",
   },
   { symbol: <p style={{color: 'red', margin: 0}}>red colored text</p>,
-    explanation: 'under development games',
+    explanation: 'game is under development or in beta',
   },
   { symbol: <p style={{color: 'black', margin: 0}}>black colored text</p>,
     explanation: 'unavailable games or inactive teams',

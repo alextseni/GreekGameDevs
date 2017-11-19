@@ -195,6 +195,7 @@ class Filters extends Component {
                   <MenuItem value={'2d'}> {'2D'} </MenuItem>
                   <MenuItem value={'3d'}> {'3D'} </MenuItem>
                   <MenuItem value={'vr'}> {'VR'} </MenuItem>
+                  <MenuItem value={'ar'}> {'AR'} </MenuItem>
                 </Select>
               </FormControl>
               <FormControl className='form'>
@@ -231,9 +232,9 @@ class Filters extends Component {
                     },
                   }}
                  >
-                  <MenuItem value={'singlePlayer'}> Single </MenuItem>
+                  <MenuItem value={'singlePlayer'}> Single Player</MenuItem>
                   <MenuItem value={'localMultiplayer'}> Local Multiplayer </MenuItem>
-                  <MenuItem value={'onlineMultiplayer'}> MMO </MenuItem>
+                  <MenuItem value={'onlineMultiplayer'}> Online Multiplayer </MenuItem>
                 </Select>
               </FormControl>
               </div>

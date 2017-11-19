@@ -24,7 +24,8 @@ const questions = [
                   <li>name</li>
                   <li> an image/logo. Send a url to the image, not the image itself </li>
                   <li>status: released, under developement, unavailable, beta and release year if there is one </li>
-                  <li>developer and publisher name</li>
+                  <li>tags for filtering: genre (see the filter for available genres), style (2d, 3d, vr, ar), modes (local multiplayer, online multiplayer, single player) </li>
+                  <li>developers and publishers name</li>
                   <li>media links: websites, facebook, indiedb, twitter, youtube, linkedin</li>
                   <li>For released games only, links to platforms it was released to: app store, play store, windows store, pc, available demo, online</li>
                 </ul>
@@ -33,6 +34,7 @@ const questions = [
                 <li>name</li>
                 <li> an image/logo. Send a url to the image, not the image itself </li>
                 <li>status: active, inactive and year founded</li>
+                <li>location: country (if not based in Greece) or town</li>
                 <li>their games if any</li>
                 <li>media links: websites, facebook, indiedb, twitter, youtube, linkedin</li>
               </ul>
@@ -55,10 +57,10 @@ const questions = [
   },
   {
     question: 'I like this initiative, how can I help?',
-    answer: "Any info you share is really helping me out in my search and saving me valuable time so that I can focus on developing more features. " +
-    "If you are a developer too and have worked or want to work with any of these technologies: React, Redux, Node, Postgress then perhaps you can assist in further improving the site. " +
-    "If you don't have time to spare but want to support the site no matter what, then you can consider donating. Regardlees, the content is free for you to view! " +
-    "Last but not least you can vote on the polls to help me decide on the next feature to implement!"
+    answer: "Any info you share is really helping me out in maintaining the database and saving me valuable time so that I can focus on developing more features. " +
+    "If you are a developer too and have worked or want to work with any of these technologies: React, Redux, Node, Postgress then perhaps we can join forces! " +
+    "If you don't have time to spare but want to support the site no matter what, then you can consider donating. Regardless, the content is free for you to view! " +
+    "Last but not least you can vote on the polls to help me decide on what feature to implement next!"
 },
 ]
 export default questions

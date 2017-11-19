@@ -21,6 +21,7 @@ const queryCompanies =
 'vgcom.image,' +
 'vgcom.founded AS date,' +
 'vgcom.status,' +
+'vgcom.location,' +
 'vgcom.description,' +
 'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
 '\'link\', vgcomlinks.link,' +
@@ -152,13 +153,14 @@ app.get('/api/companies', (req, res, next) => {
   pool.connect().then(client =>
     client.query(queryCompanies).then(resCompanies => {
       res.json(resCompanies.rows.map(c => {
-        const { name, image, date, status, description, links, gamelinks, games } = c
+        const { name, image, date, status, description, links, gamelinks, games, location } = c
         return ({
           name,
           image,
           date,
           status,
           description,
+          location,
           media: links[0],
           content: games[0].map(g => {
             const link = getLink(gamelinks, g.id)
@@ -188,7 +190,7 @@ app.get('/api/games', (req, res, next) => {
         const { name, style, genre, modes, image, date, status, description, links, comlinks, companies } = g
         return ({
           name,
-          image,
+    //      image,
           date,
           status,
           description,

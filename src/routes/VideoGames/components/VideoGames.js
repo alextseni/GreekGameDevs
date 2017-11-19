@@ -157,7 +157,7 @@ class VideoGames extends Component {
                       links1={item.media}
                       links2={item.platforms}
                       content={item.content}
-                      footer={(item.date || '') + '  ' + (item.status || ' ') }
+                      footer={(item.date || '') + '  ' + (item.status || ' ') + (item.location ? ' | ' + item.location : '')}
                       tags={item.displayedtags}
                     />
                   </div>
