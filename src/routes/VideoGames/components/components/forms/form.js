@@ -98,13 +98,13 @@ class Form extends Component {
               ? <div className='popupStatus' style={{ backgroundColor: '#db8787' }}>
                 <Error style={{ width:'50px', height: '50px' }} />
                 <Typography type='headline' component='h4'>
-                      Email not sent
+                      Email not sent :(
                     </Typography>
               </div>
               : <div style={{ width: 0, height: 0 }} />
         }
         <Typography type='headline' component='h4'>
-          Wrong or missing info on this card? Send an email with your comments.
+          Wrong or missing info on this card? Use the form below to send me an email.
         </Typography>
         <form
           className='infoForm'

@@ -105,7 +105,26 @@ class Filters extends Component {
               </Button>
           }
             {filters.main === 'companies' &&
-            <div>No filters yet to display. Try sorting by game first.</div>
+            <div className='subfilters'>
+              <FormControl className='form'>
+                <InputLabel htmlFor='name-multiple'>Status</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.companies.status}
+                  onChange={(event) => this.transformData(filters.main, 'status', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
+                 >
+                  <MenuItem value={'Active'}> Active </MenuItem>
+                  <MenuItem value={'Inactive'}> Inactive </MenuItem>
+                </Select>
+              </FormControl>
+              </div>
           }
             {filters.main === 'games' &&
             <div className='subfilters'>

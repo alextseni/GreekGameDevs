@@ -20,6 +20,7 @@ import {
   IndieDB,
   ViewTable,
 } from 'static/icons'
+import './helpers.scss'
 
 const getMediaIcon = (media) => ({
   website: <Website className='socialIcon' />,

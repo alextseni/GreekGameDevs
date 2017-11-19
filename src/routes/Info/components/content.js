@@ -6,7 +6,7 @@ const questions = [
     question: "So many different colors and icons...I don't understand a thing!",
     answer: "I don't blame you! The information is kind of dense to save space for mobile (even though it is not fully responsive yet) " +
     "plus I am not a ux/ui designer so don't hate me. :'( " +
-    "By pressing the top right button you can change the view to a table which simplifies the information. " +
+    "By pressing the top right button twice you can change the view to a table which simplifies the display. " +
     "If you prefer the grid and list views here is a table explaining the not-so-obvious color codes and icons. ",
     extra: <Help />,
   },

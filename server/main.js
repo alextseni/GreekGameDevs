@@ -168,6 +168,7 @@ app.get('/api/companies', (req, res, next) => {
               link: link && link.url,
             })
           }),
+          tags: [status],
         })
       }))
       client.release()

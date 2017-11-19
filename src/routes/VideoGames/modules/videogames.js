@@ -116,6 +116,8 @@ const initialState = {
   filters: {
     main: 'companies',
     companies: {
+      status: [],
+      role: [],
     },
     games: {
       platforms: [], // ios, windows, steam, etc..
