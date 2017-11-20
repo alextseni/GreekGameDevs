@@ -125,7 +125,7 @@ class Filters extends Component {
       >
           <div className={'drawerInner'}>
             {_.flattenDeep(Object.values(filters[filters.main])).length !== 0 &&
-            <Button raised onClick={() => this.reset()} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
+            <Button raised onClick={() => this.reset()} style={{ position: 'fixed', left: 0, maxWidth: '32px', padding: 0 }}>
               {'Clear filters'}
             </Button>
           }

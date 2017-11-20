@@ -62,7 +62,7 @@ class PageLayout extends Component {
           <IconButton className='menuItem' aria-label='Menu'>
             <VideoGames width='50px' fill='white' />
           </IconButton>
-          <Typography type='title' component='h4' className='menuLabel'>
+          <Typography className='menuLabel'>
             Video Games
           </Typography>
         </Link>
