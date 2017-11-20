@@ -28,6 +28,10 @@ margin-bottom: 20px;
   display: flex;
   flex-direction: row;
 }
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+}
 .sectionTitle {
   background-color: rgba(93,93,93,.06);
   padding: 20px;

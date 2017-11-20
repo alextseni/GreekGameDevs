@@ -92,7 +92,7 @@ class VideoGames extends Component {
           (startingPoint + itemsToLoad) >= currentData.length ? currentData.length : startingPoint + itemsToLoad)),
       endOfContent: (startingPoint + itemsToLoad) >= currentData.length,
     })
-  }
+    }
   }
 
   closePopover = () => {

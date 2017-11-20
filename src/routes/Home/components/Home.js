@@ -34,7 +34,7 @@ class Home extends Component {
         Here you can find all sorts of information about the greek game development scene.
       </Typography>
         </div>
-        <div className='rowContainer'>
+        <div className={window.matchMedia("(min-width: 960px)").matches ? 'rowContainer' : 'columnContainer'}>
           <News
             history={history}
             setHistory={setHistory}

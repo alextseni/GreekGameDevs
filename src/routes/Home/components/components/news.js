@@ -10,6 +10,7 @@ import {
 } from 'material-ui'
 import './news.scss'
 import StarIcon from 'material-ui-icons/Star'
+import { Assignment } from 'material-ui-icons'
 import moment from 'moment'
 
 const axios = require('axios')
@@ -39,7 +40,7 @@ class News extends Component {
   render () {
     const { setHistory, history } = this.props
     return (
-      <div className='news'>
+      <div className={window.matchMedia("(min-width: 960px)").matches ? 'news50width' : 'news100width'}>
         <div className='sectionTitle'>
           <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
             News & updates
@@ -51,7 +52,7 @@ class News extends Component {
             {history.map(item => (
             <ListItem>
               <Avatar>
-                <StarIcon />
+                {item.type === 'feature' ? <StarIcon /> : <Assignment />}
               </Avatar>
               <ListItemText
                 primary={item.description}

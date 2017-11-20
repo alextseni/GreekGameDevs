@@ -31,7 +31,7 @@ class Info extends Component {
             <Step>
               <StepButton onClick={() => this.setState({ stepIndex: index })}>
                 <p className='question'>
-                {q.question}
+                  {q.question}
                 </p>
               </StepButton>
               <StepContent>

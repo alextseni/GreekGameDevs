@@ -58,7 +58,7 @@ const questions = [
   {
     question: 'I like this initiative, how can I help?',
     answer: "Any info you share is really helping me out in maintaining the database and saving me valuable time so that I can focus on developing more features. " +
-    "If you are a developer too and have worked or want to work with any of these technologies: React, Redux, Node, Postgress then perhaps we can join forces! " +
+    "If you are a developer too and have worked or want to work with any of these technologies: React, Redux, Node, Postgres then perhaps we can join forces! " +
     "If you don't have time to spare but want to support the site no matter what, then you can consider donating. Regardless, the content is free for you to view! " +
     "Last but not least you can vote on the polls to help me decide on what feature to implement next!"
 },

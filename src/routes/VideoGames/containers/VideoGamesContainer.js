@@ -22,7 +22,7 @@ const mapDispatchToProps = {
   updateFilter : (category, subcategory, value) => updateFilter(category, subcategory, value),
   resetAllFilters: (category) => resetAllFilters(category),
   changeView: (view) => changeView(view),
-  updateData: (sortBy, filters) => updateData(sortBy, filters),
+  updateData: (sortBy, value) => updateData(sortBy, value),
   initializeData: (type, data) => initializeData(type, data),
 }
 

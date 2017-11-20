@@ -9,7 +9,8 @@ const nodemailer = require('nodemailer')
 const app = express()
 const request = require('request')
 const { Pool, Client } = require('pg')
-const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true') : 'postgresql://postgres:Gliflit28%@localhost:5432/greekgamedevs'
+const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true')
+  : 'postgres://lfchinqeazokhq:5de2fd94a33e560e4922f94a6d22f8fa66be3704e9d82fbca8b970b2430ef757@ec2-54-75-225-143.eu-west-1.compute.amazonaws.com:5432/dc7pf03tfg68aa?ssl=true'
 const credentials = require('./cred')
 const queries = require('./queries')
 const pool = new Pool({
@@ -18,6 +19,8 @@ const pool = new Pool({
 
 const getLink = (links, id) =>
     links[0].find(l => l.id === id && l.type === 'website') ||
+    links[0].find(l => l.id === id && l.type === 'websiteD') ||
+    links[0].find(l => l.id === id && l.type === 'websiteP') ||
     links[0].find(l => l.id === id && l.type === 'indiedb') ||
     links[0].find(l => l.id === id && l.type === 'facebook') ||
     links[0].find(l => l.id === id)

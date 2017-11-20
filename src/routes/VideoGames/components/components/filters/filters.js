@@ -20,6 +20,7 @@ import {
   InputLabel,
   Input,
   Drawer,
+  TextField,
 } from 'material-ui'
 
 class Filters extends Component {
@@ -27,6 +28,7 @@ class Filters extends Component {
     super(props)
     this.state = {
       open: false,
+      searchText: '',
     }
   }
 
@@ -38,25 +40,37 @@ class Filters extends Component {
     const { view, changeView } = this.props
     changeView({
       'list': 'grid',
-      'grid': 'table',
+      'grid': window.matchMedia('(min-width: 770px)').matches ? 'table' : 'list',
       'table': 'list',
     }[view])
   }
 
   reset = () => {
-    const {resetAllFilters, filters, resetContent} = this.props
+    const { resetAllFilters, filters, resetContent } = this.props
     resetAllFilters(filters.main)
     resetContent()
   }
 
   transformData = (mainCategory, subcategory = null, filterValues = null) => {
+    const searchValue = subcategory === null ? '' : this.state.searchText
+    this.setState({
+        searchText: searchValue,
+      })
     this.props.updateFilter(mainCategory, subcategory, filterValues)
-    this.props.updateData(mainCategory, filterValues)
+    this.props.updateData(mainCategory, searchValue)
     this.props.resetContent()
   }
 
+  search = name => event => {
+    this.setState({
+      searchText: event.target.value,
+    })
+    this.props.updateData(name, event.target.value)
+    this.props.resetContent()
+  };
+
   render () {
-    const { updateFilter, filters, resetAllFilters, view, updateData, resetContent } = this.props
+    const { updateFilter, filters, resetAllFilters, view, updateData, resetContent, searchData } = this.props
     return (
       <div className='filtersContainer'>
         <div className='filtersToolbar'>
@@ -67,6 +81,16 @@ class Filters extends Component {
               <Chip className='chip' label='sort by people' />
             </Tooltip>
           </div>
+          <TextField
+            id='search'
+            value={this.state.searchText}
+            label={'Search for ' + filters.main + '..'}
+            type='search'
+            margin='none'
+            className='searchField'
+            onChange={this.search(filters.main)}
+          />
+          {window.matchMedia('(min-width: 500px)').matches &&
           <Tooltip
             style={{ display: 'flex', justifyContent: 'flex-end', marginLeft: '10px' }}
             id='tooltip-icon1'
@@ -79,6 +103,7 @@ class Filters extends Component {
               {getViewIcon(view)}
             </Button>
           </Tooltip>
+        }
         </div>
         <div className='drawerHandle'>
           <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} id='tooltip-icon' title='Open filters' placement='top'>
@@ -99,10 +124,10 @@ class Filters extends Component {
           className={this.state.open ? 'drawerBox' : 'noDrawer'}
       >
           <div className={'drawerInner'}>
-          {_.flattenDeep(Object.values(filters[filters.main])).length !== 0 &&
-              <Button raised onClick={() => this.reset()} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
-                {'Clear filters'}
-              </Button>
+            {_.flattenDeep(Object.values(filters[filters.main])).length !== 0 &&
+            <Button raised onClick={() => this.reset()} style={{ margin: '0 20px', maxWidth: '32px', padding: 0 }}>
+              {'Clear filters'}
+            </Button>
           }
             {filters.main === 'companies' &&
             <div className='subfilters'>

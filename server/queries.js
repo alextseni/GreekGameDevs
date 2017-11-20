@@ -73,6 +73,7 @@ queryCalendar:
 queryHistory:
 'SELECT ' +
 'milestones.date,' +
+'milestones.type,' +
 'milestones.description ' +
 'FROM milestones ' +
 'ORDER BY milestones.date DESC',

@@ -18,10 +18,11 @@ export function initializeData (type, data) {
     payload : { type, data },
   }
 }
-export function updateData (sortBy, filters) {
+
+export function updateData (sortBy, value) {
   return {
     type    : UPDATE_DATA,
-    payload : { sortBy },
+    payload : { sortBy, value },
   }
 }
 export function updateFilter (category, subcategory = '', value = '') {
@@ -89,7 +90,9 @@ const ACTION_HANDLERS = {
   [UPDATE_DATA] : (state, action) => {
     return ({
       ...state,
-      currentData: state.data[action.payload.sortBy].filter(d => _.difference(_.flattenDeep(Object.values(state.filters[action.payload.sortBy])), d.tags).length === 0),
+      currentData: state.data[action.payload.sortBy]
+        .filter(d => _.difference(_.flattenDeep(Object.values(state.filters[action.payload.sortBy])), d.tags).length === 0)
+        .filter(d => ((d.name).toLowerCase()).includes(action.payload.value)),
     })
   },
   [INITIAL_DATA] : (state, action) => ({
@@ -106,7 +109,7 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  view: 'list',
+  view: 'grid',
   data: {
     companies: [],
     games: [],

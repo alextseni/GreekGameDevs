@@ -42,7 +42,7 @@ const getMediaIcon = (media) => ({
 
 const getViewIcon = (view) => ({
   'list': <ViewModule />,
-  'grid':  <ViewTable width='24px' />,
+  'grid':  window.matchMedia("(min-width: 770px)").matches ? <ViewTable width='24px' /> : <ViewList />,
   'table': <ViewList />,
 }[view])
 
