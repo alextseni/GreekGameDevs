@@ -2,8 +2,11 @@
   margin-top: 80px;
 }
 
-.page-layout__nav-item--active {
+.navItemLink {
   font-weight: bold;
+  text-decoration: none !important;
+}
+.navItemLink:hover {
   text-decoration: none !important;
 }
 .logoArea {
@@ -29,6 +32,11 @@ width: 173px;
    font-weight: 700 !important;
    font-size: 14px !important;
    padding: 0 !important;
+ }
+
+ .burger {
+   width: 36px !important ;
+   height: 36px !important;
  }
 
 .menuItem > span {

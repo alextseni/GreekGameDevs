@@ -37,16 +37,19 @@ const getMenuItems = (media) => [
   // },
   {
     icon: <Database className='menuIcon' />,
+    iconSmall: <Database className='menuIconSmall' />,
     header: 'Database',
     path: '/videogames',
   },
   {
     icon: <Mail className='menuIcon' />,
+    iconSmall: <Mail className='menuIconSmall' />,
     header: 'Contact',
     path: '/communication',
   },
   {
     icon: <Question className='menuIcon' />,
+    iconSmall: <Question className='menuIconSmall' />,
     path: '/info',
     header: 'F.A.Q',
   },
@@ -55,11 +58,13 @@ const getMenuItems = (media) => [
 const getDatabaseItems = (media) => [
   {
     icon: <VideoGames className='dbIcon' />,
+    iconSmall: <VideoGames className='dbIconSmall' />,
     header: 'Video Games',
     path: '/videogames',
   },
   // {
   //   icon: <Tools className='dbIcon' />,
+  //     iconSmall: <Tools className='dbIconSmall' />,
   //   header: 'Tools & Assets',
   //   path: '/tools',
   // },

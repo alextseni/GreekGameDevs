@@ -8,12 +8,20 @@
 
 .dbIcon > svg {
   width: 40px;
+  fill: white;
 }
-
+.dbIconSmall > svg {
+  width: 24px;
+  fill: rgba(0,0,0,0.84);
+}
 .menuIcon > svg {
   width: 36px;
+  fill: white;
 }
-
+.menuIconSmall > svg {
+  width: 24px;
+  fill: rgba(0,0,0,0.84);
+}
 .primary {
   color: #3f51b5 !important;
 }
