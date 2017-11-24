@@ -6,7 +6,7 @@ import {
 import './polls.scss'
 
 export const Polls = () => (
-  <div>
+  <div className='pollsContainer'>
     <div className='sectionTitle'>
       <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
         Vote here for the next feature

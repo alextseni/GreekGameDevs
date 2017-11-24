@@ -1,12 +1,20 @@
 .page-layout__viewport {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .page-layout__nav-item--active {
   font-weight: bold;
   text-decoration: none !important;
 }
-
+.logoArea {
+  background-image: url('/logo.png');
+  background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+width: 173px;
+    height: 77px;
+    margin: 0px 20px;
+}
 .appbar {
   align-items: center;
   background-color: #0091EA !important;
@@ -19,13 +27,10 @@
 .menuLabel {
    color: white !important;
    font-weight: 700 !important;
-   font-size: 12px !important;
+   font-size: 14px !important;
    padding: 0 !important;
  }
-.menuItem {
-  width: 100% !important;
-  height: 100% !important;
-}
+
 .menuItem > span {
   flex-direction: column;
 }

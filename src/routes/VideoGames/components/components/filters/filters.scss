@@ -31,9 +31,10 @@ align-items: center;
 }
 
 .subfilters {
-  align-items: flex-end;
+  //align-items: flex-end;
+  min-height: 84px;
   display: flex;
-  justify-content: center;
+//  justify-content: center;
   flex-wrap: wrap;
 }
 .tools {
@@ -61,4 +62,10 @@ align-items: center;
 }
 .drawerHeader {
   height: 30px;
+}
+@media (max-width: 640px) {
+  .filtersToolbar {
+  justify-content: center;
+  align-items: center;
+  }
 }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { IndexLink, Link } from 'react-router'
 import {
   Typography,
+  Paper,
 } from 'material-ui'
 import './Home.scss'
 import {
@@ -10,8 +12,8 @@ import {
   News,
 } from './components'
 import {
-//  Label,
-} from 'static/icons'
+  getDatabaseItems,
+} from 'utils/helpers'
 
 class Home extends Component {
   constructor (props: Home.propTypes) {
@@ -23,18 +25,28 @@ class Home extends Component {
     const { setCalendarEvents, events, setHistory, history } = this.props
     return (
       <div className='homecontainer'>
-
-        <div className='title'>
-          <div className='welcome' style={{ backgroundImage: 'url(scroll.png)' }}>
-            <Typography type='Title' component='h3' style={{ textAlign: 'center', maxWidth: '200px' }}>
+        <div className='welcome' style={{ backgroundImage: 'url(background.jpg)' }}>
+          <Typography type='Title' component='h3' style={{ textAlign: 'center', color: 'white', marginTop: '26px' }}>
         Welcome to the GGD database!
       </Typography>
-          </div>
-          <Typography type='headline' component='h4' style={{ textAlign: 'left' }}>
+          <Typography type='headline' component='h4' style={{ color: 'white', marginTop: '10px' }}>
         Here you can find all sorts of information about the greek game development scene.
       </Typography>
+          <div className='databases'>
+            {getDatabaseItems().map(d =>
+              <Link to={d.path} activeClassName='page-layout__nav-item--active'>
+              <Paper className='dbCard' elevation={4}>
+                {d.icon}
+                <Typography type='title' component='h4' style={{ color: 'white', marginTop: '10px', fontSize: '16px' }}>
+                {d.header}
+                </Typography>
+              </Paper>
+              </Link>
+            )}
+          </div>
         </div>
-        <div className={window.matchMedia("(min-width: 960px)").matches ? 'rowContainer' : 'columnContainer'}>
+        <div className='dashContent'>
+        <div className={window.matchMedia('(min-width: 960px)').matches ? 'rowContainer' : 'columnContainer'}>
           <News
             history={history}
             setHistory={setHistory}
@@ -45,6 +57,7 @@ class Home extends Component {
       />
         </div>
         <Polls />
+        </div>
       </div>
 
     )

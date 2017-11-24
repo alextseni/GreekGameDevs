@@ -21,7 +21,14 @@ import {
   Input,
   Drawer,
   TextField,
+  IconButton,
+  InputAdornment,
 } from 'material-ui'
+
+import {
+  Clear,
+  Search,
+} from 'material-ui-icons'
 
 class Filters extends Component {
   constructor (props: Filters.propTypes) {
@@ -54,8 +61,8 @@ class Filters extends Component {
   transformData = (mainCategory, subcategory = null, filterValues = null) => {
     const searchValue = subcategory === null ? '' : this.state.searchText
     this.setState({
-        searchText: searchValue,
-      })
+      searchText: searchValue,
+    })
     this.props.updateFilter(mainCategory, subcategory, filterValues)
     this.props.updateData(mainCategory, searchValue)
     this.props.resetContent()
@@ -69,6 +76,14 @@ class Filters extends Component {
     this.props.resetContent()
   };
 
+  clearSearchText = (name) => {
+    this.setState({
+      searchText: '',
+    })
+    this.props.updateData(name, '')
+    this.props.resetContent()
+  }
+
   render () {
     const { updateFilter, filters, resetAllFilters, view, updateData, resetContent, searchData } = this.props
     return (
@@ -81,15 +96,25 @@ class Filters extends Component {
               <Chip className='chip' label='sort by people' />
             </Tooltip>
           </div>
-          <TextField
-            id='search'
-            value={this.state.searchText}
-            label={'Search for ' + filters.main + '..'}
-            type='search'
-            margin='none'
-            className='searchField'
-            onChange={this.search(filters.main)}
-          />
+          <FormControl>
+            <InputLabel>{'Search for ' + filters.main + '...'}</InputLabel>
+            <Input
+              id='searchBar'
+              type={'text'}
+              value={this.state.searchText}
+              onChange={this.search(filters.main)}
+              endAdornment={
+                <InputAdornment position='end'>
+                {this.state.searchText &&
+                  <IconButton
+                    onClick={() => this.clearSearchText(filters.main)}>
+                    <Clear />
+                  </IconButton>
+                }
+                </InputAdornment>
+              }
+            />
+          </FormControl>
           {window.matchMedia('(min-width: 500px)').matches &&
           <Tooltip
             style={{ display: 'flex', justifyContent: 'flex-end', marginLeft: '10px' }}
@@ -224,6 +249,25 @@ class Filters extends Component {
                 </Select>
               </FormControl>
               <FormControl className='form'>
+                <InputLabel htmlFor='name-multiple'>Mode</InputLabel>
+                <Select
+                  multiple
+                  style={{ width: '200px' }}
+                  value={filters.games.mode}
+                  onChange={(event) => this.transformData(filters.main, 'mode', event.target.value)}
+                  input={<Input id='name-multiple' />}
+                  MenuProps={{
+                    PaperProps: {
+                      style: { maxHeight: 224, width: 200, },
+                    },
+                  }}
+                 >
+                  <MenuItem value={'singlePlayer'}> Single Player</MenuItem>
+                  <MenuItem value={'localMultiplayer'}> Local Multiplayer </MenuItem>
+                  <MenuItem value={'onlineMultiplayer'}> Online Multiplayer </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl className='form'>
                 <InputLabel htmlFor='name-multiple'>Status</InputLabel>
                 <Select
                   multiple
@@ -241,25 +285,6 @@ class Filters extends Component {
                   <MenuItem value={'Released'}> Released </MenuItem>
                   <MenuItem value={'Beta'}> Beta </MenuItem>
                   <MenuItem value={'Unavailable'}> Unavailable </MenuItem>
-                </Select>
-              </FormControl>
-              <FormControl className='form'>
-                <InputLabel htmlFor='name-multiple'>Mode</InputLabel>
-                <Select
-                  multiple
-                  style={{ width: '200px' }}
-                  value={filters.games.mode}
-                  onChange={(event) => this.transformData(filters.main, 'mode', event.target.value)}
-                  input={<Input id='name-multiple' />}
-                  MenuProps={{
-                    PaperProps: {
-                      style: { maxHeight: 224, width: 200, },
-                    },
-                  }}
-                 >
-                  <MenuItem value={'singlePlayer'}> Single Player</MenuItem>
-                  <MenuItem value={'localMultiplayer'}> Local Multiplayer </MenuItem>
-                  <MenuItem value={'onlineMultiplayer'}> Online Multiplayer </MenuItem>
                 </Select>
               </FormControl>
               </div>

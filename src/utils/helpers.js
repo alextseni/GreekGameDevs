@@ -19,8 +19,52 @@ import {
   PC,
   IndieDB,
   ViewTable,
+  Source,
+  Database,
+  News,
+  VideoGames,
+  Tools,
+  Mail,
+  Question,
 } from 'static/icons'
 import './helpers.scss'
+
+const getMenuItems = (media) => [
+  // {
+  //   icon: <News className='menuIcon' />,
+  //   header: 'Dashboard',
+  //   path: '/',
+  // },
+  {
+    icon: <Database className='menuIcon' />,
+    header: 'Database',
+    path: '/videogames',
+  },
+  {
+    icon: <Mail className='menuIcon' />,
+    header: 'Contact',
+    path: '/communication',
+  },
+  {
+    icon: <Question className='menuIcon' />,
+    path: '/info',
+    header: 'F.A.Q',
+  },
+]
+
+const getDatabaseItems = (media) => [
+  {
+    icon: <VideoGames className='dbIcon' />,
+    header: 'Video Games',
+    path: '/videogames',
+  },
+  // {
+  //   icon: <Tools className='dbIcon' />,
+  //   header: 'Tools & Assets',
+  //   path: '/tools',
+  // },
+]
+
 
 const getMediaIcon = (media) => ({
   website: <Website className='socialIcon' />,
@@ -37,6 +81,7 @@ const getMediaIcon = (media) => ({
   windowstore: <WindowsStore className='socialIcon' />,
   demo: <Demo className='socialIcon' />,
   online: <Online className='socialIcon' />,
+  source: <Source className='socialIcon' />,
   indiedb: <IndieDB className='socialIcon' />,
 })[media]
 
@@ -66,6 +111,8 @@ const getColorCode = (status) => ({
 
 export {
   getViewIcon,
+  getDatabaseItems,
+  getMenuItems,
   transformName,
   getMediaIcon,
   getColorCode,

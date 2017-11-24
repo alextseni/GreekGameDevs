@@ -3,10 +3,11 @@
   margin-top: 10px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .sectionTitle {
 margin: 20px 0px;
-      background-color: rgba(93,93,93,.06);
+      background-color: #f3f3f3;
       padding: 20px;
 }
