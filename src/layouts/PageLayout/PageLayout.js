@@ -44,7 +44,7 @@ class PageLayout extends Component {
     return (
       <div className='text-center'>
         <AppBar className='appbar'>
-          <div style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div className='menuBar'>
             <Link to={'/'} activeClassName='navItemLink'>
               <div className={'logoArea'} />
             </Link>
@@ -83,7 +83,8 @@ class PageLayout extends Component {
                       </ClickAwayListener>
                     </Popper>
                   </Manager>
-                  : <Link to={m.path} activeClassName='navItemLink'>
+                  : m.header !== 'Dashboard' &&
+                  <Link to={m.path} activeClassName='navItemLink'>
                     <IconButton className='menuItem' aria-label='Menu'>
                       {m.icon}
                     </IconButton>

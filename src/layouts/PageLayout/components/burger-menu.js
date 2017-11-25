@@ -52,7 +52,7 @@ class BurgerMenu extends Component {
           <Divider />
           <List >
             {getDatabaseItems().map(d =>
-              <Link to={d.path} activeClassName='navItemLink'>
+              <Link to={d.path} onClick={this.handleDrawerClose}>
                 <ListItem button>
                   <ListItemIcon>
                     {d.iconSmall}
@@ -65,7 +65,8 @@ class BurgerMenu extends Component {
           <Divider />
           <List >
             {getMenuItems().map(d =>
-              <Link to={d.path} activeClassName='navItemLink'>
+              d.header !== 'Database' &&
+              <Link to={d.path} onClick={this.handleDrawerClose}>
                 <ListItem button>
                   <ListItemIcon>
                     {d.iconSmall}
@@ -80,7 +81,7 @@ class BurgerMenu extends Component {
         color='contrast'
         aria-label='open drawer'
         onClick={this.handleDrawerOpen}
-            >
+      >
         <MenuIcon className='burger' />
       </IconButton>
       </div>

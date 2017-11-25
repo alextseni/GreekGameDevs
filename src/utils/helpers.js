@@ -37,11 +37,12 @@ const getTableHeader = (category) => ({
 }[category])
 
 const getMenuItems = (media) => [
-  // {
-  //   icon: <News className='menuIcon' />,
-  //   header: 'Dashboard',
-  //   path: '/',
-  // },
+  {
+    icon: <News className='menuIcon' />,
+    iconSmall: <News className='menuIconSmall' />,
+    header: 'Dashboard',
+    path: '/',
+  },
   {
     icon: <Database className='menuIcon' />,
     iconSmall: <Database className='menuIconSmall' />,
