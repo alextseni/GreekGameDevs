@@ -21,7 +21,7 @@ const help = [
     explanation: 'game available for pc ' +
     '(currently there is no distinction between linux, mac or windows)',
   },
-  { symbol: getMediaIcon('source'),
+  { symbol: getMediaIcon('sourcecode'),
     explanation: 'source code available',
   },
   { symbol: 'website icon sometimes appears twice',

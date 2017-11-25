@@ -1,5 +1,5 @@
 module.exports = {
-queryCompanies:
+videogamesCompanies:
 'SELECT ' +
 'vgcom.name,' +
 'vgcom.image,' +
@@ -15,16 +15,45 @@ queryCompanies:
 '\'status\', vg.status,' +
 '\'name\', vg.name,' +
 '\'id\', vg.id' +
-')),\',\')AS games,' +
+')),\',\')AS content,' +
 'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
 '\'url\',vglinks.link,' +
 '\'type\',vglinks.type,' +
 '\'id\', vglinks.gameid' +
-')),\',\')AS gamelinks ' +
+')),\',\')AS contentlinks ' +
 'FROM vgcom ' +
-'LEFT JOIN vg on vgcom.name = vg.developer ' +
+'JOIN vg on vgcom.name = vg.developer ' +
 'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
 'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
+'GROUP BY vgcom.name ' +
+'ORDER BY vgcom.name ASC',
+
+assetsCompanies:
+'SELECT ' +
+'vgcom.name,' +
+'vgcom.image,' +
+'vgcom.founded AS date,' +
+'vgcom.status,' +
+'vgcom.location,' +
+'vgcom.description,' +
+'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
+'\'link\', vgcomlinks.link,' +
+'\'type\', vgcomlinks.type' +
+')),\',\')AS links,' +
+'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
+'\'status\', assets.status,' +
+'\'name\', assets.name,' +
+'\'id\', assets.id' +
+')),\',\')AS content,' +
+'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
+'\'url\',assetlinks.link,' +
+'\'type\',assetlinks.type,' +
+'\'id\', assetlinks.assetid' +
+')),\',\')AS contentlinks ' +
+'FROM vgcom ' +
+'JOIN assets on vgcom.name = assets.company ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
+'LEFT JOIN assetlinks on assetlinks.assetid = assets.id ' +
 'GROUP BY vgcom.name ' +
 'ORDER BY vgcom.name ASC',
 
@@ -59,6 +88,38 @@ queryGames:
 'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
 'GROUP BY vg.id ' +
 'ORDER BY vg.name ASC',
+
+queryAssets:
+'SELECT ' +
+'assets.name,' +
+'assets.image,' +
+'assets.released AS date,' +
+'assets.status,' +
+'assets.description,' +
+'assets.category,' +
+'assets.price,' +
+'assets.tags,' +
+'assets.id,' +
+'assets.category,' +
+'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
+'\'link\', assetlinks.link,' +
+'\'type\', assetlinks.type' +
+')),\',\')AS links,' +
+'jsonb_build_array(array_agg (DISTINCT jsonb_build_object(' +
+'\'status\', vgcom.status,' +
+'\'name\', vgcom.name' +
+')),\',\')AS companies,' +
+'jsonb_build_array( array_agg (DISTINCT jsonb_build_object(' +
+'\'url\',vgcomlinks.link,' +
+'\'id\', vgcomlinks.company,' +
+'\'type\', vgcomlinks.type' +
+')),\',\')AS comlinks ' +
+'FROM assets ' +
+'LEFT JOIN vgcom on vgcom.name = assets.company ' +
+'LEFT JOIN assetlinks on assetlinks.assetid = assets.id ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
+'GROUP BY assets.id ' +
+'ORDER BY assets.name ASC',
 
 queryCalendar:
 'SELECT ' +

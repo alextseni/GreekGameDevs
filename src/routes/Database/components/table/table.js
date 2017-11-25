@@ -14,6 +14,7 @@ import {
 } from 'material-ui'
 import {
   transformName,
+  getTableHeader,
 } from 'utils/helpers'
 
 class Table extends Component {
@@ -23,11 +24,6 @@ class Table extends Component {
     }
   }
 
-  getHeader = (category) => ({
-    'companies': ['Company/Team', 'Games', 'Media', 'Status'],
-    'games': ['Game', 'Team(s)', 'Media', 'Platforms', 'Status'],
-  }[category]);
-
   render () {
     const { content, category, } = this.props
     return (
@@ -35,7 +31,7 @@ class Table extends Component {
         <TableBoard>
           <TableHead>
             <TableRow>
-              {this.getHeader(category).map(h =>
+              {getTableHeader(category).map(h =>
                 <TableCell padding={'dense'}>{h}</TableCell>
               )}
             </TableRow>
@@ -60,7 +56,7 @@ class Table extends Component {
                 </TableCell>
                 <TableCell padding={'dense'}>
                   <div className='flexClass'>
-                  {item.media.map(m =>
+                  {item.links1.map(m =>
                     <a
                       target='_blank'
                       style={{ margin: '0px 10px' }}
@@ -69,10 +65,10 @@ class Table extends Component {
                     </a>)}
                   </div>
                 </TableCell>
-                {item.platforms &&
+                {item.links2 &&
                 <TableCell padding={'dense'}>
                   <div className='flexClass'>
-                  {item.platforms.map(p =>
+                  {item.links2.map(p =>
                     <a
                       target='_blank'
                       style={{ margin: '0px 10px' }}
@@ -83,7 +79,7 @@ class Table extends Component {
                 </TableCell>
                 }
                 <TableCell padding={'dense'}>
-                  {(item.date || '') + '  ' + (item.status || ' ') }
+                  {item.other.map(f => f !== null && <span className='footerItem'>{f}</span>)}
                 </TableCell>
               </TableRow>
               ))}

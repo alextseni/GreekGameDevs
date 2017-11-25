@@ -1,3 +1,32 @@
+
+.info {
+  position: relative;
+    top: 20px;
+    min-width: 40px !important;
+    padding: 0 !important;
+    display: flex;
+    align-self: flex-start;
+}
+.btnandcardGrid {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  max-width: 470px;
+  width: 100%;
+    margin: 0px 10px;
+}
+
+.btnandcardList {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+    margin: 0px 10px;
+  max-width: 1000px;
+}
+
 .cardContainer {
 width: 100%;
   padding: 10px;
@@ -20,7 +49,9 @@ width: 100%;
 .itemButton {
   text-align: left;
 }
+.cardsContainer {
 
+}
 .logoGrid {
   display: flex;
   flex-direction: column;
@@ -29,6 +60,9 @@ width: 100%;
   background-color: rgba(93,93,93,.06);
   padding: 10px;
   flex-wrap: wrap;
+}
+.otherInfo {
+  display: flex;
 }
 .social {
   align-items: left;

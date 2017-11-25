@@ -1,3 +1,4 @@
+const credentials = require('./cred')
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack')
@@ -10,8 +11,7 @@ const app = express()
 const request = require('request')
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true')
-  : 'postgres://lfchinqeazokhq:5de2fd94a33e560e4922f94a6d22f8fa66be3704e9d82fbca8b970b2430ef757@ec2-54-75-225-143.eu-west-1.compute.amazonaws.com:5432/dc7pf03tfg68aa?ssl=true'
-const credentials = require('./cred')
+  : credentials.connectionString
 const queries = require('./queries')
 const pool = new Pool({
   connectionString: connectionString,
@@ -75,22 +75,21 @@ app.get('/api/totalTeams', (req, res, next) => {
       console.error('query error', e.message, e.stack)
     }))
 })
-app.get('/api/companies', (req, res, next) => {
+
+app.get('/api/:category/companies', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>
-    client.query(queries.queryCompanies).then(resCompanies => {
+    client.query(queries[req.params.category + 'Companies']).then(resCompanies => {
       res.json(resCompanies.rows.map(c => {
-        const { name, image, date, status, description, links, gamelinks, games, location } = c
+        const { name, image, date, status, description, links, contentlinks, content, location } = c
         return ({
           name,
           image,
-          date,
-          status,
           description,
-          location,
-          media: links[0],
-          content: games[0].map(g => {
-            const link = getLink(gamelinks, g.id)
+          other: [date, status, location],
+          links1: links[0],
+          content: content[0].map(g => {
+            const link = getLink(contentlinks, g.id)
             return ({
               name: g.name,
               status: g.status,
@@ -109,7 +108,8 @@ app.get('/api/companies', (req, res, next) => {
   )
 })
 
-app.get('/api/games', (req, res, next) => {
+
+app.get('/api/videogames/games', (req, res, next) => {
   // Get a Postgres client from the connection pool
   pool.connect().then(client =>
     client.query(queries.queryGames).then(resGames => {
@@ -117,12 +117,11 @@ app.get('/api/games', (req, res, next) => {
         const { name, style, genre, modes, image, date, status, description, links, comlinks, companies } = g
         return ({
           name,
-    //      image,
-          date,
-          status,
+          image,
           description,
-          media: links[0].filter(l => l.category === 'media'),
-          platforms: links[0].filter(l => l.category === 'platform'),
+          other: [date, status],
+          links1: links[0].filter(l => l.category === 'media'),
+          links2: links[0].filter(l => l.category === 'platform'),
           content: companies[0].map(c => {
             const link = getLink(comlinks, c.name)
             return ({
@@ -133,6 +132,40 @@ app.get('/api/games', (req, res, next) => {
           }),
           tags: (status + ',' + genre + ',' + modes + ',' + style).split(',').concat(links[0].map(l => l.type)),
           displayedtags: (genre + ',' + modes + ',' + style).split(','),
+        })
+      }))
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    })
+  )
+})
+
+app.get('/api/assets/assets', (req, res, next) => {
+  // Get a Postgres client from the connection pool
+  pool.connect().then(client =>
+    client.query(queries.queryAssets).then(resGames => {
+      res.json(resGames.rows.map(g => {
+        const { name, category, image, date, tags, price, status, description, links, comlinks, companies } = g
+        return ({
+          name,
+          image,
+          description,
+          other: [date, status],
+          links1: links[0],
+          content: companies[0].map(c => {
+            const link = getLink(comlinks, c.name)
+            return ({
+              name: c.name,
+              status: c.status,
+              link: link && link.url,
+            })
+          }),
+          tags: (status + ',' + category + ',' + price + ',' + tags).split(',').concat(links[0].map(l => l.type)),
+          displayedtags: (tags + ',' + 'null').split(','),
+        //  displayedtags: (genre + ',' + modes + ',' + style).split(','),
         })
       }))
       client.release()

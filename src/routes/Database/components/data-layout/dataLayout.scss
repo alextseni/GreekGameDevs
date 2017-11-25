@@ -1,0 +1,39 @@
+
+.contentContainer {
+  height:100%;
+  overflow: auto;
+      padding: 10px 30px;
+}
+
+.contentLoader {
+  margin: 40px;
+}
+
+.containerGrid {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.containerGrid > div > div:first-child {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+.containerGrid > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.containerList {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

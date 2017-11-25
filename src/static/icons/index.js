@@ -10,6 +10,7 @@ const AppStore = InlineSvg(require('!!raw-loader!./appstore.svg'))
 const LinkedIn = InlineSvg(require('!!raw-loader!./linkedin.svg'))
 const WindowsStore = InlineSvg(require('!!raw-loader!./windowsstore.svg'))
 const Demo = InlineSvg(require('!!raw-loader!./demo.svg'))
+const Unity = InlineSvg(require('!!raw-loader!./unity.svg'))
 const Online = InlineSvg(require('!!raw-loader!./online.svg'))
 const PC = InlineSvg(require('!!raw-loader!./computer.svg'))
 const IndieDB = InlineSvg(require('!!raw-loader!./indiedb.svg'))
@@ -22,7 +23,7 @@ const ViewTable = InlineSvg(require('!!raw-loader!./table.svg'))
 
 const Database = InlineSvg(require('!!raw-loader!./database.svg'))
 const VideoGames = InlineSvg(require('!!raw-loader!./controller.svg'))
-const Tools = InlineSvg(require('!!raw-loader!./tools.svg'))
+const Tools = InlineSvg(require('!!raw-loader!./settings.svg'))
 const Mail = InlineSvg(require('!!raw-loader!./envelope.svg'))
 const News = InlineSvg(require('!!raw-loader!./dashboard.svg'))
 const Question = InlineSvg(require('!!raw-loader!./question.svg'))
@@ -40,6 +41,7 @@ export {
   //Label,
   IndieDB,
   Tools,
+  Unity,
   PC,
   Mail,
   VideoGames,

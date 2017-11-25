@@ -1,7 +1,7 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/PageLayout/PageLayout'
-import VideoGamesRoute from './VideoGames'
-import ToolsRoute from './Tools'
+import VideoGamesRoute from './Database/VideoGames'
+import ToolsRoute from './Database/Tools'
 import CommunicationRoute from './Communication'
 import HomeRoute from './Home'
 import InfoRoute from './Info'

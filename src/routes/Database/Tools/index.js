@@ -1,7 +1,7 @@
-import { injectReducer } from '../../store/reducers'
+import { injectReducer } from 'store/reducers'
 
 export default (store) => ({
-  path : 'tools',
+  path : '/database/tools',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point
@@ -9,16 +9,16 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Tools = require('./containers/ToolsContainer').default
-      const reducer = require('./modules/tools').default
+      const Tools = require('../containers/databaseContainer').ToolsC
+      const reducer = require('../modules/database').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'tools', reducer })
+      injectReducer(store, { key: 'database', reducer })
 
       /*  Return getComponent   */
       cb(null, Tools)
 
     /* Webpack named bundle   */
-    }, 'tools')
+    }, 'database')
   }
 })

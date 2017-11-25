@@ -9,6 +9,7 @@ export const RESET_FILTERS = 'RESET_FILTERS'
 export const CHANGE_VIEW = 'CHANGE_VIEW'
 export const UPDATE_DATA = 'UPDATE_DATA'
 export const INITIAL_DATA = 'INITIAL_DATA'
+export const INITIAL_STATE = 'INITIAL_STATE'
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -16,6 +17,13 @@ export function initializeData (type, data) {
   return {
     type    : INITIAL_DATA,
     payload : { type, data },
+  }
+}
+
+export function initializeState () {
+  return {
+    type    : INITIAL_STATE,
+    payload : {},
   }
 }
 
@@ -103,6 +111,7 @@ const ACTION_HANDLERS = {
     },
     currentData: state.filters.main === action.payload.type ? action.payload.data : state.currentData,
   }),
+  [INITIAL_STATE] : (state, action) => initialState,
 }
 
 // ------------------------------------
@@ -113,6 +122,7 @@ const initialState = {
   data: {
     companies: [],
     games: [],
+    assets: [],
     people: [],
   },
   currentData: null,
@@ -129,7 +139,12 @@ const initialState = {
       style: [], // 3D, 2D, VR, etc..
       mode: [],
     },
+    assets: {
+      status: [], // released, under development, stopped,etc..
+      price: [],
+      category: [],
 
+    },
   },
 }
 

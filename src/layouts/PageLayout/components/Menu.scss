@@ -1,0 +1,36 @@
+.navbar {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.burger {
+  width: 36px !important ;
+  height: 36px !important;
+}
+.stats {
+display: flex;
+justify-content: center;
+font-weight: 800;
+margin: 5px 0px;
+}
+.stat {
+  width: 100px;
+}
+.navItemLink {
+  font-weight: bold;
+  text-decoration: none !important;
+}
+.navItemLink:hover {
+  text-decoration: none !important;
+}
+
+.menuLabel {
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 0 !important;
+}
+
+.menuItem > span {
+  flex-direction: column;
+}

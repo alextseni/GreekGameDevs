@@ -22,15 +22,17 @@ class CardFront extends Component {
     }
   }
   render () {
-    const { title, description, image, links1, links2, content, footer, tags, view } = this.props
+    const { title, description, image, links1, links2, content, footer, tags, view, hasImage = true } = this.props
     return (
       <Paper className='cardContainer'>
           <div className='header'>
             <div className={view === 'grid' ? 'logoGrid' : 'logo'}>
+            {hasImage &&
               <div
                 className={view === 'grid' ? 'iconGrid' : 'icon'}
-                style={{ backgroundImage: 'url(' + (image || 'missing.png') + ')' }}
+                style={{ backgroundImage: 'url(' + (image || '../missing.png') + ')' }}
               />
+            }
               <div className='title'>
                 <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
                   {title}
@@ -77,9 +79,13 @@ class CardFront extends Component {
               <Chip className='tag' label={t} />
             )}
           </div>
-          <Typography type='body2' component='h2' style={{ marginRight: '10px', marginLeft: '15px' }}>
-            {footer}
-          </Typography>
+          <div className='otherInfo'>
+          {footer.map((f, index) => f !== null &&
+            <Typography type='body2' component='h2' style={{ marginRight: '10px', marginLeft: '15px' }}>
+              {f}
+            </Typography>
+          )}
+          </div>
         </div>
       </Paper>
     )

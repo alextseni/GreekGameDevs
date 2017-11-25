@@ -35,7 +35,7 @@ class Home extends Component {
           <div className='databases'>
             {getDatabaseItems().map(d =>
               <Link to={d.path} activeClassName='navItemLink'>
-              <Paper className='dbCard' elevation={4}>
+              <Paper className='dbCard' elevation={8}>
                 {d.icon}
                 <Typography type='title' component='h4' style={{ color: 'white', marginTop: '10px', fontSize: '16px' }}>
                 {d.header}
