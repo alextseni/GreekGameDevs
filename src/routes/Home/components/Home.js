@@ -56,7 +56,7 @@ class Home extends Component {
             setCalendarEvents={setCalendarEvents}
       />
         </div>
-        <Polls />
+      {/*  <Polls /> */}
         </div>
       </div>
 
