@@ -66,12 +66,13 @@ class DataLayout extends Component {
   }
 
   componentWillMount = () => {
+     window.scrollTo(0, 0)
     this.props.sortByOptions.map(o =>
       this.getData(o))
   }
 
   render () {
-    const { filters, updateFilter, resetAllFilters, view, changeView, currentData, updateData, sortByOptions } = this.props
+    const { filters, updateFilter, view, changeView, currentData, updateData, sortByOptions } = this.props
     return (
         <Paper style={{ height: '100%', padding: '20px 20px 80px' }} elevation={2}>
           <div className='contentContainer' id='scrollContainer'>
@@ -80,7 +81,7 @@ class DataLayout extends Component {
               updateFilter={updateFilter}
               updateData={updateData}
               filters={filters}
-              resetAllFilters={resetAllFilters}
+            //  resetAllFilters={resetAllFilters}
               view={view}
               changeView={changeView}
               sortByOptions={sortByOptions} />

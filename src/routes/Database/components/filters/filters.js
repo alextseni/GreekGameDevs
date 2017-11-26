@@ -10,12 +10,12 @@ import {
   getViewIcon,
   getFilters,
 } from 'utils/helpers'
-
+import Select from 'react-select'
+import '!style-loader!css-loader!react-select/dist/react-select.css'
 import {
   Tooltip,
   Button,
   Chip,
-  Select,
   FormControl,
   MenuItem,
   InputLabel,
@@ -53,18 +53,18 @@ class Filters extends Component {
     }[view])
   }
 
-  reset = () => {
-    const { resetAllFilters, filters, resetContent } = this.props
-    resetAllFilters(filters.main)
-    resetContent()
-  }
+  // reset = () => {
+  //   const { resetAllFilters, filters, resetContent } = this.props
+  //   resetAllFilters(filters.main)
+  //   resetContent()
+  // }
 
   transformData = (mainCategory, subcategory = null, filterValues = null) => {
     const searchValue = subcategory === null ? '' : this.state.searchText
     this.setState({
       searchText: searchValue,
     })
-    this.props.updateFilter(mainCategory, subcategory, filterValues)
+    this.props.updateFilter(mainCategory, subcategory, filterValues ? filterValues.split(',') : [])
     this.props.updateData(mainCategory, searchValue)
     this.props.resetContent()
   }
@@ -73,9 +73,23 @@ class Filters extends Component {
     this.setState({
       searchText: event.target.value,
     })
-    this.props.updateData(name, event.target.value)
+  //  this.props.updateData(name, event.target.value)
+  //  this.props.resetContent()
+  };
+
+  onSearch = (name, value) => {
+    this.setState({
+      searchText: value,
+    })
+    this.props.updateData(name, value)
     this.props.resetContent()
   };
+  onEnter = (event) => {
+    if (event.key === 'Enter') {
+      this.props.updateData(this.props.filters.main, this.state.searchText)
+      this.props.resetContent()
+    }
+  }
 
   clearSearchText = (name) => {
     this.setState({
@@ -85,8 +99,9 @@ class Filters extends Component {
     this.props.resetContent()
   }
 
+
   render () {
-    const { updateFilter, filters, resetAllFilters, view, updateData, resetContent, searchData, sortByOptions } = this.props
+    const { updateFilter, filters, view, updateData, resetContent, searchData, sortByOptions } = this.props
     return (
       <div className='filtersContainer'>
         <div className='filtersToolbar'>
@@ -95,17 +110,21 @@ class Filters extends Component {
               <Chip className='chip' label={'sort by ' + o} onClick={() => this.transformData(o)} />
             )}
           </div>
-          <FormControl>
-            <InputLabel>{'Search for ' + filters.main + '...'}</InputLabel>
+          <FormControl className='searchBar'>
             <Input
               id='searchBar'
               type={'text'}
+              placeholder={'Search for ' + filters.main + '...'}
               value={this.state.searchText}
               onChange={this.search(filters.main)}
+              onKeyDown={this.onEnter}
+              className='searchInput'
+              disableUnderline
               endAdornment={
                 <InputAdornment position='end'>
                   {this.state.searchText &&
                   <IconButton
+                    style={{ height: '25px', width: '25px' }}
                     onClick={() => this.clearSearchText(filters.main)}>
                     <Clear />
                   </IconButton>
@@ -113,6 +132,14 @@ class Filters extends Component {
                 </InputAdornment>
               }
             />
+            <IconButton
+              style={{
+                height: '34px', width: '40px',
+                backgroundColor: '#efefef',
+                borderLeft: '1px solid #d4d4d4', borderRadius: 'inherit' }}
+              onClick={() => this.onSearch(filters.main, this.state.searchText)}>
+              <Search />
+            </IconButton>
           </FormControl>
           {window.matchMedia('(min-width: 500px)').matches &&
           <Tooltip
@@ -122,6 +149,7 @@ class Filters extends Component {
             placement='top'>
             <Button
               raised
+              style={{ minWidth: '50px', padding: 0 }}
               onClick={this.handleViewChange}
              >
               {getViewIcon(view)}
@@ -148,43 +176,34 @@ class Filters extends Component {
           className={this.state.open ? 'drawerBox' : 'noDrawer'}
       >
           <div className={'drawerInner'}>
-            {_.flattenDeep(Object.values(filters[filters.main])).length !== 0 &&
-            <Button raised onClick={() => this.reset()} style={{ position: 'fixed', left: 0, maxWidth: '32px', padding: 0 }}>
-              {'Clear filters'}
-            </Button>
-          }
             <div className='subfilters'>
               {getFilters(filters.main).map(f =>
-                <FormControl className='form'>
-                  <InputLabel htmlFor='name-multiple'>{f.filterName}</InputLabel>
+                <div className='multiselect'>
                   <Select
-                    multiple
-                    style={{ width: '200px' }}
-                    value={filters[filters.main][f.filterValue]}
-                    onChange={(event) => this.transformData(filters.main, f.filterValue, event.target.value)}
-                    input={<Input id='name-multiple' />}
-                    MenuProps={{
-                      PaperProps: {
-                        style: { maxHeight: 224, width: 200, },
-                      },
+                    closeOnSelect
+                    multi
+                    onChange={(value) => {
+                      this.transformData(filters.main, f.filterValue, value)
                     }}
-                 >
-                    {f.filterOptions.map(o =>
-                      <MenuItem value={o.value}>{o.name}</MenuItem>
-                    )}
-                  </Select>
-                </FormControl>
+                    options={f.filterOptions}
+                    placeholder={f.filterName}
+                    removeSelected={this.state.removeSelected}
+                //    rtl={this.state.rtl}
+                    simpleValue
+                    value={filters[filters.main][f.filterValue]}
+                  />
+                </div>
             )}
-            </div>
-            <div className='tools'>
-              <Tooltip id='tooltip-icon3' title='Return to top' placement='bottom'>
-                <Button raised onClick={() => window.scrollTo(0, 0)} style={{ margin: '0 20px', minWidth: '32px', padding: 0 }}>
-                  <BackToTop />
-                </Button>
-              </Tooltip>
             </div>
           </div>
         </Drawer>
+        <div className='tools'>
+          <Tooltip id='tooltip-icon3' title='Return to top' placement='top'>
+            <Button raised onClick={() => window.scrollTo(0, 0)} style={{ margin: '0 10px', minWidth: '32px', padding: 0 }}>
+              <BackToTop />
+            </Button>
+          </Tooltip>
+        </div>
       </div>
     )
   }

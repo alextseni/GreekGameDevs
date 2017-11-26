@@ -131,6 +131,8 @@ class Form extends Component {
           <TextField
             id='mail'
             label='Your email'
+            style={{ width: '100%' }}
+            labelClassName={'formLabel'}
             name='mail'
             required
             type='e-mail'
@@ -145,7 +147,7 @@ class Form extends Component {
             required
             className='multiline'
             style={{ width: '100%' }}
-            labelClassName='label'
+            labelClassName={'formLabel'}
             name='comment'
             id='multiline-flexible'
             label='Fill in anything you wish to add or correct.'
@@ -153,7 +155,7 @@ class Form extends Component {
               shrink: true,
             }}
             multiline
-            rowsMax='4'
+            rowsMax='10'
             rows='5'
             value={this.state.formItem.comment}
             onChange={this.handleFormChange('comment')}

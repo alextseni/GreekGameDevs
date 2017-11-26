@@ -12,7 +12,7 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  max-width: 470px;
+  max-width: 375px;
   width: 100%;
     margin: 0px 10px;
 }
@@ -49,6 +49,14 @@ width: 100%;
 .itemButton {
   text-align: left;
 }
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #777;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 2px
+}
 .cardsContainer {
 
 }
@@ -63,15 +71,33 @@ width: 100%;
 }
 .otherInfo {
   display: flex;
+  margin-top: 2px;
 }
-.social {
+.socialGrid {
   align-items: left;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-.content {
+.socialList {
+  align-items: left;
+  display: flex;
   flex-wrap: wrap;
-  min-height: 52px;
+  align-items: center;
+}
+.contentGrid {
+  flex-wrap: wrap;
+  min-height: 24px;
+  height: auto;
+  align-items: center;
+    justify-content: center;
+  display: flex;
+  background-color: rgba(93,93,93,.06);
+}
+.contentList {
+  flex-wrap: wrap;
+  min-height: 24px;
   height: auto;
   align-items: center;
   display: flex;
@@ -79,6 +105,8 @@ width: 100%;
 }
 .line {
   border: 1px solid rgba(0,0,0,.1);
+  height: 30px;
+  margin: 5px 0px;
 }
 .title {
   display: flex;
@@ -89,9 +117,10 @@ width: 100%;
   background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgba(255,255,255,0.67);
-    width: 76px;
+//    background-color: rgba(255,255,255,0.67);
+    width: 160px;
 height: 76px;
+background-position: 4%;
 //border: 1px solid rgba(0,0,0,0.64);
 //border-radius: 50%;
 margin-right: 20px;
@@ -120,17 +149,18 @@ margin-bottom: 5px;
   display: flex;
 justify-content: space-between;
 align-items: center;
-margin-top: 10px;
+margin-top: 5px;
 flex-wrap: wrap;
 }
 .tags {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+//  justify-content: center;
 }
 
 .tag {
   height: 24px !important;
   margin-left: 10px;
+  margin-top: 5px;
 }

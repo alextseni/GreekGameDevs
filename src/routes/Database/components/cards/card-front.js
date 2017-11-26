@@ -43,24 +43,24 @@ class CardFront extends Component {
               </div>
             </div>
           </div>
-          <div className='social'>
+          <div className={view === 'list' ? 'socialList' : 'socialGrid'}>
           {links1 && links1.map(link => (
               <Button target='_blank' disabled={!link.link} href={link.link} dense color='primary'>
                 {getMediaIcon(link.type)}
               </Button>
           ))}
-          </div>
-          {links1 && links2 && <div className='line' />}
-          <div className='social'>
+          {links1 && links2 && links1.length !== 0 && links2.length !== 0 && <span className='line' />}
           {links2 && links2.map(link => (
               <Button target='_blank' disabled={!link.link} href={link.link} dense color='primary'>
                 {getMediaIcon(link.type)}
               </Button>
           ))}
           </div>
-        <div className='content'>
-          {content && content.map(item => (
+        <div className={view === 'list' ? 'contentList' : 'contentGrid'}>
+          {content && content.map((item, index) => (
             item &&
+            <div>
+            {index !== 0 && <span className='dot' />}
             <Button
               className={getColorCode(item.status) + ' ' + 'itemButton'}
               target='_blank'
@@ -70,6 +70,7 @@ class CardFront extends Component {
             >
               {item.name}
             </Button>
+            </div>
           ))}
         </div>
         <div className='footer'>

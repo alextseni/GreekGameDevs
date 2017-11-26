@@ -1,25 +1,31 @@
 .socialIcon {
   margin: 2px;
   fill: #34a56f;
+  display: flex;
 }
 .socialIcon > svg {
   width: 28px;
+  height: 28px;
 }
 
 .dbIcon > svg {
   width: 40px;
+  height: 40px;
   fill: white;
 }
 .dbIconSmall > svg {
   width: 24px;
+  height: 24px;
   fill: rgba(0,0,0,0.84);
 }
 .menuIcon > svg {
   width: 36px;
+  height: 36px;
   fill: white;
 }
 .menuIconSmall > svg {
   width: 24px;
+  height: 24px;
   fill: rgba(0,0,0,0.84);
 }
 .primary {

@@ -47,7 +47,7 @@ class Table extends Component {
                   {item.content.map(c =>
                     <a
                       target='_blank'
-                      style={{ margin: '0px 10px' }}
+                      style={{ marginRight: '10px' }}
                       href={c.link}>
                       {c.name}
                     </a>
@@ -59,7 +59,7 @@ class Table extends Component {
                   {item.links1.map(m =>
                     <a
                       target='_blank'
-                      style={{ margin: '0px 10px' }}
+                      style={{ marginRight: '10px' }}
                       href={m.link}>
                       {transformName(m.type) || m.type}
                     </a>)}
@@ -71,7 +71,7 @@ class Table extends Component {
                   {item.links2.map(p =>
                     <a
                       target='_blank'
-                      style={{ margin: '0px 10px' }}
+                      style={{ marginRight: '10px' }}
                       href={p.link}>
                       {transformName(p.type) || p.type}
                     </a>)}

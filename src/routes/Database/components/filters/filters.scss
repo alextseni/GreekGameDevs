@@ -26,19 +26,28 @@ align-items: center;
 .chip {
   margin: 5px;
 }
+
 .chip:hover {
   background-color: #eaeaea !important;
+}
+.multiselect {
+  max-width: 240px;
+  width: 100%;
+  margin: 10px 5px 5px;
 }
 
 .subfilters {
   //align-items: flex-end;
   min-height: 84px;
+  width: 100%;
   display: flex;
 //  justify-content: center;
   flex-wrap: wrap;
 }
 .tools {
-
+  position: fixed;
+  bottom: 20px;
+  right: 0;
 }
 .drawerHandle {
   position: fixed;
@@ -46,12 +55,29 @@ align-items: center;
   left: 0px;
   z-index: 10000;
 }
+.searchBar {
+  height: 36px !important;
+  padding: 5px 0px 5px 10px !important;
+  border: 1px solid #d0d0d0 !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+.searchInput {
+  display: flex !important;
+align-items: center !important;
+}
+.searchInput > input {
+padding: 0;
+}
+.searchInput > div {
+  display: flex;
+}
 
 .drawerBox > div {
-  overflow: hidden;
-  background-color: #E1F5FE;
-      padding-bottom: 20px;
-      padding-left: 110px;
+  overflow: visible;
+  background-color: #b8dff1;
+  padding-bottom: 20px;
+  padding-left: 110px;
 }
 
 .drawerInner {

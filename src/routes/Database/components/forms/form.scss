@@ -16,10 +16,12 @@
   width: 100%;
   max-width: 500px;
 }
-
+.formLabel {
+  font-size: 18px !important;
+}
 .multiline > div {
-  max-height: 200px;
-  margin-top: 40px !important;
+  margin-top: 20px !important;
+  background-color: #f7f7f7;
 }
 
 .popupStatus {
