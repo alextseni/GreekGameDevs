@@ -37,7 +37,7 @@ class BurgerMenu extends Component {
 
   render () {
     return (
-      <div>
+      <div className='burgerContainer'>
       <Drawer
         anchor={'right'}
         open={this.state.open}

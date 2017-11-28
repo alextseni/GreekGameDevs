@@ -40,7 +40,7 @@ class News extends Component {
   render () {
     const { setHistory, history } = this.props
     return (
-      <div className={window.matchMedia("(min-width: 960px)").matches ? 'news50width' : 'news100width'}>
+      <div className={'newsWidth'}>
         <div className='sectionTitle'>
           <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
             News & updates

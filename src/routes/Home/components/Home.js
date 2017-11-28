@@ -46,7 +46,7 @@ class Home extends Component {
           </div>
         </div>
         <div className='dashContent'>
-        <div className={window.matchMedia('(min-width: 960px)').matches ? 'rowContainer' : 'columnContainer'}>
+        <div className={'rowContainer'}>
           <News
             history={history}
             setHistory={setHistory}

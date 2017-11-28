@@ -48,9 +48,8 @@ class PageLayout extends Component {
             <Link to={'/'} activeClassName='navItemLink'>
               <div className={'logoArea'} />
             </Link>
-            {window.matchMedia('(max-width: 700px)').matches
-            ? <BurgerMenu />
-            : <Toolbar className='navbar'>
+            <BurgerMenu />
+            <Toolbar className='navbar'>
               {getMenuItems().map(m =>
                   m.header === 'Database'
                   ? <Manager>
@@ -94,7 +93,6 @@ class PageLayout extends Component {
                   </Link>
               )}
             </Toolbar>
-            }
           </div>
           <MiniStats />
         </AppBar>

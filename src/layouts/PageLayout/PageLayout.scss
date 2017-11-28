@@ -1,19 +1,31 @@
 .page-layout__viewport {
-  margin-top: 80px;
+  margin-top: 60px;
+}
+
+@media (max-width: 620px) {
+.page-layout__viewport {
+  margin-top: 50px;
+}
 }
 
 .logoArea {
   background-image: url('/logo.png');
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   width: 173px;
-  height: 77px;
-  margin: 0px 20px;
+  height: 55px;
+  margin: 0px 10px;
 }
 .appbar {
   align-items: center;
   background-color: #0091EA !important;
+}
+
+@media (max-width: 620px) {
+.navbar {
+    display: none !important;
+}
 }
 
 .menuBar {
@@ -29,6 +41,9 @@
   font-weight: 700 !important;
   font-size: 14px !important;
   padding: 0 !important;
+}
+.menuItem {
+  height: 36px !important;
 }
 
 .menuItem > span {

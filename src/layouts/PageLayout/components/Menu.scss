@@ -4,6 +4,12 @@
   justify-content: space-evenly;
   max-width: 430px;
 }
+@media (min-width: 621px) {
+  .burgerContainer {
+      display: none !important;
+  }
+}
+
 .burger {
   width: 36px !important ;
   height: 36px !important;

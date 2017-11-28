@@ -47,10 +47,12 @@ cursor: pointer;
   display: flex;
   flex-direction: row;
 }
-.columnContainer {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 960px) {
+  .rowContainer {
+    flex-direction: column;
+  }
 }
+
 .sectionTitle {
   background-color: #f3f3f3;
   padding: 20px;

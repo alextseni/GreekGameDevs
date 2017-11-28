@@ -26,13 +26,14 @@ class CardFront extends Component {
     return (
       <Paper className='cardContainer'>
           <div className='header'>
-            <div className={view === 'grid' ? 'logoGrid' : 'logo'}>
-            {hasImage &&
-              <div
-                className={view === 'grid' ? 'iconGrid' : 'icon'}
-                style={{ backgroundImage: 'url(' + (image || '../missing.png') + ')' }}
-              />
-            }
+          {view === 'grid' ?
+            <div className={'logoGrid'}>
+              {hasImage &&
+                <div
+                  className={'iconGrid'}
+                  style={{ backgroundImage: 'url(' + (image || '../missing.png') + ')' }}
+                />
+              }
               <div className='title'>
                 <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
                   {title}
@@ -42,6 +43,24 @@ class CardFront extends Component {
                 </Typography>
               </div>
             </div>
+            :
+            <div className={'logo'}>
+              <div className='title'>
+                <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
+                  {title}
+                </Typography>
+                <Typography type='caption' style={{ textAlign: 'left', marginTop: '5px' }}>
+                  {description}
+                </Typography>
+              </div>
+              {hasImage &&
+                <div
+                  className={'icon'}
+                  style={{ backgroundImage: 'url(' + (image || '../missing.png') + ')' }}
+                />
+              }
+            </div>
+          }
           </div>
           <div className={view === 'list' ? 'socialList' : 'socialGrid'}>
           {links1 && links1.map(link => (

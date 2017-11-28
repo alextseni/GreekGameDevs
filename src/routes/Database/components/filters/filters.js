@@ -141,11 +141,11 @@ class Filters extends Component {
               <Search />
             </IconButton>
           </FormControl>
-          {window.matchMedia('(min-width: 500px)').matches &&
           <Tooltip
             style={{ display: 'flex', justifyContent: 'flex-end', marginLeft: '10px' }}
             id='tooltip-icon1'
             title='Change view'
+            className='viewButton'
             placement='top'>
             <Button
               raised
@@ -155,7 +155,6 @@ class Filters extends Component {
               {getViewIcon(view)}
             </Button>
           </Tooltip>
-        }
         </div>
         <div className='drawerHandle'>
           <Tooltip style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} id='tooltip-icon' title='Open filters' placement='top'>

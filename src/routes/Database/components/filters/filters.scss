@@ -79,7 +79,11 @@ padding: 0;
   padding-bottom: 20px;
   padding-left: 110px;
 }
-
+@media (max-width: 500px) {
+.viewButton {
+  display: none !important;
+}
+}
 .drawerInner {
   flex-direction: row;
     display: flex;
