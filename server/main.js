@@ -225,41 +225,45 @@ app.get('/send', (req, res) => {
 // ------------------------------------
 // Apply Webpack HMR Middleware
 // ------------------------------------
-const compiler = webpack(webpackConfig)
-
-logger.info('Enabling webpack development and HMR middleware')
-app.use(require('webpack-dev-middleware')(compiler, {
-  publicPath  : webpackConfig.output.publicPath,
-  contentBase : path.resolve(project.basePath, project.srcDir),
-  hot         : true,
-  quiet       : false,
-  noInfo      : false,
-  lazy        : false,
-  stats       : 'normal',
-}))
-app.use(require('webpack-hot-middleware')(compiler, {
-  path: '/__webpack_hmr'
-}))
-
+if (project.env === 'development') {
+  const compiler = webpack(webpackConfig)
+  logger.info('Enabling webpack development and HMR middleware')
+  app.use(require('webpack-dev-middleware')(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    contentBase: path.resolve(project.basePath, project.srcDir),
+    hot: true,
+    quiet: false,
+    noInfo: false,
+    lazy: false,
+    stats: 'normal',
+  }))
+  app.use(require('webpack-hot-middleware')(compiler, {
+    path: '/__webpack_hmr'
+  }))
   // Serve static assets from ~/public since Webpack is unaware of
   // these files. This middleware doesn't need to be enabled outside
   // of development since this directory will be copied into ~/dist
   // when the application is compiled.
-app.use(express.static(path.resolve(project.basePath, 'public')))
-
+  app.use(express.static(path.resolve(project.basePath, 'public')))
   // This rewrites all routes requests to the root /index.html file
   // (ignoring file requests). If you want to implement universal
   // rendering, you'll want to remove this middleware.
-app.use('*', function (req, res, next) {
-  const filename = path.join(compiler.outputPath, 'index.html')
-  compiler.outputFileSystem.readFile(filename, (err, result) => {
-    if (err) {
-      return next(err)
-    }
-    res.set('content-type', 'text/html')
-    res.send(result)
-    res.end()
+  app.use('*', function (req, res, next) {
+    const filename = path.join(compiler.outputPath, 'index.html')
+    compiler.outputFileSystem.readFile(filename, (err, result) => {
+      if (err) {
+        return next(err)
+      }
+      res.set('content-type', 'text/html')
+      res.send(result)
+      res.end()
+    })
   })
-})
+} else {
+  app.use(express.static(path.resolve(project.basePath, project.outDir)))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(project.basePath, 'dist', 'index.html'));
+  });
+}
 
 module.exports = app

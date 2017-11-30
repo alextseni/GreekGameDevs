@@ -1,7 +1,9 @@
 .DS_STORE
 *.log
 node_modules
-dist
+#dist
 coverage
 .idea/
 .yarn-cache
+package-lock.json
+yarn.lock
