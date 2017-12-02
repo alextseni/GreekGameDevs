@@ -88,7 +88,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1ed39f52f17bee55ef88"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1f6b2833e385586fb382"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -660,7 +660,9 @@
 /******/ 		}
 /******/ 	
 /******/ 		hotSetStatus("idle");
-/******/ 		return Promise.resolve(outdatedModules);
+/******/ 		return new Promise(function(resolve) {
+/******/ 			resolve(outdatedModules);
+/******/ 		});
 /******/ 	}
 /******/
 /******/ 	// The module cache
@@ -701,20 +703,21 @@
 /******/ 	// This file contains only the entry chunk.
 /******/ 	// The chunk loading function for additional chunks
 /******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		if(installedChunks[chunkId] === 0) {
-/******/ 			return Promise.resolve();
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData === 0) {
+/******/ 			return new Promise(function(resolve) { resolve(); });
 /******/ 		}
 /******/
 /******/ 		// a Promise means "currently loading".
-/******/ 		if(installedChunks[chunkId]) {
-/******/ 			return installedChunks[chunkId][2];
+/******/ 		if(installedChunkData) {
+/******/ 			return installedChunkData[2];
 /******/ 		}
 /******/
 /******/ 		// setup Promise in chunk cache
 /******/ 		var promise = new Promise(function(resolve, reject) {
-/******/ 			installedChunks[chunkId] = [resolve, reject];
+/******/ 			installedChunkData = installedChunks[chunkId] = [resolve, reject];
 /******/ 		});
-/******/ 		installedChunks[chunkId][2] = promise;
+/******/ 		installedChunkData[2] = promise;
 /******/
 /******/ 		// start chunk loading
 /******/ 		var head = document.getElementsByTagName('head')[0];
