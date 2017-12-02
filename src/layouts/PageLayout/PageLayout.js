@@ -66,6 +66,7 @@ class PageLayout extends Component {
                     <Popper
                       placement='bottom-start'
                       eventsEnabled={this.state.open}
+                      className={this.state.open ? '' : 'popperClose'}
                   >
                       <ClickAwayListener onClickAway={this.handleRequestClose}>
                         <Grow in={this.state.open} id='menu-list' style={{ transformOrigin: '0 0 0' }}>
