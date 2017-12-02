@@ -161,7 +161,7 @@ class Filters extends Component {
             <Button
               aria-label='open drawer'
               raised
-              style={{ minHeight: '36px', height: '36px' }}
+              style={{ minHeight: '31px', height: '31px', width: '20px', minWidth: '80px' }}
               onClick={this.handleDrawer}
           >
               {'Filters'}
