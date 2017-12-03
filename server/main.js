@@ -20,10 +20,10 @@ const ical = require('ical-generator')
 const http = require('http')
 
 let cal = ical({
-    domain: 'greekgamedevs.com',
+    domain: 'ggdtest.herokuapp.com',
     name: 'GGD events',
-    prodId: '//greekgamedevs.com//calendar//EN',
-    url: 'http://greekgamedevs.com/calendar.ical',
+    prodId: '//ggdtest.herokuapp.com//calendar//EN',
+    url: 'http://ggdtest.herokuapp.com/calendar.ical',
     timezone: 'Europe/Athens',
 })
 
