@@ -85,7 +85,7 @@ class Calendar extends Component {
           raised
           target='_blank'
           color='accent'
-          href={'http://www.google.com/calendar/render?cid=http://ggdtest.herokuapp.com/calendar.ical'}>
+          href={'http://www.google.com/calendar/render?cid=http://ggdtest.herokuapp.com/calendar'}>
             Subscribe to calendar
         </Button>
         </div>

@@ -17,13 +17,12 @@ const pool = new Pool({
   connectionString: connectionString,
 })
 const ical = require('ical-generator')
-const http = require('http')
 
 let cal = ical({
     domain: 'ggdtest.herokuapp.com',
     name: 'GGD events',
     prodId: '//ggdtest.herokuapp.com//calendar//EN',
-    url: 'http://ggdtest.herokuapp.com/calendar.ical',
+    url: 'http://ggdtest.herokuapp.com/calendar',
     timezone: 'Europe/Athens',
 })
 
@@ -39,6 +38,7 @@ const getEvents = () => {
           location: e.location,
         })
       )
+      cal.toString()
       client.release()
     })
     .catch(e => {
@@ -48,7 +48,7 @@ const getEvents = () => {
 }
 getEvents()
 
-app.post('/', (req, res) => {
+app.get('/calendar', (req, res) => {
   cal.serve(res)
 })
 
