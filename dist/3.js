@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -8,14 +8,14 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".infocontainer{max-width:750px;margin:auto;text-align:left}.question{font-weight:700;margin-bottom:0;text-align:left;font-size:16px}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Info/components/src/routes/Info/components/Info.scss"],"names":[],"mappings":"AAAA,eACE,gBAAgB,AAChB,YAAY,AACZ,eAAgB,CACjB,AACD,UACE,gBAAgB,AAChB,gBAAkB,AAClB,gBAAgB,AAChB,cAAe,CAChB","file":"Info.scss","sourcesContent":[".infocontainer {\n  max-width: 750px;\n  margin: auto;\n  text-align: left;\n}\n.question {\n  font-weight: 700;\n  margin-bottom: 0px;\n  text-align: left;\n  font-size: 16px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".infocontainer{max-width:750px;margin:auto;text-align:left}.question{font-weight:700;margin-bottom:0;text-align:left;font-size:16px}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Info/components/src/routes/Info/components/Info.scss"],"names":[],"mappings":"AAAA,eACE,gBAAgB,AAChB,YAAY,AACZ,eAAgB,CACjB,AACD,UACE,gBAAgB,AAChB,gBAAkB,AAClB,gBAAgB,AAChB,cAAe,CAChB","file":"Info.scss","sourcesContent":[".infocontainer {\r\n  max-width: 750px;\r\n  margin: auto;\r\n  text-align: left;\r\n}\r\n.question {\r\n  font-weight: 700;\r\n  margin-bottom: 0px;\r\n  text-align: left;\r\n  font-size: 16px;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -23,14 +23,14 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".credits{margin-bottom:50px}.creditsList{margin:15px 0}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Info/components/components/credits/src/routes/Info/components/components/credits/credits.scss"],"names":[],"mappings":"AACA,SACE,kBAAmB,CACpB,AACD,aACE,aAAgB,CACjB","file":"credits.scss","sourcesContent":["\n.credits {\n  margin-bottom: 50px;\n}\n.creditsList {\n  margin: 15px 0px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".credits{margin-bottom:50px}.creditsList{margin:15px 0}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Info/components/components/credits/src/routes/Info/components/components/credits/credits.scss"],"names":[],"mappings":"AACA,SACE,kBAAmB,CACpB,AACD,aACE,aAAgB,CACjB","file":"credits.scss","sourcesContent":["\r\n.credits {\r\n  margin-bottom: 50px;\r\n}\r\n.creditsList {\r\n  margin: 15px 0px;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -38,7 +38,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".help{margin:10px}.helpList{margin:15px 0}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Info/components/components/help/src/routes/Info/components/components/help/help.scss"],"names":[],"mappings":"AACA,MACA,WAAY,CACX,AACD,UACE,aAAgB,CACjB","file":"help.scss","sourcesContent":["\n.help {\nmargin: 10px;\n}\n.helpList {\n  margin: 15px 0px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".help{margin:10px}.helpList{margin:15px 0}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Info/components/components/help/src/routes/Info/components/components/help/help.scss"],"names":[],"mappings":"AACA,MACA,WAAY,CACX,AACD,UACE,aAAgB,CACjB","file":"help.scss","sourcesContent":["\r\n.help {\r\nmargin: 10px;\r\n}\r\n.helpList {\r\n  margin: 15px 0px;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -161,7 +161,7 @@ Info.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -175,8 +175,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/Info.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -400,7 +400,7 @@ Credits.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -414,8 +414,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/credits/credits.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -572,7 +572,7 @@ Help.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -586,8 +586,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Info/components/components/help/help.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});

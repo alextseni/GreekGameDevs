@@ -13,6 +13,7 @@ import {
   CircularProgress,
 } from 'material-ui'
 import { CheckCircle, Error } from 'material-ui-icons'
+import { validEmail } from 'utils/validations'
 
 class Contact extends Component {
   constructor (props: Contact.propTypes) {
@@ -22,6 +23,8 @@ class Contact extends Component {
       hasSubmitted: false,
       success: false,
       contactItem: {
+        mail: '',
+        comment: '',
       },
     }
   }
@@ -30,7 +33,10 @@ class Contact extends Component {
     this.setState({
       hasSubmitted: false,
       success: false,
-      contactItem: {},
+      contactItem: {
+        mail: '',
+        comment: '',
+      },
     })
   }
 
@@ -64,12 +70,18 @@ class Contact extends Component {
         this.setState({
           success: true,
           isLoading: false,
+          contactItem: {
+            mail: '',
+            comment: '',
+          },
         })
       }
-      setTimeout(() => {this.setState({
-                hasSubmitted: false,
-                success: false,
-              })}, 4000)
+      setTimeout(() => {
+        this.setState({
+          hasSubmitted: false,
+          success: false,
+        })
+      }, 4000)
     }
     console.log(this.state.verification)
     xhttp.open(
@@ -88,11 +100,11 @@ class Contact extends Component {
       <div className='contact'>
         <Typography type='headline' component='h4' className='title'>
       Get in touch!
-    </Typography>
+        </Typography>
         <Typography type='body2' component='h4' className='description'>
       Is your team missing from the list? Wish to share your ideas about making this site better? Let us know by using the form below!
       For missing or wrong info on existing cards, go to that card, click on {<Info width='22px' />} and use the poped up form.
-    </Typography>
+        </Typography>
         <div>
           {this.state.isLoading
       ? <div className='popupStatusForm' style={{ backgroundColor: 'white' }}>
@@ -103,14 +115,14 @@ class Contact extends Component {
           <CheckCircle style={{ width:'50px', height: '50px' }} />
           <Typography type='headline' component='h4'>
               Thank you!
-            </Typography>
+          </Typography>
         </div>
         : this.state.hasSubmitted
           ? <div className='popupStatusForm' style={{ backgroundColor: '#db8787' }}>
             <Error style={{ width:'50px', height: '50px' }} />
             <Typography type='headline' component='h4'>
                   Email not sent
-                </Typography>
+            </Typography>
           </div>
           : <div style={{ width: 0, height: 0 }} />
     }
@@ -122,6 +134,7 @@ class Contact extends Component {
             name='mail'
             type='email'
             required
+            error={this.state.contactItem.mail && !validEmail(this.state.contactItem.mail)}
             value={this.state.contactItem.mail}
             onChange={this.handleFormChange('mail')}
     />
@@ -147,13 +160,13 @@ class Contact extends Component {
             style={{ width: '50px', margin: '20px', alignSelf: 'flex-end' }}
             raised
             disabled={
-              !this.state.contactItem.mail ||
+              !validEmail(this.state.contactItem.mail) ||
               !this.state.contactItem.comment ||
               this.state.hasSubmitted ||
               !this.state['verification']}
             onClick={this.sendMail}>
-      Send!
-    </Button>
+            Send!
+          </Button>
         </div>
       </div>
     )

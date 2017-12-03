@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('./config')
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack')
@@ -16,6 +16,41 @@ const sendInBlueOptions = { "apiKey": config.sendinblue.apikey /*, "timeout": 50
 const SendInBlue = new Mail(sendInBlueOptions)
 const pool = new Pool({
   connectionString: connectionString,
+})
+const ical = require('ical-generator')
+
+let cal = ical({
+  domain: 'greekgamedevs.com',
+  name: 'GGD events',
+  prodId: '//greekgamedevs.com//calendar//EN',
+  url: config.calendar.url,
+  timezone: 'Europe/Athens',
+})
+
+const getEvents = () => {
+  pool.connect().then(client =>
+    client.query(queries.queryCalendar).then(resEvents => {
+      resEvents.rows.map(e =>
+        cal.createEvent({
+          start: e.start,
+          end: e.end,
+          summary: e.title,
+          description: e.descr,
+          location: e.location,
+        })
+      )
+      cal.toString()
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    }))
+}
+getEvents()
+
+app.get('/calendar', (req, res) => {
+  cal.serve(res)
 })
 
 const sendEmail = (data) => {
@@ -220,13 +255,15 @@ app.get('/send', (req, res) => {
     }
     sendEmail(mailOptions)
       .then((result) => {
-        console.log(res)
-        if (result.code !== 'success') result.end('error')
-        res.end('sent')
+        console.log(result)
+        if (result.code !== 'success') {
+          return res.end('error')
+        }
+        return res.end('sent')
       })
       .catch((err) => {
-        console.log(err)
-        res.end('error')
+        //console.log(err)
+        return res.end('error')
       })
   })
 })

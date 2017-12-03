@@ -3,17 +3,13 @@ import PropTypes from 'prop-types'
 import './form.scss'
 import _ from 'lodash'
 import {
-  Icon,
-  Paper,
   Typography,
-  IconButton,
-  Checkbox,
   Button,
-  Badge,
   TextField,
   CircularProgress,
 } from 'material-ui'
 import { CheckCircle, Error } from 'material-ui-icons'
+import { validEmail } from 'utils/validations'
 
 import ReCAPTCHA from 'react-google-recaptcha'
 let xhttp
@@ -26,6 +22,7 @@ class Form extends Component {
       isLoading: false,
       success: false,
       formItem: {
+        mail: '',
       },
     }
   }
@@ -33,7 +30,10 @@ class Form extends Component {
   componentWillMount = () => {
     xhttp = new XMLHttpRequest()
     this.setState({
-      formItem: this.props.selectedItem,
+      formItem: {
+        ...this.props.selectedItem,
+        mail: '',
+      },
       hasSubmitted: false,
       success: false,
     })
@@ -136,6 +136,7 @@ class Form extends Component {
             name='mail'
             required
             type='e-mail'
+            error={this.state.formItem.mail && !validEmail(this.state.formItem.mail)}
             value={this.state.formItem.mail}
             onChange={this.handleFormChange('mail')}
             margin='normal'
@@ -171,7 +172,7 @@ class Form extends Component {
             onClick={this.sendMail}
             disabled={
               !this.state.formItem.comment ||
-              !this.state.formItem.mail ||
+              !validEmail(this.state.formItem.mail) ||
               this.state.hasSubmitted ||
               !this.state['verification']}>
             Send!

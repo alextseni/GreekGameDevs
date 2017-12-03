@@ -15,7 +15,7 @@ exports.push([module.i, ".rbc-btn {\n  color: inherit;\n  font: inherit;\n  marg
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -23,14 +23,14 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".welcome{background-repeat:no-repeat;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column;background-size:cover;min-height:372px;background-attachment:fixed;background-position:50% 314%;padding:20px}.databases,.welcome{display:-ms-flexbox;display:flex;width:100%}.databases{max-width:700px;height:100%;-ms-flex-align:end;align-items:flex-end;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding:40px;-ms-flex-wrap:wrap;flex-wrap:wrap}.dbCard{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center!important;align-items:center!important;-ms-flex-pack:center!important;justify-content:center!important;height:100px!important;width:150px;background-color:#4e4e4e!important;margin-top:10px}.dbCard:hover{box-shadow:0 0 12px #888;cursor:pointer}.dashContent{-ms-flex-direction:column;flex-direction:column;padding:0 40px}.dashContent,.rowContainer{display:-ms-flexbox;display:flex}.rowContainer{-ms-flex-direction:row;flex-direction:row}@media (max-width:960px){.rowContainer{-ms-flex-direction:column;flex-direction:column}}.sectionTitle{background-color:#f3f3f3;padding:20px}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Home/components/src/routes/Home/components/Home.scss"],"names":[],"mappings":"AAAA,SACE,4BAA4B,AAExB,sBAAmB,AAAnB,mBAAmB,AAEnB,0BAAsB,AAAtB,sBAAsB,AAEtB,sBAAsB,AACtB,iBAAiB,AACjB,4BAA4B,AAC5B,6BAA6B,AAC7B,YAAa,CAClB,AACD,oBAXM,oBAAa,AAAb,aAAa,AAEb,UAAW,CAkBhB,AATD,WAEE,gBAAgB,AAEhB,YAAY,AACZ,mBAAqB,AAArB,qBAAqB,AACvB,2BAA6B,AAA7B,6BAA6B,AAC7B,aAAa,AACT,mBAAe,AAAf,cAAe,CAClB,AAED,QACE,oBAAa,AAAb,aAAa,AACf,0BAAsB,AAAtB,sBAAsB,AACtB,gCAA8B,AAA9B,6BAA8B,AAC9B,+BAAkC,AAAlC,iCAAkC,AAClC,uBAAwB,AACxB,YAAY,AACZ,mCAAoC,AACpC,eAAgB,CACf,AAED,cACA,yBAAgC,AAChC,cAAe,CACd,AACD,aAEE,0BAAsB,AAAtB,sBAAsB,AACtB,cAAe,CAChB,AAED,2BALE,oBAAa,AAAb,YAAa,CAQd,AAHD,cAEE,uBAAmB,AAAnB,kBAAmB,CACpB,AACD,yBACE,cACE,0BAAsB,AAAtB,qBAAsB,CACvB,CAAA,AAGH,cACE,yBAAyB,AACzB,YAAa,CACd","file":"Home.scss","sourcesContent":[".welcome {\n  background-repeat: no-repeat;\n      display: flex;\n      align-items: center;\n      width: 100%;\n      flex-direction: column;\n      background-size: cover;\n      background-size: cover;\n      min-height: 372px;\n      background-attachment: fixed;\n      background-position: 50% 314%;\n      padding: 20px;\n}\n.databases {\n  display: flex;\n  max-width: 700px;\n  width: 100%;\n  height: 100%;\n  align-items: flex-end;\njustify-content: space-evenly;\npadding: 40px;\n    flex-wrap: wrap;\n}\n\n.dbCard {\n  display: flex;\nflex-direction: column;\nalign-items: center !important;\njustify-content: center !important;\nheight: 100px !important;\nwidth: 150px;\nbackground-color: #4e4e4e !important;\nmargin-top: 10px;\n}\n\n.dbCard:hover {\nbox-shadow: 0px 0px 12px #888888;\ncursor: pointer;\n}\n.dashContent {\n  display: flex;\n  flex-direction: column;\n  padding: 0 40px;\n}\n\n.rowContainer {\n  display: flex;\n  flex-direction: row;\n}\n@media (max-width: 960px) {\n  .rowContainer {\n    flex-direction: column;\n  }\n}\n\n.sectionTitle {\n  background-color: #f3f3f3;\n  padding: 20px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".welcome{background-repeat:no-repeat;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column;background-size:cover;min-height:372px;background-attachment:fixed;background-position:50% 314%;padding:20px}.databases,.welcome{display:-ms-flexbox;display:flex;width:100%}.databases{max-width:700px;height:100%;-ms-flex-align:end;align-items:flex-end;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding:40px;-ms-flex-wrap:wrap;flex-wrap:wrap}.dbCard{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center!important;align-items:center!important;-ms-flex-pack:center!important;justify-content:center!important;height:100px!important;width:150px;background-color:#4e4e4e!important;margin-top:10px}.dbCard:hover{box-shadow:0 0 12px #888;cursor:pointer}.dashContent{-ms-flex-direction:column;flex-direction:column;padding:0 40px}.dashContent,.rowContainer{display:-ms-flexbox;display:flex}.rowContainer{-ms-flex-direction:row;flex-direction:row}@media (max-width:960px){.rowContainer{-ms-flex-direction:column;flex-direction:column}.dashContent{padding:0 20px}}.sectionTitle{min-height:80px;-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;background-color:#f3f3f3;padding:20px;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:20px 0}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Home/components/src/routes/Home/components/Home.scss"],"names":[],"mappings":"AAAA,SACE,4BAA4B,AAExB,sBAAmB,AAAnB,mBAAmB,AAEnB,0BAAsB,AAAtB,sBAAsB,AAEtB,sBAAsB,AACtB,iBAAiB,AACjB,4BAA4B,AAC5B,6BAA6B,AAC7B,YAAa,CAClB,AACD,oBAXM,oBAAa,AAAb,aAAa,AAEb,UAAW,CAkBhB,AATD,WAEE,gBAAgB,AAEhB,YAAY,AACZ,mBAAqB,AAArB,qBAAqB,AACvB,2BAA6B,AAA7B,6BAA6B,AAC7B,aAAa,AACT,mBAAe,AAAf,cAAe,CAClB,AAED,QACE,oBAAa,AAAb,aAAa,AACf,0BAAsB,AAAtB,sBAAsB,AACtB,gCAA8B,AAA9B,6BAA8B,AAC9B,+BAAkC,AAAlC,iCAAkC,AAClC,uBAAwB,AACxB,YAAY,AACZ,mCAAoC,AACpC,eAAgB,CACf,AAED,cACA,yBAAgC,AAChC,cAAe,CACd,AACD,aAEE,0BAAsB,AAAtB,sBAAsB,AACtB,cAAe,CAChB,AAED,2BALE,oBAAa,AAAb,YAAa,CAQd,AAHD,cAEE,uBAAmB,AAAnB,kBAAmB,CACpB,AACD,yBACE,cACE,0BAAsB,AAAtB,qBAAsB,CACvB,AACD,aACE,cAAe,CAChB,CAAA,AAGH,cACE,gBAAgB,AAChB,sBAAmB,AAAnB,mBAAmB,AACrB,oBAAa,AAAb,aAAa,AACb,sBAA8B,AAA9B,8BAA8B,AAC5B,yBAAyB,AACzB,aAAa,AACb,mBAAe,AAAf,eAAe,AAEf,aAAgB,CACjB","file":"Home.scss","sourcesContent":[".welcome {\r\n  background-repeat: no-repeat;\r\n      display: flex;\r\n      align-items: center;\r\n      width: 100%;\r\n      flex-direction: column;\r\n      background-size: cover;\r\n      background-size: cover;\r\n      min-height: 372px;\r\n      background-attachment: fixed;\r\n      background-position: 50% 314%;\r\n      padding: 20px;\r\n}\r\n.databases {\r\n  display: flex;\r\n  max-width: 700px;\r\n  width: 100%;\r\n  height: 100%;\r\n  align-items: flex-end;\r\njustify-content: space-evenly;\r\npadding: 40px;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.dbCard {\r\n  display: flex;\r\nflex-direction: column;\r\nalign-items: center !important;\r\njustify-content: center !important;\r\nheight: 100px !important;\r\nwidth: 150px;\r\nbackground-color: #4e4e4e !important;\r\nmargin-top: 10px;\r\n}\r\n\r\n.dbCard:hover {\r\nbox-shadow: 0px 0px 12px #888888;\r\ncursor: pointer;\r\n}\r\n.dashContent {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 0 40px;\r\n}\r\n\r\n.rowContainer {\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n@media (max-width: 960px) {\r\n  .rowContainer {\r\n    flex-direction: column;\r\n  }\r\n  .dashContent {\r\n    padding: 0 20px;\r\n  }\r\n}\r\n\r\n.sectionTitle {\r\n  min-height: 80px;\r\n  align-items: center;\r\ndisplay: flex;\r\njustify-content: space-between;\r\n  background-color: #f3f3f3;\r\n  padding: 20px;\r\n  flex-wrap: wrap;\r\n\r\n  margin: 20px 0px;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -38,14 +38,14 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".calendar{height:500px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:100%;margin-bottom:60px}.eventDetails{padding:10px;background-color:#f0f8ff;border:1px solid}.rbc-toolbar{-ms-flex-wrap:wrap;flex-wrap:wrap}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Home/components/components/src/routes/Home/components/components/calendar.scss"],"names":[],"mappings":"AAAA,UACE,aAAa,AACb,oBAAa,AAAb,aAAa,AACb,0BAAsB,AAAtB,sBAAsB,AACtB,WAAW,AACX,kBAAmB,CACpB,AAED,cACE,aAAa,AACf,yBAA2B,AAC3B,gBAAiB,CAChB,AAED,aACE,mBAAe,AAAf,cAAe,CAChB","file":"calendar.scss","sourcesContent":[".calendar {\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  margin-bottom: 60px;\n}\n\n.eventDetails {\n  padding: 10px;\nbackground-color: aliceblue;\nborder: 1px solid;\n}\n\n.rbc-toolbar {\n  flex-wrap: wrap;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".calendar{height:650px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:100%;margin-bottom:60px}.eventDetails{padding:10px;background-color:#f0f8ff;border:1px solid}.rbc-toolbar{-ms-flex-wrap:wrap;flex-wrap:wrap}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Home/components/components/src/routes/Home/components/components/calendar.scss"],"names":[],"mappings":"AAAA,UACE,aAAa,AACb,oBAAa,AAAb,aAAa,AACb,0BAAsB,AAAtB,sBAAsB,AACtB,WAAW,AACX,kBAAmB,CACpB,AAED,cACE,aAAa,AACf,yBAA2B,AAC3B,gBAAiB,CAChB,AAED,aACE,mBAAe,AAAf,cAAe,CAChB","file":"calendar.scss","sourcesContent":[".calendar {\r\n  height: 650px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  margin-bottom: 60px;\r\n}\r\n\r\n.eventDetails {\r\n  padding: 10px;\r\nbackground-color: aliceblue;\r\nborder: 1px solid;\r\n}\r\n\r\n.rbc-toolbar {\r\n  flex-wrap: wrap;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -53,14 +53,14 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".newsWidth{width:50%;margin:0 20px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}@media (max-width:960px){.newsWidth{width:100%}}.updatesList{width:100%;position:relative;overflow:auto;max-height:390px;text-align:left;height:100%}.updatesList>ul>li{-ms-flex-align:start;align-items:flex-start}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Home/components/components/src/routes/Home/components/components/news.scss"],"names":[],"mappings":"AAAA,WACE,UAAU,AACR,cAAgB,AACd,oBAAa,AAAb,aAAa,AACb,0BAAsB,AAAtB,qBAAsB,CAC3B,AACD,yBACE,WACE,UAAW,CACZ,CAAA,AAEH,aACE,WAAW,AACb,kBAAkB,AAClB,cAAc,AACd,iBAAiB,AACjB,gBAAgB,AAChB,WAAY,CACX,AACD,mBACE,qBAAuB,AAAvB,sBAAuB,CACxB","file":"news.scss","sourcesContent":[".newsWidth {\n  width: 50%;\n    margin: 0px 20px;\n      display: flex;\n      flex-direction: column;\n}\n@media (max-width: 960px) {\n  .newsWidth {\n    width: 100%;\n  }\n}\n.updatesList {\n  width: 100%;\nposition: relative;\noverflow: auto;\nmax-height: 390px;\ntext-align: left;\nheight: 100%;\n}\n.updatesList > ul > li {\n  align-items: flex-start;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".newsWidth{width:50%;margin-right:20px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}@media (max-width:960px){.newsWidth{width:100%;margin:0}}.updatesList{width:100%;position:relative;overflow:auto;max-height:500px;text-align:left;height:100%}.updatesList>ul>li{-ms-flex-align:start;align-items:flex-start}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Home/components/components/src/routes/Home/components/components/news.scss"],"names":[],"mappings":"AAAA,WACE,UAAU,AACV,kBAAkB,AACd,oBAAa,AAAb,aAAa,AACb,0BAAsB,AAAtB,qBAAsB,CAC3B,AACD,yBACE,WACE,WAAW,AACX,QAAW,CACZ,CAAA,AAEH,aACE,WAAW,AACb,kBAAkB,AAClB,cAAc,AACd,iBAAiB,AACjB,gBAAgB,AAChB,WAAY,CACX,AACD,mBACE,qBAAuB,AAAvB,sBAAuB,CACxB","file":"news.scss","sourcesContent":[".newsWidth {\r\n  width: 50%;\r\n  margin-right: 20px;\r\n      display: flex;\r\n      flex-direction: column;\r\n}\r\n@media (max-width: 960px) {\r\n  .newsWidth {\r\n    width: 100%;\r\n    margin: 0px;\r\n  }\r\n}\r\n.updatesList {\r\n  width: 100%;\r\nposition: relative;\r\noverflow: auto;\r\nmax-height: 500px;\r\ntext-align: left;\r\nheight: 100%;\r\n}\r\n.updatesList > ul > li {\r\n  align-items: flex-start;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -68,7 +68,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".polls{text-align:left;margin-top:10px;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-ms-flex-wrap:wrap;flex-wrap:wrap}.sectionTitle{margin:20px 0;background-color:#f3f3f3;padding:20px}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Home/components/components/src/routes/Home/components/components/polls.scss"],"names":[],"mappings":"AAAA,OACE,gBAAgB,AAChB,gBAAgB,AAChB,oBAAa,AAAb,aAAa,AACb,yBAA6B,AAA7B,6BAA6B,AAC7B,mBAAe,AAAf,cAAe,CAChB,AAED,cACA,cAAgB,AACV,yBAAyB,AACzB,YAAa,CAClB","file":"polls.scss","sourcesContent":[".polls {\n  text-align: left;\n  margin-top: 10px;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n}\n\n.sectionTitle {\nmargin: 20px 0px;\n      background-color: #f3f3f3;\n      padding: 20px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".polls{text-align:left;margin-top:10px;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-ms-flex-wrap:wrap;flex-wrap:wrap}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Home/components/components/src/routes/Home/components/components/polls.scss"],"names":[],"mappings":"AAAA,OACE,gBAAgB,AAChB,gBAAgB,AAChB,oBAAa,AAAb,aAAa,AACb,yBAA6B,AAA7B,6BAA6B,AAC7B,mBAAe,AAAf,cAAe,CAChB","file":"polls.scss","sourcesContent":[".polls {\r\n  text-align: left;\r\n  margin-top: 10px;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  flex-wrap: wrap;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -32342,7 +32342,7 @@ Home.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -32356,8 +32356,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/Home.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -32393,10 +32393,12 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__style_loader_css_loader_react_big_calendar_lib_css_react_big_calendar_css__ = __webpack_require__("./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/react-big-calendar/lib/css/react-big-calendar.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__style_loader_css_loader_react_big_calendar_lib_css_react_big_calendar_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__style_loader_css_loader_react_big_calendar_lib_css_react_big_calendar_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_material_ui__ = __webpack_require__("./node_modules/material-ui/index.es.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__calendar_scss__ = __webpack_require__("./src/routes/Home/components/components/calendar.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__calendar_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__calendar_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_react_dom__ = __webpack_require__("./node_modules/react-dom/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_material_ui_icons__ = __webpack_require__("./node_modules/material-ui-icons/index.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__calendar_scss__ = __webpack_require__("./src/routes/Home/components/components/calendar.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__calendar_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__calendar_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_react_dom__ = __webpack_require__("./node_modules/react-dom/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_react_dom__);
+
 
 
 
@@ -32519,7 +32521,18 @@ var Calendar = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_10_material_ui__["h" /* Typography */],
             { type: 'Title', component: 'h4', style: { textAlign: 'left' } },
-            'Upcoming game related events'
+            'Upcoming events'
+          ),
+          __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_10_material_ui__["k" /* Button */],
+            {
+              raised: true,
+              target: '_blank',
+              color: 'accent',
+              style: { margin: '5px 0px' },
+              href: 'http://www.google.com/calendar/render?cid=http://' + window.location.hostname + '/calendar' },
+            'Subscribe with google',
+            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11_material_ui_icons__["h" /* Event */], { style: { marginLeft: '10px' } })
           )
         ),
         __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_big_calendar___default.a, __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, this.props, {
@@ -32551,7 +32564,7 @@ Calendar.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -32565,8 +32578,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/calendar.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -32721,7 +32734,7 @@ News.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -32735,8 +32748,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/news.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -32805,7 +32818,7 @@ Polls.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -32819,8 +32832,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Home/components/components/polls.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});

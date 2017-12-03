@@ -1,19 +1,20 @@
 .newsWidth {
   width: 50%;
-    margin: 0px 20px;
+  margin-right: 20px;
       display: flex;
       flex-direction: column;
 }
 @media (max-width: 960px) {
   .newsWidth {
     width: 100%;
+    margin: 0px;
   }
 }
 .updatesList {
   width: 100%;
 position: relative;
 overflow: auto;
-max-height: 390px;
+max-height: 500px;
 text-align: left;
 height: 100%;
 }

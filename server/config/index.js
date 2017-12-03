@@ -25,6 +25,6 @@ if (env) {
 const rootPath = path.resolve(__dirname + '/../')
 defaults.root_path = rootPath
 
-const configs = { ...defaults, ...envConfigs }
+const configs = Object.assign({}, defaults, envConfigs)
 
 module.exports = configs

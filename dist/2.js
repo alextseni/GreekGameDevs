@@ -31,7 +31,7 @@ module.exports = __webpack_require__("./node_modules/core-js/library/modules/_co
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -39,14 +39,14 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".container{margin:0 auto;max-width:700px;text-align:left}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Communication/components/src/routes/Communication/components/Communication.scss"],"names":[],"mappings":"AAAA,WACE,cAAc,AACd,gBAAgB,AAChB,eAAgB,CACjB","file":"Communication.scss","sourcesContent":[".container {\n  margin: 0 auto;\n  max-width: 700px;\n  text-align: left;\n}\n.formsContainer {\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".container{margin:0 auto;max-width:700px;text-align:left}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Communication/components/src/routes/Communication/components/Communication.scss"],"names":[],"mappings":"AAAA,WACE,cAAc,AACd,gBAAgB,AAChB,eAAgB,CACjB","file":"Communication.scss","sourcesContent":[".container {\r\n  margin: 0 auto;\r\n  max-width: 700px;\r\n  text-align: left;\r\n}\r\n.formsContainer {\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss":
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
@@ -54,7 +54,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".description{text-align:left;margin:auto!important;margin-top:20px!important}.title{text-align:center}.contact{background-color:#efefef;-webkit-clip-path:polygon(0 0,0 100%,100% 100%,100% 0,76% 6%,48% 0,24% 5%);clip-path:polygon(0 0,0 100%,100% 100%,100% 0,76% 6%,48% 0,24% 5%)}.contact,.donation{margin:0 30px 30px;padding:52px 20px}.donation{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-webkit-clip-path:polygon(0 88%,0 0,100% 0,100% 91%,74% 100%,52% 91%,28% 100%);clip-path:polygon(0 88%,0 0,100% 0,100% 91%,74% 100%,52% 91%,28% 100%);background-color:#f3f3f3}.textContent{margin-bottom:20px}.newsletter{display:-ms-flexbox;display:flex}.popupStatusForm{-ms-flex-direction:column;flex-direction:column;height:440px;max-width:560px;width:100%}.popupStatusForm,.popupStatusNews{position:absolute;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;z-index:9;opacity:.8}.popupStatusNews{-ms-flex-direction:row;flex-direction:row;height:75px;width:491px}", "", {"version":3,"sources":["/Users/chrysa/repository/thecodevs/GGD/src/routes/Communication/components/components/src/routes/Communication/components/components/styles.scss"],"names":[],"mappings":"AAAA,aACE,gBAAgB,AAChB,sBAAuB,AACvB,yBAA2B,CAC5B,AACD,OACE,iBAAkB,CACnB,AAED,SAGA,yBAAyB,AAEzB,2EAAyE,AAAzE,kEAAyE,CACxE,AACD,mBANE,mBAAqB,AACrB,iBAAkB,CAanB,AARD,UACE,oBAAa,AAAb,aAAa,AACb,0BAAsB,AAAtB,sBAAsB,AACtB,sBAAmB,AAAnB,mBAAmB,AAGnB,+EAA6E,AAA7E,uEAA6E,AAC3E,wBAAyB,CAC5B,AACD,aACE,kBAAmB,CACpB,AACD,YACE,oBAAa,AAAb,YAAa,CACd,AACD,iBAEE,0BAAsB,AAAtB,sBAAsB,AAIxB,aAAa,AACb,gBAAgB,AAChB,UAAW,CAGV,AACD,kCAXE,kBAAkB,AAEpB,oBAAa,AAAb,aAAa,AACb,qBAAuB,AAAvB,uBAAuB,AACvB,sBAAmB,AAAnB,mBAAmB,AAInB,UAAU,AACV,UAAY,CAYX,AAVD,iBAEE,uBAAmB,AAAnB,mBAAmB,AAIrB,YAAY,AACR,WAAY,CAGf","file":"styles.scss","sourcesContent":[".description {\n  text-align: left;\n  margin: auto !important;\n  margin-top: 20px !important;\n}\n.title {\n  text-align: center;\n}\n\n.contact {\n  margin: 0px 30px 30px;\n  padding: 52px 20px;\nbackground-color: #efefef;\n/* width: 100%; */\nclip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 76% 6%, 48% 0, 24% 5%);\n}\n.donation {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 30px 30px;\n  padding: 52px 20px;\n  clip-path: polygon(0 88%, 0 0, 100% 0, 100% 91%, 74% 100%, 52% 91%, 28% 100%);\n    background-color: #f3f3f3;\n}\n.textContent {\n  margin-bottom: 20px;\n}\n.newsletter {\n  display: flex;\n}\n.popupStatusForm {\n  position: absolute;\n  flex-direction: column;\ndisplay: flex;\njustify-content: center;\nalign-items: center;\nheight: 440px;\nmax-width: 560px;\nwidth: 100%;\nz-index: 9;\nopacity: 0.8;\n}\n.popupStatusNews {\n  position: absolute;\n  flex-direction: row;\ndisplay: flex;\njustify-content: center;\nalign-items: center;\nheight: 75px;\n    width: 491px;\nz-index: 9;\nopacity: 0.8;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".description{text-align:left;margin:auto!important;margin-top:20px!important}.title{text-align:center}.contact{background-color:#efefef;-webkit-clip-path:polygon(0 0,0 100%,100% 100%,100% 0,76% 6%,48% 0,24% 5%);clip-path:polygon(0 0,0 100%,100% 100%,100% 0,76% 6%,48% 0,24% 5%)}.contact,.donation{margin:0 30px 30px;padding:52px 20px}.donation{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-webkit-clip-path:polygon(0 88%,0 0,100% 0,100% 91%,74% 100%,52% 91%,28% 100%);clip-path:polygon(0 88%,0 0,100% 0,100% 91%,74% 100%,52% 91%,28% 100%);background-color:#f3f3f3}.textContent{margin-bottom:20px}.newsletter{display:-ms-flexbox;display:flex}.popupStatusForm{-ms-flex-direction:column;flex-direction:column;height:440px;max-width:560px;width:100%}.popupStatusForm,.popupStatusNews{position:absolute;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;z-index:9;opacity:.8}.popupStatusNews{-ms-flex-direction:row;flex-direction:row;height:75px;width:491px}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Communication/components/components/src/routes/Communication/components/components/styles.scss"],"names":[],"mappings":"AAAA,aACE,gBAAgB,AAChB,sBAAuB,AACvB,yBAA2B,CAC5B,AACD,OACE,iBAAkB,CACnB,AAED,SAGA,yBAAyB,AAEzB,2EAAyE,AAAzE,kEAAyE,CACxE,AACD,mBANE,mBAAqB,AACrB,iBAAkB,CAanB,AARD,UACE,oBAAa,AAAb,aAAa,AACb,0BAAsB,AAAtB,sBAAsB,AACtB,sBAAmB,AAAnB,mBAAmB,AAGnB,+EAA6E,AAA7E,uEAA6E,AAC3E,wBAAyB,CAC5B,AACD,aACE,kBAAmB,CACpB,AACD,YACE,oBAAa,AAAb,YAAa,CACd,AACD,iBAEE,0BAAsB,AAAtB,sBAAsB,AAIxB,aAAa,AACb,gBAAgB,AAChB,UAAW,CAGV,AACD,kCAXE,kBAAkB,AAEpB,oBAAa,AAAb,aAAa,AACb,qBAAuB,AAAvB,uBAAuB,AACvB,sBAAmB,AAAnB,mBAAmB,AAInB,UAAU,AACV,UAAY,CAYX,AAVD,iBAEE,uBAAmB,AAAnB,mBAAmB,AAIrB,YAAY,AACR,WAAY,CAGf","file":"styles.scss","sourcesContent":[".description {\r\n  text-align: left;\r\n  margin: auto !important;\r\n  margin-top: 20px !important;\r\n}\r\n.title {\r\n  text-align: center;\r\n}\r\n\r\n.contact {\r\n  margin: 0px 30px 30px;\r\n  padding: 52px 20px;\r\nbackground-color: #efefef;\r\n/* width: 100%; */\r\nclip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 76% 6%, 48% 0, 24% 5%);\r\n}\r\n.donation {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin: 0 30px 30px;\r\n  padding: 52px 20px;\r\n  clip-path: polygon(0 88%, 0 0, 100% 0, 100% 91%, 74% 100%, 52% 91%, 28% 100%);\r\n    background-color: #f3f3f3;\r\n}\r\n.textContent {\r\n  margin-bottom: 20px;\r\n}\r\n.newsletter {\r\n  display: flex;\r\n}\r\n.popupStatusForm {\r\n  position: absolute;\r\n  flex-direction: column;\r\ndisplay: flex;\r\njustify-content: center;\r\nalign-items: center;\r\nheight: 440px;\r\nmax-width: 560px;\r\nwidth: 100%;\r\nz-index: 9;\r\nopacity: 0.8;\r\n}\r\n.popupStatusNews {\r\n  position: absolute;\r\n  flex-direction: row;\r\ndisplay: flex;\r\njustify-content: center;\r\nalign-items: center;\r\nheight: 75px;\r\n    width: 491px;\r\nz-index: 9;\r\nopacity: 0.8;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -3053,7 +3053,7 @@ Communication.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -3067,8 +3067,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/Communication.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -3104,6 +3104,8 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_google_recaptcha___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react_google_recaptcha__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_material_ui__ = __webpack_require__("./node_modules/material-ui/index.es.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_material_ui_icons__ = __webpack_require__("./node_modules/material-ui-icons/index.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_utils_validations__ = __webpack_require__("./src/utils/validations.js");
+
 
 
 
@@ -3130,7 +3132,10 @@ var Contact = function (_Component) {
       _this.setState({
         hasSubmitted: false,
         success: false,
-        contactItem: {}
+        contactItem: {
+          mail: '',
+          comment: ''
+        }
       });
     };
 
@@ -3162,7 +3167,11 @@ var Contact = function (_Component) {
           xhttp = new XMLHttpRequest();
           _this.setState({
             success: true,
-            isLoading: false
+            isLoading: false,
+            contactItem: {
+              mail: '',
+              comment: ''
+            }
           });
         }
         setTimeout(function () {
@@ -3181,7 +3190,10 @@ var Contact = function (_Component) {
       isLoading: false,
       hasSubmitted: false,
       success: false,
-      contactItem: {}
+      contactItem: {
+        mail: '',
+        comment: ''
+      }
     };
     return _this;
   }
@@ -3240,6 +3252,7 @@ var Contact = function (_Component) {
             name: 'mail',
             type: 'email',
             required: true,
+            error: this.state.contactItem.mail && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12_utils_validations__["a" /* validEmail */])(this.state.contactItem.mail),
             value: this.state.contactItem.mail,
             onChange: this.handleFormChange('mail')
           }),
@@ -3268,7 +3281,7 @@ var Contact = function (_Component) {
             {
               style: { width: '50px', margin: '20px', alignSelf: 'flex-end' },
               raised: true,
-              disabled: !this.state.contactItem.mail || !this.state.contactItem.comment || this.state.hasSubmitted || !this.state['verification'],
+              disabled: !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12_utils_validations__["a" /* validEmail */])(this.state.contactItem.mail) || !this.state.contactItem.comment || this.state.hasSubmitted || !this.state['verification'],
               onClick: this.sendMail },
             'Send!'
           )
@@ -3459,7 +3472,7 @@ Newsletter.propTypes = {};
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss");
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -3473,8 +3486,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"/Users/chrysa/repository/thecodevs/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss");
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"E:/Documents/Github/GGD/src/styles\"]}!./src/routes/Communication/components/components/styles.scss");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -3571,6 +3584,20 @@ function counterReducer() {
 
   return handler ? handler(state, action) : state;
 }
+
+/***/ }),
+
+/***/ "./src/utils/validations.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return validEmail; });
+var validEmail = function validEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
+
 
 /***/ })
 
