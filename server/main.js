@@ -1,21 +1,36 @@
-const credentials = require('./cred')
+const config = require('./config');
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack')
 const logger = require('../build/lib/logger')
 const webpackConfig = require('../build/webpack.config')
 const project = require('../project.config')
-const compress = require('compression')
-const nodemailer = require('nodemailer')
 const app = express()
-const request = require('request')
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true')
-  : credentials.connectionString
+  : config.connectionString
 const queries = require('./queries')
+const Mail = require('sendinblue-api')
+const sendInBlueOptions = { "apiKey": config.sendinblue.apikey/*, "timeout": 5000*/ };
+const SendInBlue = new Mail(sendInBlueOptions);
 const pool = new Pool({
   connectionString: connectionString,
 })
+
+const sendEmail = (data) => {
+  try {
+    return new Promise((resolve, reject) =>{
+      SendInBlue.send_email(data, (err, data) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(data);
+      });
+    });
+  } catch (e) {
+    throw e;
+  }
+}
 
 const getLink = (links, id) =>
     links[0].find(l => l.id === id && l.type === 'website') ||
@@ -177,32 +192,22 @@ app.get('/api/assets/assets', (req, res, next) => {
   )
 })
 
-/// REMOVE THIS AFTER MAIL
-const smtpTransport = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
-  auth: {
-    user: credentials.mail,
-    pass: credentials.pass,
-  }
-})
-/// /
-
 app.use(express.static(__dirname + '/public'))
 
 app.set('src', __dirname + '/src')
 
-/// REMOVE THIS AFTER MAIL
 app.get('/send', (req, res) => {
+
   const mailOptions = {
-    to : credentials.mail,
+    to : { [config.mail]: config.mail },
+    from : [req.query.mail],
     subject : req.query.title,
     text : 'From ' + req.query.mail + ': ' + req.query.comment,
-  }
-  console.log('data', req.query.verification, req.connection.remoteAddress )
+  };
+  
   request.post('https://www.google.com/recaptcha/api/siteverify', {
     form: {
-      secret: '6LejpjUUAAAAAFxxvha5U1o4cHKbwpWC_w0KX4gX',
+      secret: config.recaptcha,
       response: req.query.verification,
       remoteip: req.connection.remoteAddress,
     }
@@ -212,13 +217,16 @@ app.get('/send', (req, res) => {
       console.log('captcha')
       return res.end('error')
     }
-    smtpTransport.sendMail(mailOptions, (error, response) => {
-      if (error) {
-        res.end('error')
-      } else {
+    sendEmail(mailOptions)
+      .then((result) => {
+        console.log(res)
+        if (result.code !== 'success') result.end('error')
         res.end('sent')
-      }
-    })
+      })
+      .catch((err) => {
+        console.log(err)
+        res.end('error')
+      })
   })
 })
 

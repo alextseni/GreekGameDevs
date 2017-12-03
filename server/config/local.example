@@ -1,0 +1,8 @@
+/*
+  Add whatever you want to override from global.js
+*/
+module.exports = {
+  sendinblue: {
+    apikey: '',
+  },
+};

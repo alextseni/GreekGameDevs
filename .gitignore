@@ -7,3 +7,4 @@ coverage
 .yarn-cache
 package-lock.json
 yarn.lock
+/server/config/local.js
