@@ -17,6 +17,9 @@
   height: 55px;
   margin: 0px 10px;
 }
+.popperClose {
+  pointer-events: none;
+}
 .appbar {
   align-items: center;
   background-color: #0091EA !important;

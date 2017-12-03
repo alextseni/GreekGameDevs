@@ -6,6 +6,7 @@ const logger = require('../build/lib/logger')
 const webpackConfig = require('../build/webpack.config')
 const project = require('../project.config')
 const app = express()
+const request = require('request')
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + '?ssl=true')
   : config.connectionString

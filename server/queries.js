@@ -1,5 +1,5 @@
 module.exports = {
-videogamesCompanies:
+  videogamesCompanies:
 'SELECT ' +
 'vgcom.name,' +
 'vgcom.image,' +
@@ -23,12 +23,12 @@ videogamesCompanies:
 ')),\',\')AS contentlinks ' +
 'FROM vgcom ' +
 'JOIN vg on vgcom.name = vg.developer ' +
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
-'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name AND vgcomlinks.active = true ' +
+'LEFT JOIN vglinks on vglinks.gameid = vg.id AND vglinks.active = true ' +
 'GROUP BY vgcom.name ' +
 'ORDER BY vgcom.name ASC',
 
-assetsCompanies:
+  assetsCompanies:
 'SELECT ' +
 'vgcom.name,' +
 'vgcom.image,' +
@@ -52,12 +52,12 @@ assetsCompanies:
 ')),\',\')AS contentlinks ' +
 'FROM vgcom ' +
 'JOIN assets on vgcom.name = assets.company ' +
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
-'LEFT JOIN assetlinks on assetlinks.assetid = assets.id ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name AND vgcomlinks.active = true ' +
+'LEFT JOIN assetlinks on assetlinks.assetid = assets.id AND assetlinks.active = true ' +
 'GROUP BY vgcom.name ' +
 'ORDER BY vgcom.name ASC',
 
-queryGames:
+  queryGames:
 'SELECT ' +
 'vg.name,' +
 'vg.image,' +
@@ -84,12 +84,12 @@ queryGames:
 ')),\',\')AS comlinks ' +
 'FROM vg ' +
 'LEFT JOIN vgcom on vgcom.name = vg.developer OR vgcom.name = vg.publisher ' +
-'LEFT JOIN vglinks on vglinks.gameid = vg.id ' +
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
+'LEFT JOIN vglinks on vglinks.gameid = vg.id AND vglinks.active = true ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name AND vgcomlinks.active = true ' +
 'GROUP BY vg.id ' +
 'ORDER BY vg.name ASC',
 
-queryAssets:
+  queryAssets:
 'SELECT ' +
 'assets.name,' +
 'assets.image,' +
@@ -116,12 +116,12 @@ queryAssets:
 ')),\',\')AS comlinks ' +
 'FROM assets ' +
 'LEFT JOIN vgcom on vgcom.name = assets.company ' +
-'LEFT JOIN assetlinks on assetlinks.assetid = assets.id ' +
-'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name ' +
+'LEFT JOIN assetlinks on assetlinks.assetid = assets.id AND assetlinks.active = true ' +
+'LEFT JOIN vgcomlinks on vgcomlinks.company = vgcom.name AND vgcomlinks.active = true ' +
 'GROUP BY assets.id ' +
 'ORDER BY assets.name ASC',
 
-queryCalendar:
+  queryCalendar:
 'SELECT ' +
 'calendar.name AS title,' +
 'calendar.type,' +
@@ -131,7 +131,7 @@ queryCalendar:
 'calendar.description AS descr ' +
 'FROM calendar ',
 
-queryHistory:
+  queryHistory:
 'SELECT ' +
 'milestones.date,' +
 'milestones.type,' +
