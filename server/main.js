@@ -19,10 +19,10 @@ const pool = new Pool({
 const ical = require('ical-generator')
 
 let cal = ical({
-    domain: 'ggdtest.herokuapp.com',
+    domain: 'greekgamedevs.com',
     name: 'GGD events',
-    prodId: '//ggdtest.herokuapp.com//calendar//EN',
-    url: 'http://ggdtest.herokuapp.com/calendar',
+    prodId: '//greekgamedevs.com//calendar//EN',
+    url: 'http://greekgamedevs.com/calendar',
     timezone: 'Europe/Athens',
 })
 

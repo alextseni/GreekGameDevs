@@ -8,6 +8,9 @@ import {
   Popover,
   Button,
 } from 'material-ui'
+import {
+  Event,
+} from 'material-ui-icons'
 import './calendar.scss'
 const axios = require('axios')
 import { findDOMNode } from 'react-dom'
@@ -79,14 +82,16 @@ class Calendar extends Component {
         </Popover>
         <div className='sectionTitle'>
           <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
-          Upcoming game related events
+          Upcoming events
         </Typography>
         <Button
           raised
           target='_blank'
           color='accent'
-          href={'http://www.google.com/calendar/render?cid=http://ggdtest.herokuapp.com/calendar'}>
-            Subscribe to calendar
+          style={{margin: '5px 0px'}}
+          href={'http://www.google.com/calendar/render?cid=http://greekgamedevs.com/calendar'}>
+            Subscribe with google
+            <Event style={{marginLeft: '10px'}}/>
         </Button>
         </div>
         <BigCalendar

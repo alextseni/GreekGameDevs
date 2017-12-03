@@ -51,12 +51,19 @@ cursor: pointer;
   .rowContainer {
     flex-direction: column;
   }
+  .dashContent {
+    padding: 0 20px;
+  }
 }
 
 .sectionTitle {
-  min-height: 75px;
+  min-height: 80px;
+  align-items: center;
 display: flex;
 justify-content: space-between;
   background-color: #f3f3f3;
   padding: 20px;
+  flex-wrap: wrap;
+
+  margin: 20px 0px;
 }
