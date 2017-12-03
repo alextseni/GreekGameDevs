@@ -12,24 +12,24 @@ const connectionString = process.env.DATABASE_URL ? (process.env.DATABASE_URL + 
   : config.connectionString
 const queries = require('./queries')
 const Mail = require('sendinblue-api')
-const sendInBlueOptions = { "apiKey": config.sendinblue.apikey/*, "timeout": 5000*/ };
-const SendInBlue = new Mail(sendInBlueOptions);
+const sendInBlueOptions = { "apiKey": config.sendinblue.apikey /*, "timeout": 5000*/ }
+const SendInBlue = new Mail(sendInBlueOptions)
 const pool = new Pool({
   connectionString: connectionString,
 })
 
 const sendEmail = (data) => {
   try {
-    return new Promise((resolve, reject) =>{
+    return new Promise((resolve, reject) => {
       SendInBlue.send_email(data, (err, data) => {
         if (err) {
-          reject(err);
+          reject(err)
         }
-        resolve(data);
-      });
-    });
+        resolve(data)
+      })
+    })
   } catch (e) {
-    throw e;
+    throw e
   }
 }
 
@@ -205,7 +205,7 @@ app.get('/send', (req, res) => {
     subject : req.query.title,
     text : 'From ' + req.query.mail + ': ' + req.query.comment,
   };
-  
+
   request.post('https://www.google.com/recaptcha/api/siteverify', {
     form: {
       secret: config.recaptcha,
