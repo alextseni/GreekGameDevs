@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".infocontainer{max-width:750px;margin:auto;text-align:left}.question{font-weight:700;margin-bottom:0;text-align:left;font-size:16px}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Info/components/src/routes/Info/components/Info.scss"],"names":[],"mappings":"AAAA,eACE,gBAAgB,AAChB,YAAY,AACZ,eAAgB,CACjB,AACD,UACE,gBAAgB,AAChB,gBAAkB,AAClB,gBAAgB,AAChB,cAAe,CAChB","file":"Info.scss","sourcesContent":[".infocontainer {\n  max-width: 750px;\n  margin: auto;\n  text-align: left;\n}\n.question {\n  font-weight: 700;\n  margin-bottom: 0px;\n  text-align: left;\n  font-size: 16px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".infocontainer{max-width:750px;margin:auto;text-align:left}.question{font-weight:700;margin-bottom:0;text-align:left;font-size:16px}", "", {"version":3,"sources":["E:/Documents/Github/GGD/src/routes/Info/components/src/routes/Info/components/Info.scss"],"names":[],"mappings":"AAAA,eACE,gBAAgB,AAChB,YAAY,AACZ,eAAgB,CACjB,AACD,UACE,gBAAgB,AAChB,gBAAkB,AAClB,gBAAgB,AAChB,cAAe,CAChB","file":"Info.scss","sourcesContent":[".infocontainer {\r\n  max-width: 750px;\r\n  margin: auto;\r\n  text-align: left;\r\n}\r\n.question {\r\n  font-weight: 700;\r\n  margin-bottom: 0px;\r\n  text-align: left;\r\n  font-size: 16px;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
