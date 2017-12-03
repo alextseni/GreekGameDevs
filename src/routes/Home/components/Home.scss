@@ -54,6 +54,9 @@ cursor: pointer;
 }
 
 .sectionTitle {
+  min-height: 75px;
+display: flex;
+justify-content: space-between;
   background-color: #f3f3f3;
   padding: 20px;
 }

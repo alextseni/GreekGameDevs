@@ -6,6 +6,7 @@ import '!style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.c
 import {
   Typography,
   Popover,
+  Button,
 } from 'material-ui'
 import './calendar.scss'
 const axios = require('axios')
@@ -80,6 +81,13 @@ class Calendar extends Component {
           <Typography type='Title' component='h4' style={{ textAlign: 'left' }}>
           Upcoming game related events
         </Typography>
+        <Button
+          raised
+          target='_blank'
+          color='accent'
+          href={'http://www.google.com/calendar/render?cid=http://greekgamedevs.com/calendar.ical'}>
+            Subscribe to calendar
+        </Button>
         </div>
         <BigCalendar
           {...this.props}

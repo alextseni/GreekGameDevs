@@ -16,6 +16,41 @@ const queries = require('./queries')
 const pool = new Pool({
   connectionString: connectionString,
 })
+const ical = require('ical-generator')
+const http = require('http')
+
+let cal = ical({
+    domain: 'greekgamedevs.com',
+    name: 'GGD events',
+    prodId: '//greekgamedevs.com//calendar//EN',
+    url: 'http://greekgamedevs.com/calendar.ical',
+    timezone: 'Europe/Athens',
+})
+
+const getEvents = () => {
+  pool.connect().then(client =>
+    client.query(queries.queryCalendar).then(resEvents => {
+      resEvents.rows.map(e =>
+        cal.createEvent({
+          start: e.start,
+          end: e.end,
+          summary: e.title,
+          description: e.descr,
+          location: e.location,
+        })
+      )
+      client.release()
+    })
+    .catch(e => {
+      client.release()
+      console.error('query error', e.message, e.stack)
+    }))
+}
+getEvents()
+
+app.post('/', (req, res) => {
+  cal.serve(res)
+})
 
 const getLink = (links, id) =>
     links[0].find(l => l.id === id && l.type === 'website') ||
