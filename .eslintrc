@@ -1,0 +1,63 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "standard",
+    "standard-react",
+    "airbnb",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react"
+  ],
+  "plugins": [
+    "babel",
+    "react",
+    "promise",
+    "prettier"
+  ],
+  "env"     : {
+    "browser" : true,
+    "es6": true
+  },
+  "globals" : {
+    "__DEV__"      : false,
+    "__TEST__"     : false,
+    "__PROD__"     : false,
+    "__DEBUG__"    : false,
+    "__COVERAGE__" : false,
+    "__BASENAME__" : false
+  },
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["error", {
+      jsxBracketSameLine: true,
+      bracketSpacing: true,
+      trailingComma: "all",
+      singleQuote: true,
+      semi: true
+    }],
+    "arrow-parens": 0,
+    "import/no-named-as-default": 0,
+    "no-param-reassign": 0,
+    "no-unused-expressions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "no-shadow": 0,
+    "react/no-danger": 0,
+    "import/prefer-default-export": 0,
+    "import/no-webpack-loader-syntax": 0,
+    "react/jsx-space-before-closing": 0,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-console": "off",
+    "linebreak-style": "off"
+  }
+}
