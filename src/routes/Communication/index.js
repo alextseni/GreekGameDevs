@@ -1,0 +1,29 @@
+import { injectReducer } from '../../store/reducers';
+
+export default store => ({
+  path: 'communication',
+  /*  Async getComponent is only invoked when route matches   */
+  getComponent(nextState, cb) {
+    /*  Webpack - use 'require.ensure' to create a split point
+        and embed an async module loader (jsonp) when bundling   */
+    require.ensure(
+      [],
+      require => {
+        /*  Webpack - use require callback to define
+          dependencies for bundling   */
+        const Communication = require('./containers/CommunicationContainer')
+          .default;
+        const reducer = require('./modules/communication').default;
+
+        /*  Add the reducer to the store on key 'counter'  */
+        injectReducer(store, { key: 'communication', reducer });
+
+        /*  Return getComponent   */
+        cb(null, Communication);
+
+        /* Webpack named bundle   */
+      },
+      'communication',
+    );
+  },
+});

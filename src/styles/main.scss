@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.rbc-toolbar {
+  flex-wrap: wrap;
+}
+
+.rc-pagination-item-active {
+  background-color: #039BE5 !important;
+  border-color: #E1F5FE !important;
+}
+
+
+.rbc-agenda-date-cell,
+.rbc-agenda-time-cell,
+.rbc-agenda-event-cell,
+.rbc-header {
+  width: 33%;
+  text-align: center !important;
+  white-space: normal !important;
+}
