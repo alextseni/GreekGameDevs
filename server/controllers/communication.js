@@ -1,5 +1,7 @@
 const config = require('../config');
 const Mail = require('sendinblue-api');
+const request = require('request');
+
 const sendInBlueOptions = {
   apiKey: config.sendinblue.apikey /* , "timeout": 5000 */,
 };

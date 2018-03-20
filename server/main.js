@@ -6,7 +6,6 @@ const logger = require('../build/lib/logger');
 const webpackConfig = require('../build/webpack.config');
 const project = require('../project.config');
 const app = express();
-const request = require('request');
 const { Pool, Client } = require('pg');
 
 const pool = new Pool({
@@ -70,6 +69,7 @@ if (project.env === 'development') {
   app.use(express.static(path.resolve(project.basePath, project.outDir)));
   app.get('*', (req, res) => {
     res.sendFile(path.join(project.basePath, 'dist', 'index.html'));
+    res.redirect('https://' + req.headers.host + req.url);
   });
 }
 
