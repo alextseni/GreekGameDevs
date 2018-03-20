@@ -7,6 +7,7 @@ const webpackConfig = require('../build/webpack.config');
 const project = require('../project.config');
 const app = express();
 const { Pool, Client } = require('pg');
+const httpsRedirect = require('express-https-redirect');
 
 const pool = new Pool({
   connectionString: config.connectionString,
@@ -19,10 +20,12 @@ database(app, pool);
 communication(app, pool);
 home(app, pool);
 
+app.use('/', httpsRedirect());
 
 app.use(express.static(`${__dirname}/public`));
 
 app.set('src', `${__dirname}/src`);
+
 
 // ------------------------------------
 // Apply Webpack HMR Middleware
