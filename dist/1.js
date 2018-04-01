@@ -34198,6 +34198,15 @@ function (_Component) {
         type: "headline",
         component: "h4"
       }, 'Updates'), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement("div", {
+        className: __WEBPACK_IMPORTED_MODULE_16__style__["a" /* classes */].social
+      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement("iframe", {
+        title: "GGD",
+        src: "https://ghbtns.com/github-btn.html?user=atseniklidou&repo=GGD&type=star&count=true&size=large",
+        frameBorder: "0",
+        scrolling: "0",
+        width: "90px",
+        height: "30px"
+      }), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement("div", {
         className: __WEBPACK_IMPORTED_MODULE_16__style__["a" /* classes */].iconContainer,
         role: "presentation",
         onClick: function onClick() {
@@ -34209,7 +34218,7 @@ function (_Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10_static_icons__["t" /* FacebookFollow */], {
         style: __WEBPACK_IMPORTED_MODULE_16__style__["b" /* styles */].facebookIcon
-      }))), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement("div", {
+      })))), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement("div", {
         className: __WEBPACK_IMPORTED_MODULE_16__style__["a" /* classes */].updatesList
       }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9_material_ui__["t" /* List */], null, __WEBPACK_IMPORTED_MODULE_7_lodash___default.a.take(history.slice((this.state.page - 1) * this.state.itemsPerPage), this.state.itemsPerPage).map(function (item) {
         return __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9_material_ui__["u" /* ListItem */], null, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9_material_ui__["v" /* Avatar */], null, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11_utils_helpers__["getFeedIcon"])(item.type)), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9_material_ui__["w" /* ListItemText */], {
@@ -34320,18 +34329,23 @@ var styles = {
     flexWrap: 'wrap',
     margin: '20px 0px'
   },
+  social: {
+    display: 'flex',
+    alignItems: 'center'
+  },
   subscribeButton: {
     margin: '5px 0px'
   },
   facebookIcon: {
-    width: '60px',
-    height: '60px',
+    width: '54px',
+    height: '54px',
     fill: __WEBPACK_IMPORTED_MODULE_0_styles__["a" /* theme */].palette.facebookBlue
   },
   iconContainer: {
     '&:hover': {
       boxShadow: '0px 0px 12px #888888'
     },
+    alignItems: 'center',
     borderRadius: '100px',
     display: 'flex',
     cursor: 'pointer'

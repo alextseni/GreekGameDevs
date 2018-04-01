@@ -52,6 +52,15 @@ class News extends Component {
           <Typography type="headline" component="h4">
             {'Updates'}
           </Typography>
+          <div className={classes.social}>
+          <iframe
+            title="GGD"
+            src="https://ghbtns.com/github-btn.html?user=atseniklidou&repo=GGD&type=star&count=true&size=large"
+            frameBorder="0"
+            scrolling="0"
+            width="90px"
+            height="30px"
+          />
           <div
             className={classes.iconContainer}
             role="presentation"
@@ -63,6 +72,7 @@ class News extends Component {
               window.open('https://www.facebook.com/ggdDatabase/');
             }}>
             <FacebookFollow style={styles.facebookIcon} />
+            </div>
           </div>
         </div>
         <div className={classes.updatesList}>
