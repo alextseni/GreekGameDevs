@@ -39,18 +39,23 @@ const styles = {
     flexWrap: 'wrap',
     margin: '20px 0px',
   },
+  social: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   subscribeButton: {
     margin: '5px 0px',
   },
   facebookIcon: {
-    width: '60px',
-    height: '60px',
+    width: '54px',
+    height: '54px',
     fill: theme.palette.facebookBlue,
   },
   iconContainer: {
     '&:hover': {
       boxShadow: '0px 0px 12px #888888',
     },
+    alignItems: 'center',
     borderRadius: '100px',
     display: 'flex',
     cursor: 'pointer',
