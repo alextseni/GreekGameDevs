@@ -75,6 +75,7 @@ class Filters extends Component {
     );
     this.props.updateData(mainCategory, searchValue);
     this.props.resetContent();
+    window.scrollTo(0, 0);
   };
 
   search = name => event => {
@@ -87,6 +88,7 @@ class Filters extends Component {
     this.setState({
       searchText: '',
     });
+    window.scrollTo(0, 0);
     this.props.updateData(name, '');
     this.props.resetContent();
   };
@@ -108,12 +110,7 @@ class Filters extends Component {
             aria-label="open drawer"
             raised
             color="accent"
-            style={{
-              minHeight: '31px',
-              height: '31px',
-              width: '20px',
-              minWidth: '80px',
-            }}
+            style={styles.filtersBtn}
             onClick={() => {
               analytics.logEvent({
                 category: 'Filters',

@@ -34036,7 +34036,7 @@ function (_Component) {
         },
         href: "http://www.google.com/calendar/render?cid=http://".concat(window.location.hostname, "/calendar"),
         style: __WEBPACK_IMPORTED_MODULE_11__style__["b" /* styles */].subscribeButton
-      }, 'Subscribe with google', __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14_material_ui_icons__["p" /* Event */], {
+      }, 'Subscribe with google', __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14_material_ui_icons__["q" /* Event */], {
         style: __WEBPACK_IMPORTED_MODULE_11__style__["b" /* styles */].icon
       }))), __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_big_calendar___default.a, __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_extends___default()({}, this.props, {
         selectable: true,

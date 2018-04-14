@@ -3658,6 +3658,106 @@ if(true) {
 
 /***/ }),
 
+/***/ "./src/routes/Database/Media/Media.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_classCallCheck__ = __webpack_require__("./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_classCallCheck__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_createClass__ = __webpack_require__("./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_createClass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_createClass__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_possibleConstructorReturn__ = __webpack_require__("./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_possibleConstructorReturn__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_inherits__ = __webpack_require__("./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_inherits__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__babel_runtime_helpers_assertThisInitialized__ = __webpack_require__("./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__babel_runtime_helpers_assertThisInitialized___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__babel_runtime_helpers_assertThisInitialized__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react__ = __webpack_require__("./node_modules/react/react.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types__ = __webpack_require__("./node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_routes_Database_components__ = __webpack_require__("./src/routes/Database/components/index.js");
+
+
+
+
+
+
+
+
+
+
+var Media =
+/*#__PURE__*/
+function (_Component) {
+  __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_inherits___default()(Media, _Component);
+
+  function Media(props) {
+    var _this;
+
+    __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_classCallCheck___default()(this, Media);
+
+    _this = __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_possibleConstructorReturn___default()(this, (Media.__proto__ || Object.getPrototypeOf(Media)).call(this, props));
+    Object.defineProperty(__WEBPACK_IMPORTED_MODULE_4__babel_runtime_helpers_assertThisInitialized___default()(_this), "componentWillUnmount", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value() {
+        _this.props.initializeState();
+      }
+    });
+    _this.state = {};
+    return _this;
+  }
+
+  __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_createClass___default()(Media, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          filters = _props.filters,
+          updateFilter = _props.updateFilter,
+          resetAllFilters = _props.resetAllFilters,
+          view = _props.view,
+          changeView = _props.changeView,
+          updateData = _props.updateData,
+          currentData = _props.currentData,
+          initializeData = _props.initializeData;
+      return __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_routes_Database_components__["a" /* DataLayout */], {
+        resetContent: this.resetContent,
+        sortByOptions: ['media'],
+        route: "media",
+        updateFilter: updateFilter,
+        updateData: updateData,
+        currentData: currentData,
+        initializeData: initializeData,
+        filters: filters,
+        resetAllFilters: resetAllFilters,
+        view: view,
+        changeView: changeView
+      });
+    }
+  }]);
+
+  return Media;
+}(__WEBPACK_IMPORTED_MODULE_5_react__["Component"]);
+
+Media.propTypes = {
+  filters: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.object.isRequired,
+  updateFilter: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.func.isRequired,
+  resetAllFilters: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.func.isRequired,
+  view: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string.isRequired,
+  changeView: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.func.isRequired,
+  currentData: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.array.isRequired,
+  updateData: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.func.isRequired,
+  initializeData: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.func.isRequired,
+  initializeState: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["a"] = (Media);
+
+/***/ }),
+
 /***/ "./src/routes/Database/Network/Network.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4312,7 +4412,7 @@ var Form = function Form() {
     isLoading: isLoading,
     success: success,
     error: error
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_material_ui_icons__["m" /* Close */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_material_ui_icons__["n" /* Close */], {
     style: __WEBPACK_IMPORTED_MODULE_9__style__["b" /* styles */].closeIcon,
     onClick: closePopover
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
@@ -4907,6 +5007,8 @@ function (_Component) {
         _this.props.updateData(mainCategory, searchValue);
 
         _this.props.resetContent();
+
+        window.scrollTo(0, 0);
       }
     });
     Object.defineProperty(__WEBPACK_IMPORTED_MODULE_4__babel_runtime_helpers_assertThisInitialized___default()(_this), "search", {
@@ -4929,6 +5031,8 @@ function (_Component) {
         _this.setState({
           searchText: ''
         });
+
+        window.scrollTo(0, 0);
 
         _this.props.updateData(name, '');
 
@@ -4964,12 +5068,7 @@ function (_Component) {
         "aria-label": "open drawer",
         raised: true,
         color: "accent",
-        style: {
-          minHeight: '31px',
-          height: '31px',
-          width: '20px',
-          minWidth: '80px'
-        },
+        style: __WEBPACK_IMPORTED_MODULE_14__style__["b" /* styles */].filtersBtn,
         onClick: function onClick() {
           __WEBPACK_IMPORTED_MODULE_9_utils__["a" /* analytics */].logEvent({
             category: 'Filters',
@@ -5065,13 +5164,13 @@ function (_Component) {
 
             _this2.clearSearchText(filters.sortedBy);
           }
-        }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui_icons__["k" /* Clear */], null)))
+        }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui_icons__["l" /* Clear */], null)))
       }), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12_material_ui__["n" /* IconButton */], {
         style: __WEBPACK_IMPORTED_MODULE_14__style__["b" /* styles */].searchIcon,
         onClick: function onClick() {
           return _this2.onSearch(filters.sortedBy, _this2.state.searchText);
         }
-      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui_icons__["l" /* Search */], null))), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12_material_ui__["o" /* Tooltip */], {
+      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui_icons__["m" /* Search */], null))), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12_material_ui__["o" /* Tooltip */], {
         style: {
           display: 'flex',
           justifyContent: 'flex-end',
@@ -5174,6 +5273,21 @@ var styles = {
     justifyContent: 'space-between',
     marginLeft: '100px'
   },
+  filtersBtn: {
+    WebkitAnimation: 'pulse 1.5s infinite',
+    minHeight: '31px',
+    height: '31px',
+    width: '20px',
+    minWidth: '80px'
+  },
+  // '@-webkit-keyframes pulse': {
+  //   '70%': {
+  //     boxShadow: '0 0 0 50px rgba(#5a99d4, 0)',
+  //   },
+  //   '100%': {
+  //     boxShadow: '0 0 0 0 rgba(#5a99d4, 0)',
+  //   },
+  // },
   filtersToolbar: {
     width: '100%',
     display: 'flex',
@@ -5695,6 +5809,7 @@ var _jss$createStyleSheet = __WEBPACK_IMPORTED_MODULE_0_styles__["b" /* jss */].
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoGamesC", function() { return VideoGamesC; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaC", function() { return MediaC; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToolsC", function() { return ToolsC; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NetworkC", function() { return NetworkC; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__("./node_modules/react-redux/es/index.js");
@@ -5702,12 +5817,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__VideoGames_VideoGames__ = __webpack_require__("./src/routes/Database/VideoGames/VideoGames.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Tools_Tools__ = __webpack_require__("./src/routes/Database/Tools/Tools.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Network_Network__ = __webpack_require__("./src/routes/Database/Network/Network.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Media_Media__ = __webpack_require__("./src/routes/Database/Media/Media.js");
 
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
+
 
 
 
@@ -5760,6 +5877,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 
 var VideoGamesC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_2__VideoGames_VideoGames__["a" /* default */]);
+var MediaC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_5__Media_Media__["a" /* default */]);
 var ToolsC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_3__Tools_Tools__["a" /* default */]);
 var NetworkC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_4__Network_Network__["a" /* default */]);
 
@@ -5834,6 +5952,9 @@ var initialState = {
     },
     networks: {
       location: [],
+      type: []
+    },
+    media: {
       type: []
     },
     games: {

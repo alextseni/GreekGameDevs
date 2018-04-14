@@ -97,12 +97,12 @@ const getDatabaseItems = () => [
     header: 'Networks',
     path: '/database/networks',
   },
-  // {
-  //   icon: <Web className={classes.dbIcon} />,
-  //   iconSmall: <Web className={classes.dbIconSmall} />,
-  //   header: 'Media',
-  //   path: '/database/media',
-  // },
+  {
+    icon: <Web className={classes.dbIcon} />,
+    iconSmall: <Web className={classes.dbIconSmall} />,
+    header: 'Media',
+    path: '/database/media',
+  },
   // {
   //   icon: <School className={classes.dbIcon} />,
   //   iconSmall: <School className={classes.dbIconSmall} />,
@@ -149,13 +149,15 @@ const getFilters = (filter, data) =>
       },
       {
         filterName: 'Category',
-        filterValue: 'type',
-        filterOptions: [
-          { label: 'Meetup', value: 'Meetup' },
-          { label: 'Community', value: 'Community' },
-          { label: 'Expo', value: 'Expo' },
-          { label: 'Organization', value: 'Organization' },
-        ],
+        filterValue: 'category',
+        filterOptions: data?.types?.map(y => ({ label: y, value: y })),
+      },
+    ],
+    media: [
+      {
+        filterName: 'Category',
+        filterValue: 'category',
+        filterOptions: data?.types?.map(y => ({ label: y, value: y })),
       },
     ],
     assets: [

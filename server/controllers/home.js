@@ -57,36 +57,4 @@ module.exports = function (app, pool) {
         })
     );
   });
-
-  app.get('/api/totalGames', (req, res, next) => {
-    // Get a Postgres client from the connection pool
-    pool.connect().then(client =>
-      client
-        .query('SELECT COUNT(*) FROM vg')
-        .then(result => {
-          res.json(result.rows[0]);
-          client.release();
-        })
-        .catch(e => {
-          client.release();
-          console.error('query error', e.message, e.stack);
-        })
-    );
-  });
-  app.get('/api/totalTeams', (req, res, next) => {
-    // Get a Postgres client from the connection pool
-    pool.connect().then(client =>
-      client
-        .query('SELECT COUNT(*) FROM vgcom')
-        .then(result => {
-          res.json(result.rows[0]);
-          client.release();
-        })
-        .catch(e => {
-          client.release();
-          console.error('query error', e.message, e.stack);
-        })
-    );
-  });
-
 }

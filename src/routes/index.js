@@ -2,6 +2,7 @@
 import CoreLayout from '../layouts/PageLayout/PageLayout';
 import VideoGamesRoute from './Database/VideoGames';
 import NetworksRoute from './Database/Network';
+import MediaRoute from './Database/Media';
 import ToolsRoute from './Database/Tools';
 import CommunicationRoute from './Communication';
 import HomeRoute from './Home';
@@ -15,6 +16,7 @@ export const createRoutes = store => ({
   indexRoute: HomeRoute(store),
   childRoutes: [
     ToolsRoute(store),
+    MediaRoute(store),
     VideoGamesRoute(store),
     CommunicationRoute(store),
     InfoRoute(store),

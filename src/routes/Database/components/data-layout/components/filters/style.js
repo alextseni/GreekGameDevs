@@ -30,6 +30,21 @@ const styles = {
     justifyContent: 'space-between',
     marginLeft: '100px',
   },
+  filtersBtn: {
+    WebkitAnimation: 'pulse 1.5s infinite',
+    minHeight: '31px',
+    height: '31px',
+    width: '20px',
+    minWidth: '80px',
+  },
+  // '@-webkit-keyframes pulse': {
+  //   '70%': {
+  //     boxShadow: '0 0 0 50px rgba(#5a99d4, 0)',
+  //   },
+  //   '100%': {
+  //     boxShadow: '0 0 0 0 rgba(#5a99d4, 0)',
+  //   },
+  // },
   filtersToolbar: {
     width: '100%',
     display: 'flex',
