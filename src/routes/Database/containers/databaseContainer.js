@@ -16,6 +16,7 @@ import {
 import VideoGames from '../VideoGames/VideoGames';
 import Tools from '../Tools/Tools';
 import Network from '../Network/Network';
+import Media from '../Media/Media';
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
@@ -50,8 +51,7 @@ const mapStateToProps = state => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export const VideoGamesC = connect(mapStateToProps, mapDispatchToProps)(
-  VideoGames,
-);
+export const VideoGamesC = connect(mapStateToProps, mapDispatchToProps)(VideoGames);
+export const MediaC = connect(mapStateToProps, mapDispatchToProps)(Media);
 export const ToolsC = connect(mapStateToProps, mapDispatchToProps)(Tools);
 export const NetworkC = connect(mapStateToProps, mapDispatchToProps)(Network);

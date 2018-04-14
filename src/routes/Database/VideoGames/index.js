@@ -11,8 +11,7 @@ export default store => ({
       require => {
         /*  Webpack - use require callback to define
           dependencies for bundling   */
-        const VideoGames = require('../containers/databaseContainer')
-          .VideoGamesC;
+        const VideoGames = require('../containers/databaseContainer').VideoGamesC;
         const reducer = require('../modules/database').default;
 
         /*  Add the reducer to the store on key 'counter'  */

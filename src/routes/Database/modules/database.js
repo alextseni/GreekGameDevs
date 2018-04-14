@@ -45,6 +45,9 @@ const initialState = {
       location: [],
       type: [],
     },
+    media: {
+      type: [],
+    },
     games: {
       platforms: [], // ios, windows, steam, etc..
       genre: [], // platform. rpg, idle, action, puzzle,etc..

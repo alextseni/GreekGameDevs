@@ -80,7 +80,7 @@ const checkBrokenLinks = () => {
   // Get a Postgres client from the connection pool
   checkLinks('vgcomlinks')
   checkLinks('vglinks')
-  checkLinks('assetlinks')
+//  checkLinks('assetlinks')
 }
 
 checkBrokenLinks()

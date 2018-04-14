@@ -65,16 +65,35 @@ module.exports = {
       'vgcom.status,' +
       'vgcom.location,' +
       'vgcom.description,' +
-      'vgcom.type,' +
+      'vgcom.tags,' +
       'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
       "'link', vgcomlinks.link," +
       "'type', vgcomlinks.type" +
       ")),',')AS links " +
       "FROM vgcom " +
       'JOIN vgcomlinks on vgcomlinks.company = vgcom.name AND vgcomlinks.active = true ' +
-      "WHERE vgcom.type = 'Community' OR vgcom.type = 'Expo' OR vgcom.type = 'Meetup' OR vgcom.type = 'Organization' " +
+      "WHERE vgcom.type = 'Network' " +
       'GROUP BY vgcom.name ' +
       'ORDER BY vgcom.name ASC',
+
+      queryMedia:
+        'SELECT ' +
+        'vgcom.name,' +
+        'vgcom.image,' +
+        'vgcom.founded AS date,' +
+        'vgcom.status,' +
+        'vgcom.location,' +
+        'vgcom.description,' +
+        'vgcom.tags,' +
+        'jsonb_build_array(array_agg(DISTINCT  jsonb_build_object(' +
+        "'link', vgcomlinks.link," +
+        "'type', vgcomlinks.type" +
+        ")),',')AS links " +
+        "FROM vgcom " +
+        'JOIN vgcomlinks on vgcomlinks.company = vgcom.name AND vgcomlinks.active = true ' +
+        "WHERE vgcom.type = 'Media' " +
+        'GROUP BY vgcom.name ' +
+        'ORDER BY vgcom.name ASC',
 
   queryGames:
     'SELECT ' +

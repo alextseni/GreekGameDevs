@@ -10,22 +10,22 @@ const getLink = (links, id) =>
 
 module.exports = function (app, pool) {
 
-  app.get('/api/:category/networks', (req, res, next) => {
+  app.get('/api/:category/media', (req, res, next) => {
     // Get a Postgres client from the connection pool
     pool.connect().then(client =>
       client
-        .query(queries.queryNetworks)
-        .then(resCompanies => {
+        .query(queries.queryMedia)
+        .then(resMedia => {
           res.json({
             filtersData: {
-              locations: _.uniq(_.flatten(resCompanies.rows.filter(r => r.location).map(c => c.location.split(',')))).sort(),
+              types: _.uniq(_.flatten(resMedia.rows.filter(r => r.tags).map(c => c.tags.split(',')))).sort(),
             },
-            itemsData: resCompanies.rows.map(c => {
+            itemsData: resMedia.rows.map(c => {
               const {
                 name,
                 image,
                 date,
-                type,
+                tags,
                 status,
                 description,
                 links,
@@ -37,8 +37,8 @@ module.exports = function (app, pool) {
                 name,
                 image,
                 description,
-                type,
-                other: [date, type, location],
+                category: tags,
+                other: [date, location, tags],
                 links1: links[0],
                 content: content && content[0].map(g => {
                   const link = getLink(contentlinks, g.id);
@@ -48,7 +48,59 @@ module.exports = function (app, pool) {
                     link: link && link.url,
                   };
                 }),
-                tags: `${status},${type},${location}`.split(','),
+                tags: `${status},${location},${tags}`.split(','),
+              };
+            })
+          });
+          client.release();
+        })
+        .catch(e => {
+          client.release();
+          console.error('query error', e.message, e.stack);
+        })
+    );
+  });
+
+  app.get('/api/:category/networks', (req, res, next) => {
+    // Get a Postgres client from the connection pool
+    pool.connect().then(client =>
+      client
+        .query(queries.queryNetworks)
+        .then(resNetworks => {
+          res.json({
+            filtersData: {
+              locations: _.uniq(_.flatten(resNetworks.rows.filter(r => r.location).map(c => c.location.split(',')))).sort(),
+              types: _.uniq(_.flatten(resNetworks.rows.filter(r => r.tags).map(c => c.tags.split(',')))).sort(),
+            },
+            itemsData: resNetworks.rows.map(c => {
+              const {
+                name,
+                image,
+                date,
+                tags,
+                status,
+                description,
+                links,
+                contentlinks,
+                content,
+                location,
+              } = c;
+              return {
+                name,
+                image,
+                description,
+                category: tags,
+                other: [date, location, tags],
+                links1: links[0],
+                content: content && content[0].map(g => {
+                  const link = getLink(contentlinks, g.id);
+                  return {
+                    name: g.name,
+                    status: g.status,
+                    link: link && link.url,
+                  };
+                }),
+                tags: `${status},${location},${tags}`.split(','),
               };
             })
           });
