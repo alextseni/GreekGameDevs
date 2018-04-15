@@ -18,37 +18,24 @@ module.exports = function (app, pool) {
         .then(resMedia => {
           res.json({
             filtersData: {
-              types: _.uniq(_.flatten(resMedia.rows.filter(r => r.tags).map(c => c.tags.split(',')))).sort(),
+              mediaTypes: _.uniq(_.flatten(resMedia.rows.map(c => c.tags ? c.tags.split(',') : 'Unknown category'))).sort(),
             },
             itemsData: resMedia.rows.map(c => {
               const {
                 name,
                 image,
-                date,
                 tags,
-                status,
                 description,
                 links,
-                contentlinks,
-                content,
-                location,
               } = c;
               return {
                 name,
                 image,
                 description,
                 category: tags,
-                other: [date, location, tags],
+                other: [tags],
                 links1: links[0],
-                content: content && content[0].map(g => {
-                  const link = getLink(contentlinks, g.id);
-                  return {
-                    name: g.name,
-                    status: g.status,
-                    link: link && link.url,
-                  };
-                }),
-                tags: `${status},${location},${tags}`.split(','),
+                tags: `${tags || 'Unknown category'}`.split(','),
               };
             })
           });
@@ -69,8 +56,8 @@ module.exports = function (app, pool) {
         .then(resNetworks => {
           res.json({
             filtersData: {
-              locations: _.uniq(_.flatten(resNetworks.rows.filter(r => r.location).map(c => c.location.split(',')))).sort(),
-              types: _.uniq(_.flatten(resNetworks.rows.filter(r => r.tags).map(c => c.tags.split(',')))).sort(),
+              netLocations: _.uniq(_.flatten(resNetworks.rows.map(c => c.location ? c.location.split(',') : 'Unknown location'))).sort(),
+              netTypes: _.uniq(_.flatten(resNetworks.rows.map(c => c.tags ? c.tags.split(',') : 'Unknown category'))).sort(),
             },
             itemsData: resNetworks.rows.map(c => {
               const {
@@ -78,11 +65,8 @@ module.exports = function (app, pool) {
                 image,
                 date,
                 tags,
-                status,
                 description,
                 links,
-                contentlinks,
-                content,
                 location,
               } = c;
               return {
@@ -92,15 +76,7 @@ module.exports = function (app, pool) {
                 category: tags,
                 other: [date, location, tags],
                 links1: links[0],
-                content: content && content[0].map(g => {
-                  const link = getLink(contentlinks, g.id);
-                  return {
-                    name: g.name,
-                    status: g.status,
-                    link: link && link.url,
-                  };
-                }),
-                tags: `${status},${location},${tags}`.split(','),
+                tags: `${location || 'Unknown location'},${tags || 'Unknown category'}`.split(','),
               };
             })
           });
@@ -121,8 +97,9 @@ module.exports = function (app, pool) {
         .then(resCompanies => {
           res.json({
             filtersData: {
-              locations: _.uniq(_.flatten(resCompanies.rows.filter(r => r.location).map(c => c.location.split(',')))).sort(),
-              foundationYears: _.uniq(resCompanies.rows.filter(r => r.date).map(c => c.date)).sort(),
+              teamLocations: _.uniq(_.flatten(resCompanies.rows.map(c => c.location ? c.location.split(',') : 'Unknown location'))).sort(),
+              foundationYears: _.uniq(resCompanies.rows.map(c => c.date || 'Unknown year')).sort(),
+              teamStatus: _.uniq(resCompanies.rows.map(c => c.status || 'Unknown status')).sort(),
             },
             itemsData:
             resCompanies.rows.map(c => {
@@ -143,7 +120,7 @@ module.exports = function (app, pool) {
                 image,
                 description,
                 type,
-                other: [date, status, type, location],
+                other: [date, status, location, type],
                 links1: links[0],
                 content: content && content[0].map(g => {
                   const link = getLink(contentlinks, g.id);
@@ -153,7 +130,7 @@ module.exports = function (app, pool) {
                     link: link && link.url,
                   };
                 }),
-                tags: `${status},${type},${location},${date}`.split(','),
+                tags: `${status || 'Unknown status'},${type || 'Unknown category'},${location || 'Unknown location'},${date || 'Unknown yaer'}`.split(','),
               };
             })
           });
@@ -174,7 +151,11 @@ module.exports = function (app, pool) {
         .then(resGames => {
           res.json({
             filtersData: {
-              releasesYears: _.uniq(resGames.rows.filter(r => r.date).map(c => c.date)).sort(),
+              releasesYears: _.uniq(resGames.rows.map(c => c.date || 'Unknown year')).sort(),
+              gameGenres: _.uniq(_.flatten(resGames.rows.map(c => c.genre ? c.genre.split(',') : 'Unknown genre'))).sort(),
+              gameStyles: _.uniq(_.flatten(resGames.rows.map(c => c.style ? c.style.split(',') : 'Unknown type'))).sort(),
+              gameModes: _.uniq(_.flatten(resGames.rows.map(c => c.modes ? c.modes.split(',') : 'Unknown mode'))).sort(),
+              gameStatus: _.uniq(_.flatten(resGames.rows.map(c => c.status || 'Unknown status'))).sort(),
             },
             itemsData:
             resGames.rows.map(g => {
@@ -206,7 +187,7 @@ module.exports = function (app, pool) {
                     link: link && link.url,
                   };
                 }),
-                tags: `${status},${genre},${modes},${style},${date}`
+                tags: `${status || 'Unknown status'},${genre || 'Unknown genre'},${modes || 'Unknown mode'},${style || 'Unknown type'},${date || 'Unknown year'}`
                   .split(',')
                   .concat(links[0].map(l => l.type)),
                 displayedtags: `${genre},${modes},${style}`.split(','),
@@ -230,6 +211,10 @@ module.exports = function (app, pool) {
         .then(resAssets => {
           res.json({
             filtersData: {
+              assetStatus: _.uniq(_.flatten(resAssets.rows.map(c => c.status || 'Unknown status'))).sort(),
+              assetPrice: _.uniq(_.flatten(resAssets.rows.map(c => c.price || 'Unknown plan'))).sort(),
+              assetCategories: _.uniq(_.flatten(resAssets.rows.map(c => c.category || 'Unknown category'))).sort(),
+              assetTags: _.uniq(_.flatten(resAssets.rows.map(c => c.tags ? c.tags.split(',') : 'Other'))).sort(),
             },
             itemsData:
             resAssets.rows.map(g => {
@@ -260,11 +245,10 @@ module.exports = function (app, pool) {
                     link: link && link.url,
                   };
                 }),
-                tags: `${status},${category},${price},${tags}`
+                tags: `${status || 'Unknown status'},${category || 'Unknown category'},${price || 'Unknown plan'},${tags || 'Other'}`
                   .split(',')
                   .concat(links[0].map(l => l.type)),
                 displayedtags: (`${tags},` + `null`).split(','),
-                //  displayedtags: (genre + ',' + modes + ',' + style).split(','),
               };
             })
           });

@@ -11,6 +11,11 @@ const styles = {
     textAlign: 'left',
     fontSize: '16px',
   },
+  answer: {
+    fontFamily: 'Helvetica',
+    fontSize: '14px',
+    lineHeight: '20px',
+  },
 };
 
 const { classes } = jss.createStyleSheet(styles).attach();

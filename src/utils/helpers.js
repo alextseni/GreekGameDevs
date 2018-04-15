@@ -123,10 +123,7 @@ const getFilters = (filter, data) =>
       {
         filterName: 'Status',
         filterValue: 'status',
-        filterOptions: [
-          { label: 'Active', value: 'Active' },
-          { label: 'Inactive', value: 'Inactive' },
-        ],
+        filterOptions: data?.teamStatus?.map(y => ({ label: y, value: y })),
       },
       {
         filterName: 'Year founded',
@@ -137,7 +134,7 @@ const getFilters = (filter, data) =>
         multiselect: true,
         filterName: 'Location',
         filterValue: 'location',
-        filterOptions: data?.locations?.map(y => ({ label: y, value: y })),
+        filterOptions: data?.teamLocations?.map(y => ({ label: y, value: y })),
       },
     ],
     networks: [
@@ -145,49 +142,42 @@ const getFilters = (filter, data) =>
         multiselect: true,
         filterName: 'Location',
         filterValue: 'location',
-        filterOptions: data?.locations?.map(y => ({ label: y, value: y })),
+        filterOptions: data?.netLocations?.map(y => ({ label: y, value: y })),
       },
       {
         filterName: 'Category',
         filterValue: 'category',
-        filterOptions: data?.types?.map(y => ({ label: y, value: y })),
+        filterOptions: data?.netTypes?.map(y => ({ label: y, value: y })),
       },
     ],
     media: [
       {
         filterName: 'Category',
         filterValue: 'category',
-        filterOptions: data?.types?.map(y => ({ label: y, value: y })),
+        filterOptions: data?.mediaTypes?.map(y => ({ label: y, value: y })),
       },
     ],
     assets: [
       {
         filterName: 'Status',
         filterValue: 'status',
-        filterOptions: [
-          { label: 'Under Development', value: 'Under Development' },
-          { label: 'Released', value: 'Released' },
-          { label: 'Beta', value: 'Beta' },
-          { label: 'Unavailable', value: 'Unavailable' },
-        ],
+        filterOptions: data?.assetStatus?.map(y => ({ label: y, value: y })),
       },
       {
         filterName: 'Cost',
         filterValue: 'price',
-        filterOptions: [
-          { label: 'Free', value: 'free' },
-          { label: 'Buy once', value: 'buy' },
-          { label: 'Subscription', value: 'subscription' },
-        ],
+        filterOptions: data?.assetPrice?.map(y => ({ label: y, value: y })),
       },
-      // {
-      //   filterName: 'Category',
-      //   filterValue: 'category',
-      //   filterOptions: [
-      //     { name: 'Asset', value: 'asset' },
-      //     { name: 'Tool', value: 'tool' },
-      //   ],
-      // },
+      {
+        filterName: 'Tags',
+        filterValue: 'tags',
+        filterOptions: data?.assetTags?.map(y => ({ label: y, value: y })),
+      },
+      {
+        filterName: 'Category',
+        filterValue: 'category',
+        filterOptions: data?.assetCategories?.map(y => ({ label: y, value: y })),
+      },
     ],
     games: [
       {
@@ -212,51 +202,25 @@ const getFilters = (filter, data) =>
         multiselect: true,
         filterName: 'Genres',
         filterValue: 'genre',
-        filterOptions: [
-          { label: 'Puzzle', value: 'puzzle' },
-          { label: 'Adventure', value: 'adventure' },
-          { label: 'Idle', value: 'idle' },
-          { label: 'RPG', value: 'rpg' },
-          { label: 'Horror', value: 'horror' },
-          { label: 'Platform', value: 'platform' },
-          { label: 'Action', value: 'action' },
-          { label: 'Simulation', value: 'simulation' },
-          { label: 'Strategy', value: 'strategy' },
-          { label: 'Runner', value: 'runner' },
-          { label: 'Sports', value: 'sports' },
-          { label: 'Educational', value: 'educational' },
-        ],
+        filterOptions: data?.gameGenres?.map(y => ({ label: y, value: y })),
+
       },
       {
         multiselect: true,
         filterName: 'Style',
         filterValue: 'style',
-        filterOptions: [
-          { label: '2D', value: '2d' },
-          { label: '3D', value: '3d' },
-          { label: 'VR', value: 'vr' },
-          { label: 'AR', value: 'ar' },
-        ],
+        filterOptions: data?.gameStyles?.map(y => ({ label: y, value: y })),
       },
       {
         multiselect: true,
         filterName: 'Modes',
         filterValue: 'mode',
-        filterOptions: [
-          { label: 'Single Player', value: 'singlePlayer' },
-          { label: 'Local Multiplayer', value: 'localMultiplayer' },
-          { label: 'Online Multiplayer', value: 'onlineMultiplayer' },
-        ],
+        filterOptions: data?.gameModes?.map(y => ({ label: y, value: y })),
       },
       {
         filterName: 'Status',
         filterValue: 'status',
-        filterOptions: [
-          { label: 'Under Development', value: 'Under Development' },
-          { label: 'Released', value: 'Released' },
-          { label: 'Beta', value: 'Beta' },
-          { label: 'Unavailable', value: 'Unavailable' },
-        ],
+        filterOptions: data?.gameStatus?.map(y => ({ label: y, value: y })),
       },
     ],
   }[filter]);
