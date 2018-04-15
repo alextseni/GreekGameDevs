@@ -44,6 +44,7 @@ module.exports = function (app, pool) {
             })
           );
           cal.toString();
+          cal.serve(res);
           client.release();
         })
         .catch(e => {
@@ -51,7 +52,6 @@ module.exports = function (app, pool) {
           console.error('query error', e.message, e.stack);
         })
     );
-    cal.serve(res);
   });
 
   app.get('/api/history', (req, res, next) => {
