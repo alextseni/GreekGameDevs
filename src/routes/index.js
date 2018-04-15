@@ -6,6 +6,7 @@ import MediaRoute from './Database/Media';
 import ToolsRoute from './Database/Tools';
 import CommunicationRoute from './Communication';
 import HomeRoute from './Home';
+import StatsRoute from './Stats';
 import InfoRoute from './Info';
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -16,6 +17,7 @@ export const createRoutes = store => ({
   indexRoute: HomeRoute(store),
   childRoutes: [
     ToolsRoute(store),
+    StatsRoute(store),
     MediaRoute(store),
     VideoGamesRoute(store),
     CommunicationRoute(store),

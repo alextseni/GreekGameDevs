@@ -14,6 +14,7 @@ import {
   Help,
   Storage,
   Dashboard,
+  DonutSmall,
 } from 'material-ui-icons';
 import {
   Facebook,
@@ -52,11 +53,17 @@ const getTableHeader = category =>
   }[category]);
 
 const getMenuItems = () => [
+  // {
+  //   icon: <Dashboard className={classes.menuIcon} />,
+  //   iconSmall: <Dashboard className={classes.menuIconSmall} />,
+  //   header: 'Dashboard',
+  //   path: '/',
+  // },
   {
-    icon: <Dashboard className={classes.menuIcon} />,
-    iconSmall: <Dashboard className={classes.menuIconSmall} />,
-    header: 'Dashboard',
-    path: '/',
+    icon: <DonutSmall className={classes.menuIcon} />,
+    iconSmall: <DonutSmall className={classes.menuIconSmall} />,
+    header: 'Stats',
+    path: '/stats',
   },
   {
     icon: <Storage className={classes.menuIcon} />,

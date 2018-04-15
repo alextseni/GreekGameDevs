@@ -13,12 +13,16 @@ const pool = new Pool({
   connectionString: config.connectionString,
 })
 
+// controllers
 const database = require('./controllers/database.js');
 const home = require('./controllers/home.js');
 const communication = require('./controllers/communication.js');
+const analytics = require('./controllers/analytics.js');
 database(app, pool);
 communication(app, pool);
 home(app, pool);
+analytics(app, pool);
+//////
 
 app.use('/', httpsRedirect());
 

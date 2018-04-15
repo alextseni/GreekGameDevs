@@ -72,19 +72,17 @@ const PageLayout = (
                   </Popper>
                 </Manager>
               ) : (
-                m.header !== 'Dashboard' && (
-                  <Link to={m.path} activeClassName="navItemLink">
-                    <IconButton className={classes.menuItem} aria-label="Menu">
-                      {m.icon}
-                    </IconButton>
-                    <Typography
-                      type="title"
-                      component="h4"
-                      className={classes.menuLabel}>
-                      {m.header}
-                    </Typography>
-                  </Link>
-                )
+                <Link to={m.path} activeClassName="navItemLink">
+                  <IconButton className={classes.menuItem} aria-label="Menu">
+                    {m.icon}
+                  </IconButton>
+                  <Typography
+                    type="title"
+                    component="h4"
+                    className={classes.menuLabel}>
+                    {m.header}
+                  </Typography>
+                </Link>
               ),
           )}
         </Toolbar>
