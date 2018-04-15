@@ -39,32 +39,40 @@ const questions = [
               linkedin
             </li>
           </ul>
+          <br />
           <li>
             <strong>Digital Games</strong> - including released, under
             development and published but no longer available games. Betting
-            games are not supported for the time being.
+            games are not currently supported.
           </li>
           <ul>
             <li>name</li>
             <li>
               an image/logo. Send a url to the image, not the image itself
             </li>
-            <li>
-              status: released, under developement, unavailable, beta and
-              release year if there is one{' '}
-            </li>
-            <li>
-              tags for filtering: genre (see the filter for available genres),
-              style (2d, 3d, vr, ar), modes (local multiplayer, online
-              multiplayer, single player){' '}
-            </li>
             <li>developers and publishers name</li>
+            <li>
+              status: released, under developement, unavailable, beta, etc
+            </li>
+            <li>
+              release year if there is one
+            </li>
+            <li>
+              genre: action, rpg, adventure, etc
+            </li>
+            <li>
+              style: 2d, 3d, vr, ar, etc
+            </li>
+            <li>
+              modes: local multiplayer, online multiplayer, single player)
+            </li>
             <li>media links: websites, facebook, indiedb, twitter, youtube</li>
             <li>
               For released games only, links to platforms it was released to:
               app store, play store, windows store, pc, available demo, online
             </li>
           </ul>
+          <br />
           <li>
             <strong>Assets/Tools</strong> - that can be used in games or game
             creation.
@@ -76,13 +84,50 @@ const questions = [
             </li>
             <li>
               status: released, under developement, beta and release year if
-              there is one{' '}
+              there is one
             </li>
-            <li>tags for filtering: price (free, buy once, subscription)</li>
+            <li>
+              plan: free, buy, subscription, etc
+            </li>
             <li>developers name</li>
             <li>
               media links: websites, facebook, twitter and any stores it might
               be available
+            </li>
+          </ul>
+          <br />
+          <li>
+            <strong>Networks</strong> - meetups, communities, expos, groups related to digital game development
+          </li>
+          <ul>
+            <li>name</li>
+            <li>
+              an image/logo. Send a url to the image, not the image itself
+            </li>
+            <li>
+              location: Athens, online, etc
+            </li>
+            <li>
+            category: meetup, community, expo, organization, etc
+            </li>
+            <li>
+              media links: website, facebook, twitter, etc
+            </li>
+          </ul>
+          <br />
+          <li>
+            <strong>Media</strong> - sites & youtubers promoting games
+          </li>
+          <ul>
+            <li>name</li>
+            <li>
+              an image/logo. Send a url to the image, not the image itself
+            </li>
+            <li>
+            category: site, youtube channel, etc
+            </li>
+            <li>
+              media links: website, facebook, twitter, youtube, etc
             </li>
           </ul>
         </ul>
