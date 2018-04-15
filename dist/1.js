@@ -33833,7 +33833,7 @@ var Home = function Home() {
     type: "headline",
     component: "h4",
     style: __WEBPACK_IMPORTED_MODULE_7__style__["b" /* styles */].subheader
-  }, "Here you can find all sorts of information about the greek game development scene."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+  }, "Here you can find all sorts of information about the Greek game development scene."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: __WEBPACK_IMPORTED_MODULE_7__style__["a" /* classes */].databases,
     style: {
       maxWidth: "".concat(300 * __WEBPACK_IMPORTED_MODULE_4_utils__["b" /* helpers */].getDatabaseItems().length, "px")

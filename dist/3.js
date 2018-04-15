@@ -130,21 +130,8 @@ var credits = [{
     rel: "noreferrer noopener"
   }, "CC 3.0 BY"))
 }, {
-  key: 4,
-  credit: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-    target: "_blank",
-    rel: "noreferrer noopener",
-    href: "https://github.com/davezuko/react-redux-starter-kit",
-    title: "Starter Kit"
-  }, ' ', "Project's boilerplate", ' '), "from", ' ', __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-    target: "_blank",
-    rel: "noreferrer noopener",
-    href: "https://github.com/davezuko",
-    title: "Github"
-  }, "David Zukowski", ' '), "licensed under the MIT License")
-}, {
   key: 5,
-  credit: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, "Content by", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+  credit: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, "Part of games content found in", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
     target: "_blank",
     rel: "noreferrer noopener",
     href: "http://aboutgamedev.weebly.com/greek-games-2014.html",
@@ -160,6 +147,27 @@ var credits = [{
     href: "https://allianceive.wordpress.com/%CE%BF%CE%BC%CE%AC%CE%B4%CE%B5%CF%82-%CE%B1%CE%BD%CE%AC%CF%80%CF%84%CF%85%CE%BE%CE%B7%CF%82-video-games/",
     title: "GamesInGreece"
   }, ' ', "Games in Greece 3.0"))
+}, {
+  key: 6,
+  credit: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, "Part of media content found in", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    target: "_blank",
+    rel: "noreferrer noopener",
+    href: "https://www.facebook.com/groups/582847431837484/files/",
+    title: "Games 2014"
+  }, ' ', "Greek Game Devs Files"))
+}, {
+  key: 4,
+  credit: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    target: "_blank",
+    rel: "noreferrer noopener",
+    href: "https://github.com/davezuko/react-redux-starter-kit",
+    title: "Starter Kit"
+  }, ' ', "Project's boilerplate", ' '), "from", ' ', __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    target: "_blank",
+    rel: "noreferrer noopener",
+    href: "https://github.com/davezuko",
+    title: "Github"
+  }, "David Zukowski", ' '), "licensed under the MIT License")
 }];
 /* harmony default export */ __webpack_exports__["a"] = (credits);
 

@@ -18,7 +18,7 @@ const Home = (
         {'Welcome to the GGD database!'}
       </Typography>
       <Typography type="headline" component="h4" style={styles.subheader}>
-        Here you can find all sorts of information about the greek game
+        Here you can find all sorts of information about the Greek game
         development scene.
       </Typography>
       <div

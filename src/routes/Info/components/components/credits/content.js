@@ -96,34 +96,10 @@ const credits = [
     ),
   },
   {
-    key: 4,
-    credit: (
-      <div>
-        <a
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://github.com/davezuko/react-redux-starter-kit"
-          title="Starter Kit">
-          {' '}
-          {"Project's boilerplate"}{' '}
-        </a>
-        from{' '}
-        <a
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://github.com/davezuko"
-          title="Github">
-          David Zukowski{' '}
-        </a>
-        licensed under the MIT License
-      </div>
-    ),
-  },
-  {
     key: 5,
     credit: (
       <div>
-        Content by
+        Part of games content found in
         <a
           target="_blank"
           rel="noreferrer noopener"
@@ -148,6 +124,46 @@ const credits = [
           {' '}
           Games in Greece 3.0
         </a>
+      </div>
+    ),
+  },
+  {
+    key: 6,
+    credit: (
+      <div>
+        Part of media content found in
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://www.facebook.com/groups/582847431837484/files/"
+          title="Games 2014">
+          {' '}
+          Greek Game Devs Files
+        </a>
+      </div>
+    ),
+  },
+  {
+    key: 4,
+    credit: (
+      <div>
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://github.com/davezuko/react-redux-starter-kit"
+          title="Starter Kit">
+          {' '}
+          {"Project's boilerplate"}{' '}
+        </a>
+        from{' '}
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://github.com/davezuko"
+          title="Github">
+          David Zukowski{' '}
+        </a>
+        licensed under the MIT License
       </div>
     ),
   },
