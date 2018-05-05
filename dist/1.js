@@ -34019,12 +34019,12 @@ function (_Component) {
         style: {
           textDecoration: 'underline'
         }
-      }, "Learn more")))), __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement("div", {
+      }, 'Learn more')))), __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement("div", {
         className: __WEBPACK_IMPORTED_MODULE_11__style__["a" /* classes */].sectionTitle
       }, __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui__["q" /* Typography */], {
         type: "headline",
         component: "h4"
-      }, "Upcoming events"), __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui__["h" /* Button */], {
+      }, 'Upcoming events'), __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_material_ui__["h" /* Button */], {
         raised: true,
         target: "_blank",
         color: "accent",

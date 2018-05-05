@@ -130,7 +130,7 @@ module.exports = function (app, pool) {
                     link: link && link.url,
                   };
                 }),
-                tags: `${status || 'Unknown status'},${type || 'Unknown category'},${location || 'Unknown location'},${date || 'Unknown yaer'}`.split(','),
+                tags: `${status || 'Unknown status'},${type || 'Unknown category'},${location || 'Unknown location'},${date || 'Unknown year'}`.split(','),
               };
             })
           });

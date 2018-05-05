@@ -75,14 +75,14 @@ class Calendar extends Component {
                 target="_blank"
                 href={this.state.description}
                 style={{ textDecoration: 'underline' }}>
-                Learn more
+                {'Learn more'}
               </a>
             </Typography>
           </div>
         </Popover>
         <div className={classes.sectionTitle}>
           <Typography type="headline" component="h4">
-            Upcoming events
+            {'Upcoming events'}
           </Typography>
           <Button
             raised

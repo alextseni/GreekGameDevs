@@ -87,6 +87,7 @@
     "react-async-script": "^0.9.1",
     "react-big-calendar": "^0.17.0",
     "react-chartjs-2": "^2.7.0",
+    "react-countup": "^3.0.3",
     "react-dom": "^15.5.4",
     "react-ga": "^2.4.1",
     "react-google-recaptcha": "^0.9.7",

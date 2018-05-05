@@ -1,11 +1,22 @@
-import { grey, lightBlue, green, red } from 'material-ui/colors';
+import {
+  grey,
+  lightBlue,
+  green,
+  red,
+  purple,
+  indigo,
+  amber,
+  deepOrange,
+  blueGrey,
+  brown,
+  pink,
+  blue,
+  teal,
+  cyan,
+  yellow,
+  lime,
+} from 'material-ui/colors';
 import { createMuiTheme } from 'material-ui/styles';
-
-// Needed for onTouchTap
-// Check this repo:
-// // https://github.com/zilverline/react-tap-event-plugin
-// import injectTapEventPlugin from 'react-tap-event-plugin';
-// injectTapEventPlugin();
 
 const theme = createMuiTheme({
   fontFamily: 'Ubuntu',
@@ -23,10 +34,26 @@ const theme = createMuiTheme({
     //  lighterBlue: lightBlue[100],
     mainBlue: lightBlue[600], // #039BE5
     white: '#FFFFFF',
+    black: '#000000',
     facebookBlue: '#3b5998',
     successColor: green[300],
     errorColor: red[300],
     warningColor: '',
+    colors: {
+      red: red[400],
+      purple: purple[400],
+      orange: deepOrange[400],
+      indigo: indigo[400],
+      amber: amber[400],
+      blueGrey: blueGrey[400],
+      brown: brown[400],
+      blue: blue[400],
+      pink: pink[400],
+      teal: teal[400],
+      cyan: cyan[400],
+      yellow: yellow[700],
+      lime: lime[400],
+    },
   },
 });
 

@@ -3,70 +3,15 @@ const _ = require('lodash');
 
 module.exports = function (app, pool) {
 
-  // app.get('/api/stats/companies', (req, res, next) => {
-  //   // Get a Postgres client from the connection pool
-  //   pool.connect().then(client =>
-  //     client
-  //       .query(queries[`${req.params.category}Companies`])
-  //       .then(resCompanies => {
-  //         res.json({
-  //           totalActiveCompanies: resCompanies.rows.filter(c => c.status === 'Active').length,
-  //           companiesByYear: _.groupBy(resCompanies.rows, 'date'),
-  //       //    companiesByLocation: ,
-  //
-  //           filtersData: {
-  //             locations: _.uniq(_.flatten(resCompanies.rows.filter(r => r.location).map(c => c.location.split(',')))).sort(),
-  //             foundationYears: _.uniq(resCompanies.rows.filter(r => r.date).map(c => c.date)).sort(),
-  //           },
-  //           itemsData:
-  //           resCompanies.rows.map(c => {
-  //             const {
-  //               name,
-  //               image,
-  //               date,
-  //               type,
-  //               status,
-  //               description,
-  //               links,
-  //               contentlinks,
-  //               content,
-  //               location,
-  //             } = c;
-  //             return {
-  //               name,
-  //               image,
-  //               description,
-  //               type,
-  //               other: [date, status, type, location],
-  //               links1: links[0],
-  //               content: content && content[0].map(g => {
-  //                 const link = getLink(contentlinks, g.id);
-  //                 return {
-  //                   name: g.name,
-  //                   status: g.status,
-  //                   link: link && link.url,
-  //                 };
-  //               }),
-  //               tags: `${status},${type},${location},${date}`.split(','),
-  //             };
-  //           })
-  //         });
-  //         client.release();
-  //       })
-  //       .catch(e => {
-  //         client.release();
-  //         console.error('query error', e.message, e.stack);
-  //       })
-  //   );
-  // });
-
-  app.get('/api/totalGames', (req, res, next) => {
+  app.get('/api/stats/totalAssets', (req, res, next) => {
     // Get a Postgres client from the connection pool
     pool.connect().then(client =>
       client
-        .query('SELECT COUNT(*) FROM vg')
+        .query('SELECT COUNT(*) FROM assets')
         .then(result => {
-          res.json(result.rows[0]);
+          res.json({
+            totalAssets: result.rows[0].count,
+          });
           client.release();
         })
         .catch(e => {
@@ -75,13 +20,18 @@ module.exports = function (app, pool) {
         })
     );
   });
-  app.get('/api/totalTeams', (req, res, next) => {
+
+  app.get('/api/stats/totalTeams', (req, res, next) => {
     // Get a Postgres client from the connection pool
     pool.connect().then(client =>
       client
-        .query('SELECT COUNT(*) FROM vgcom')
+        .query('SELECT * FROM vgcom')
         .then(result => {
-          res.json(result.rows[0]);
+          const teamCategories = _.groupBy(result.rows, 'type');
+          res.json({
+            totalMedia: teamCategories['Media'].length,
+            totalNetworks: teamCategories['Network'].length,
+          });
           client.release();
         })
         .catch(e => {
@@ -97,12 +47,83 @@ module.exports = function (app, pool) {
       client
         .query(queries.queryGames)
         .then(resGames => {
-          const gamesByYear = _.omit(_.groupBy(resGames.rows, 'date'), 'null');
+          const gamesByYear = _.groupBy(resGames.rows, 'date');
+          const gamesByStatus = _.groupBy(resGames.rows, 'status');
           res.json({
+            totalGames: resGames.rows.length,
             gamesByYearData: {
-              label: 'Games released',
-              labels: _.keys(gamesByYear),
+              label: 'Games by release year',
+              labels: _.keys(gamesByYear).map(key => key === 'null' ? 'Unknown' : key),
               data: _.values(gamesByYear).map(games => games.length),
+            },
+            gamesByStatusData: {
+              label: 'Games by status',
+              labels: _.keys(gamesByStatus).map(key => key === 'null' ? 'Unknown' : key),
+              data: _.values(gamesByStatus).map(games => games.length),
+            },
+          });
+          client.release();
+        })
+        .catch(e => {
+          client.release();
+          console.error('query error', e.message, e.stack);
+        })
+    );
+  });
+
+  app.get('/api/stats/gamesPlatforms', (req, res, next) => {
+    // Get a Postgres client from the connection pool
+    const mapPlatform = {
+      'appStore': 'iOS',
+      'playstore': 'android',
+      'windowstore': 'windows',
+    };
+    pool.connect().then(client =>
+      client
+        .query("SELECT * FROM vglinks WHERE category = 'platform'")
+        .then(resGames => {
+          const gamesByPlatform = _.groupBy(resGames.rows, 'type');
+          res.json({
+            gamesByPlatformData: {
+              label: 'Games by platform',
+              labels: _.keys(gamesByPlatform).map(plat => mapPlatform[plat] || plat),
+              data: _.values(gamesByPlatform).map(games => games.length),
+            },
+          });
+          client.release();
+        })
+        .catch(e => {
+          client.release();
+          console.error('query error', e.message, e.stack);
+        })
+    );
+  });
+
+  app.get('/api/stats/gameDevs', (req, res, next) => {
+    // Get a Postgres client from the connection pool
+    pool.connect().then(client =>
+      client
+        .query(queries.videogamesCompanies)
+        .then(resDevs => {
+          const gameDevsByYear = _.groupBy(resDevs.rows, 'date');
+          const gameDevsByStatus = _.groupBy(resDevs.rows, 'status');
+          const gameDevsByLocation = _.groupBy(resDevs.rows, 'location');
+          res.json({
+            totalGameDevs: resDevs.rows.length,
+            gameDevsByYearData: {
+              label: 'Devs by year of initial activity',
+              labels: _.keys(gameDevsByYear).map(key => key === 'null' ? 'Unknown' : key),
+              data: _.values(gameDevsByYear).map(devs => devs.length),
+            },
+            gameDevsByStatusData: {
+              label: 'Devs by status',
+              labels: _.keys(gameDevsByStatus).map(key => key === 'null' ? 'Unknown' : key),
+              data: _.values(gameDevsByStatus).map(devs => devs.length),
+            },
+            gameDevsByLocationData: {
+              label: 'Devs by location',
+              labels: _.keys(gameDevsByLocation).map(key => key === 'null' ? 'Unknown' : key),
+              data: _.values(gameDevsByLocation).map(devs => devs.length),
             },
           });
           client.release();
