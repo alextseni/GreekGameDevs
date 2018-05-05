@@ -80,7 +80,7 @@ module.exports = function (app, pool) {
     };
     pool.connect().then(client =>
       client
-        .query("SELECT * FROM vglinks WHERE category = 'platform'")
+        .query("SELECT * FROM vglinks WHERE category = 'platform' AND active = true")
         .then(resGames => {
           const gamesByPlatform = _.groupBy(resGames.rows, 'type');
           res.json({
