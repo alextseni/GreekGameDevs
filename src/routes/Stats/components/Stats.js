@@ -78,14 +78,14 @@ class Stats extends Component {
           </div>
         </Paper>
         <StatusCover isLoading={!stats.totalGames}>
-          <Bar
-            data={this.transformData('gamesByYearData', 'bar')}
+          <Doughnut
+            data={this.transformData('gamesByStatusData', 'pie')}
             width={100}
             height={50}
             options={{}}
           />
-          <Doughnut
-            data={this.transformData('gamesByStatusData', 'pie')}
+          <Bar
+            data={this.transformData('gamesByYearData', 'bar')}
             width={100}
             height={50}
             options={{}}
@@ -117,14 +117,14 @@ class Stats extends Component {
           </div>
         </Paper>
         <StatusCover isLoading={!stats.totalGameDevs}>
-          <Bar
-            data={this.transformData('gameDevsByYearData', 'bar')}
+          <Doughnut
+            data={this.transformData('gameDevsByStatusData', 'pie')}
             width={100}
             height={50}
             options={{}}
           />
-          <Doughnut
-            data={this.transformData('gameDevsByStatusData', 'pie')}
+          <Bar
+            data={this.transformData('gameDevsByYearData', 'bar')}
             width={100}
             height={50}
             options={{}}

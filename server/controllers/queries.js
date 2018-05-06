@@ -4,6 +4,7 @@ module.exports = {
     'vgcom.name,' +
     'vgcom.image,' +
     'vgcom.founded AS date,' +
+    'vgcom.tags AS category,' +
     'vgcom.status,' +
     'vgcom.location,' +
     'vgcom.description,' +

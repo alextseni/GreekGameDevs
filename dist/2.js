@@ -35628,10 +35628,10 @@ module.exports = toString;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Doughnut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Doughnut; });
 /* unused harmony export Pie */
 /* unused harmony export Line */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Bar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Bar; });
 /* unused harmony export HorizontalBar */
 /* unused harmony export Radar */
 /* unused harmony export Polar */
@@ -36452,19 +36452,19 @@ function (_Component) {
         separator: "."
       }))), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10_commons_components__["a" /* StatusCover */], {
         isLoading: !stats.totalGames
-      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["a" /* Bar */], {
-        data: this.transformData('gamesByYearData', 'bar'),
+      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["a" /* Doughnut */], {
+        data: this.transformData('gamesByStatusData', 'pie'),
         width: 100,
         height: 50,
         options: {}
-      }), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["b" /* Doughnut */], {
-        data: this.transformData('gamesByStatusData', 'pie'),
+      }), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["b" /* Bar */], {
+        data: this.transformData('gamesByYearData', 'bar'),
         width: 100,
         height: 50,
         options: {}
       })), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10_commons_components__["a" /* StatusCover */], {
         isLoading: !stats.gamesByPlatformData
-      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["b" /* Doughnut */], {
+      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["a" /* Doughnut */], {
         data: this.transformData('gamesByPlatformData', 'pie'),
         width: 100,
         height: 50,
@@ -36489,13 +36489,13 @@ function (_Component) {
         separator: "."
       }))), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10_commons_components__["a" /* StatusCover */], {
         isLoading: !stats.totalGameDevs
-      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["a" /* Bar */], {
-        data: this.transformData('gameDevsByYearData', 'bar'),
+      }, __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["a" /* Doughnut */], {
+        data: this.transformData('gameDevsByStatusData', 'pie'),
         width: 100,
         height: 50,
         options: {}
-      }), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["b" /* Doughnut */], {
-        data: this.transformData('gameDevsByStatusData', 'pie'),
+      }), __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_chartjs_2__["b" /* Bar */], {
+        data: this.transformData('gameDevsByYearData', 'bar'),
         width: 100,
         height: 50,
         options: {}

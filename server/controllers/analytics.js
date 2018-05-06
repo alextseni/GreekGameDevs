@@ -47,7 +47,9 @@ module.exports = function (app, pool) {
       client
         .query(queries.queryGames)
         .then(resGames => {
-          const gamesByYear = _.groupBy(resGames.rows, 'date');
+          const gamesByYear = _.groupBy(
+            resGames.rows.filter(g => g.status !== 'Under Development' && g.status !== 'Stopped'),
+            'date');
           const gamesByStatus = _.groupBy(resGames.rows, 'status');
           res.json({
             totalGames: resGames.rows.length,
@@ -108,6 +110,7 @@ module.exports = function (app, pool) {
           const gameDevsByYear = _.groupBy(resDevs.rows, 'date');
           const gameDevsByStatus = _.groupBy(resDevs.rows, 'status');
           const gameDevsByLocation = _.groupBy(resDevs.rows, 'location');
+          const gameDevsByCategory = _.groupBy(resDevs.rows, 'category');
           res.json({
             totalGameDevs: resDevs.rows.length,
             gameDevsByYearData: {
@@ -124,6 +127,11 @@ module.exports = function (app, pool) {
               label: 'Devs by location',
               labels: _.keys(gameDevsByLocation).map(key => key === 'null' ? 'Unknown' : key),
               data: _.values(gameDevsByLocation).map(devs => devs.length),
+            },
+            gameDevsByCategoryData: {
+              label: 'Devs by business plan',
+              labels: _.keys(gameDevsByCategory).map(key => key === 'null' ? 'Unknown' : key),
+              data: _.values(gameDevsByCategory).map(devs => devs.length),
             },
           });
           client.release();
