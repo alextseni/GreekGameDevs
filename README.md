@@ -2,7 +2,7 @@
 This is a website with information about the greek game development scene.  
 Made with: ReactJS, ReduxJS, NodeJS, Axios, Postgres, MaterialUI
 
-Production branch: <code>master</code>, deployed at http://www.greekgamedevs.com/     
+Production branch: <code>master</code>, deployed at https://greekgamedevs.herokuapp.com/    
 Development branch: <code>develop</code>, deployed at https://ggdtest.herokuapp.com/   
 
 Download project and run <code>yarn install</code> at the project's folder to install dependencies   
